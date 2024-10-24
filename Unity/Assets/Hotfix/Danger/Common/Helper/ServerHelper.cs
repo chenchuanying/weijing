@@ -345,10 +345,11 @@ namespace ET
             serverItems_1.Add(new ServerItem() { ServerId = 121, ServerIp = $"{ip}:20465", ServerName = "太平盛世", ServerOpenTime = 1727434800000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 122, ServerIp = $"{ip}:20505", ServerName = "欢度国庆", ServerOpenTime = 1728039600000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 123, ServerIp = $"{ip}:20525", ServerName = "春花秋月", ServerOpenTime = 1728644400000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
-
-
-            //2024/10/18 19:00:00 1729249200000 新区 光明之旅 124
             serverItems_1.Add(new ServerItem() { ServerId = 124, ServerIp = $"{ip}:20595", ServerName = "光明之旅", ServerOpenTime = 1729249200000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
+
+
+            //2024/10/25 19:00:00 1729854000000 新区 断桥残雪 125
+            serverItems_1.Add(new ServerItem() { ServerId = 125, ServerIp = $"{ip}:20605", ServerName = "断桥残雪", ServerOpenTime = 1729854000000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
 
 
             ///PlatformHelper.GetPlatformName(); 所有渠道ID定义
