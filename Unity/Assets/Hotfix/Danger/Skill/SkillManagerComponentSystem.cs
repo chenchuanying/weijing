@@ -377,9 +377,11 @@ namespace ET
             else
             {
                 bool noMoveSkill = skillConfig.GameObjectName.Equals("Skill_Other_XuanFengZhan_1");
-                long SkillMoveTime = noMoveSkill ? skillConfig.SkillLiveTime + TimeHelper.ClientNow() : 0;
-                self.SkillMoveTime = SkillMoveTime;
-
+                if (noMoveSkill && skillConfig.SkillType == 1)
+                {
+                    self.SkillMoveTime = noMoveSkill ? skillConfig.SkillLiveTime + TimeHelper.ClientNow() : 0; 
+                }
+                
                 double singTime = skillConfig.SkillSingTime;
                 self.SkillSingTime = singTime == 0f ? 0 : TimeHelper.ClientNow() + (int)(1000f * singTime);
 
@@ -390,7 +392,7 @@ namespace ET
                 {
                     self.SkillMoveTime = skillRigibTime;
                 }
-               
+
                 if (!ComHelp.IfNull(skillConfig.SkillAnimation))
                 {
                     int fsmType = skillConfig.ComboSkillID > 0 ? 5 : 4;
