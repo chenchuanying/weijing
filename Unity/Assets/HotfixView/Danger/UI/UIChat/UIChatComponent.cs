@@ -223,6 +223,13 @@ namespace ET
                 return;
             }
 
+            if (userInfoComponent.UserInfo.UserId == 2201523168143802368
+                || userInfoComponent.UserInfo.UserId == 2200703739923333120)
+            {
+                ErrorHelp.Instance.ErrorHint(ErrorCode.ERR_Chat_JinYan_3);
+                return;
+            }
+
             bool mask = false;
             if (!gm)
             {
