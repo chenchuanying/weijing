@@ -465,4 +465,5 @@
 {"_t":"EffectConfig","_id":77005304,"EffectType":1,"IfFollowCollider":0,"EffectName":"Eff_Skill_BaoZha_46","SkillEffectDelayTime":0.7,"SkillParent":1,"SkillParentPosition":"Center","HideTime":0,"SkillEffectLiveTime":1200,"PlayType":0},
 {"_t":"EffectConfig","_id":77005305,"EffectType":1,"IfFollowCollider":0,"EffectName":"Eff_Skill_XuanFengZhan","SkillEffectDelayTime":0.4,"SkillParent":1,"SkillParentPosition":"Center","HideTime":0,"SkillEffectLiveTime":1200,"PlayType":0},
 {"_t":"EffectConfig","_id":77005401,"EffectType":1,"IfFollowCollider":0,"EffectName":"Eff_Skill_BaoZha_14","SkillEffectDelayTime":0,"SkillParent":1,"SkillParentPosition":"Center","HideTime":0,"SkillEffectLiveTime":2000,"PlayType":0},
+{"_t":"EffectConfig","_id":77010111,"EffectType":1,"IfFollowCollider":0,"EffectName":"Eff_Skill_77010111","SkillEffectDelayTime":0,"SkillParent":1,"SkillParentPosition":"Center","HideTime":0,"SkillEffectLiveTime":100000,"PlayType":0},
 ]}
