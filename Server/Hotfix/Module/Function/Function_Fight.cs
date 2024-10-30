@@ -775,6 +775,7 @@ namespace ET
                     actDamge = skillconfig.DamgeChiXuPro;
                     actDamgeValue = skillconfig.DamgeChiXuValue;
                 }
+                
 
                 damge = (long)(damge * (actDamge + skillHandler.ActTargetTemporaryAddPro + skillHandler.ActTargetAddPro + skillHandler.GetTianfuProAdd((int)SkillAttributeEnum.AddDamageCoefficient) + skillProAdd)) + actDamgeValue;
 

@@ -2,7 +2,7 @@
 
 namespace ET
 {
-    //旋转攻击
+    //旋转攻击, 不能控制方向
     public class Skill_XuanZhuan_Attack : SkillHandler
     {
 
