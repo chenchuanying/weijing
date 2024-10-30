@@ -192,7 +192,8 @@
         public const int UnionAttribute_1 = 3192;
         public const int UnionAttribute_2 = 3193;
         public const int UnionAttributeFail_1 = 3194;
-        public const int UnionAttributeFail_2 = 3195;                           
+        public const int UnionAttributeFail_2 = 3195;
+        public const int JinYanEndTime = 3196;
         public const int Max = 10000;
 
         public const int Now_MaxHp = 1002;                                       //生命总值

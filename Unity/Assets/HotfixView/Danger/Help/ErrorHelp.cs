@@ -93,7 +93,8 @@ namespace ET
             ErrorHintList.Add(ErrorCode.ERR_UnionChatLimit, "发消息太频繁 5秒1次");
             ErrorHintList.Add(ErrorCode.ERR_EquipRepeat, "已经有相同类型的装备");
             ErrorHintList.Add(ErrorCode.ERR_WarehouseIsFull, "仓库已满");
-            
+            ErrorHintList.Add(ErrorCode.ERR_WordChatLimit, "当前已经被禁言！");
+
             ErrorHintList.Add(ErrorCode.ERR_CreateRoleName, "角色名非法!");
             ErrorHintList.Add(ErrorCode.ERR_RoleNameRepeat, "角色名重复!");
             ErrorHintList.Add(ErrorCode.ERR_ShuLianDuNotEnough, "当前制造需求熟练度不足!");
