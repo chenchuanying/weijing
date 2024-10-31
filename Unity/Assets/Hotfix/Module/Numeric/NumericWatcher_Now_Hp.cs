@@ -109,6 +109,7 @@ namespace ET
 			if (args.NewValue == 0)//复活
 			{
                 unit.Position = unit.GetBornPostion();
+				unit.GetComponent<StateComponent>().SetRigidityEndTime(0);
                 EventType.UnitRevive.Instance.Unit = unit;
 				Game.EventSystem.PublishClass(EventType.UnitRevive.Instance);
 			}
@@ -119,6 +120,6 @@ namespace ET
 				Game.EventSystem.PublishClass(EventType.UnitDead.Instance);
 			}
 #endif
-		}
-	}
+        }
+    }
 }

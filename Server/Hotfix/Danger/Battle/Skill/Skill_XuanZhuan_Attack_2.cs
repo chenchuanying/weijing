@@ -10,7 +10,8 @@ namespace ET
         public override void OnInit(SkillInfo skillId, Unit theUnitFrom)
         {
             this.BaseOnInit(skillId, theUnitFrom);
-
+            this.SkillTriggerInvelTime = 1000;
+            this.SkillTriggerLastTime = TimeHelper.ServerNow();
             OnExecute();
         }
 
@@ -28,6 +29,7 @@ namespace ET
             {
                 return;
             }
+
             //根据技能存在时间设置其结束状态
             if (serverNow > this.SkillEndTime)
             {
@@ -35,14 +37,22 @@ namespace ET
                 return;
             }
 
-            for (int i = 0; i < this.ICheckShape.Count; i++)
+
+            //每间隔一段时间触发一次伤害
+            if (serverNow - this.SkillTriggerLastTime >= this.SkillTriggerInvelTime)
             {
-                // (int)Quaternion.QuaternionToEuler().y;
-                // (this.ICheckShape[i] as Rectangle).s_forward = (Quaternion.Euler(0, anglea_1, 0) * Vector3.forward).normalized; 
-                (this.ICheckShape[i] as Rectangle).s_forward = (this.TheUnitFrom.Rotation * Vector3.forward).normalized;
+                this.SkillTriggerLastTime = TimeHelper.ServerNow();
+                this.HurtIds.Clear();
+
+                for (int i = 0; i < this.ICheckShape.Count; i++)
+                {
+                    // (int)Quaternion.QuaternionToEuler().y;
+                    // (this.ICheckShape[i] as Rectangle).s_forward = (Quaternion.Euler(0, anglea_1, 0) * Vector3.forward).normalized; 
+                    (this.ICheckShape[i] as Rectangle).s_forward = (this.TheUnitFrom.Rotation * Vector3.forward).normalized;
+                }
+                this.ExcuteSkillAction();
             }
 
-            this.ExcuteSkillAction();
             this.CheckChiXuHurt();
         }
 

@@ -28,8 +28,8 @@ namespace ET
             long serverNow = TimeHelper.ServerNow();
             if (serverNow - this.SkillTriggerLastTime >= 250)
             {
-                SkillTriggerLastTime = TimeHelper.ServerNow();
-                HurtIds.Clear();
+                this.SkillTriggerLastTime = TimeHelper.ServerNow();
+                this.HurtIds.Clear();
                 this.UpdateCheckPoint(this.TheUnitFrom.Position);
                 this.ExcuteSkillAction();
             }
