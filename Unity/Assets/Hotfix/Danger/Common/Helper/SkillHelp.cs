@@ -8,7 +8,9 @@ namespace ET
     public static class SkillHelp
     {
 
-        public static string ChongJiSkill = "Skill_Other_ChongJi_1";
+        public static string Skill_Other_ChongJi_1 = "Skill_Other_ChongJi_1";
+
+        public static string Skill_XuanZhuan_Attack_2 = "Skill_XuanZhuan_Attack_2";
 
         public static List<string> NotCombatSkill = new List<string>() { "Act_11", "Act_12", "Act_13" };
 
@@ -42,7 +44,7 @@ namespace ET
 
         public static bool IsChongJi(string skillname)
         {
-            return skillname.Equals(ChongJiSkill);
+            return skillname.Equals(Skill_Other_ChongJi_1);
         }
 
         public static bool havePassiveSkillType(int[] typelist, int passType)

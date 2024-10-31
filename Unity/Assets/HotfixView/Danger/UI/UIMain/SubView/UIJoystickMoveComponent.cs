@@ -296,6 +296,36 @@ namespace ET
 
             Unit unit = self.MainUnit;
             Quaternion rotation = Quaternion.Euler(0, direction, 0);
+           
+            if (clientNow - self.AttackComponent.MoveAttackTime < 200)
+            {
+                return;
+            }
+            if (self.lastDirection == direction && clientNow - self.lastSendTime < self.checkTime)
+            {
+                return;
+            }
+
+            int errorCode = MoveHelper.IfCanMove(unit);
+            if (errorCode == ErrorCode.ERR_CanNotMove_Rigidity)
+            {
+                SkillManagerComponent skillManager = unit.GetComponent<SkillManagerComponent>();
+                if (skillManager.HaveSkillType(SkillHelp.Skill_XuanZhuan_Attack_2))
+                {
+                    self.checkTime = 100;
+                    self.lastSendTime = clientNow;
+                    self.lastDirection = direction;
+                    NetHelper.RequestSkillXuanZhuan( self.ZoneScene(), direction ).Coroutine();
+                    return;
+                }
+            }
+
+            if (errorCode != ErrorCode.ERR_Success)
+            {
+                HintHelp.GetInstance().ShowHintError( errorCode, self.ZoneScene());
+                return;
+            }
+
             if (self.SceneTypeEnum == SceneTypeEnum.TeamDungeon)
             {
                 //检测光墙
@@ -316,23 +346,6 @@ namespace ET
                     }
                     return;
                 }
-            }
-
-            if (clientNow - self.AttackComponent.MoveAttackTime < 200)
-            {
-                return;
-            }
-            if (self.lastDirection == direction && clientNow - self.lastSendTime < self.checkTime)
-            {
-                return;
-            }
-
-
-            int errorCode = MoveHelper.IfCanMove(unit);
-            if (errorCode != ErrorCode.ERR_Success)
-            {
-                HintHelp.GetInstance().ShowHintError( errorCode, self.ZoneScene());
-                return;
             }
 
             Vector3 newv3;

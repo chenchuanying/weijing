@@ -6398,6 +6398,30 @@ message M2C_SkillJueXingResponse		// IActorLocationResponse
 	int32 Error = 92;
 }
 
+//ResponseType M2C_SkillXuanZhuanResponse
+message C2M_SkillXuanZhuanRequest			// IActorLocationRequest
+{
+	int32 RpcId = 90;
+	int32 Angle = 1;
+}
+
+message M2C_SkillXuanZhuanResponse		// IActorLocationResponse
+{
+	int32 RpcId = 90;
+	string Message = 91;
+	int32 Error = 92;
+
+	int32 Angle = 1;
+	int64 UnitID = 2;
+}
+
+message M2C_SkillXuanZhuanMessage		// IActorMessage
+{
+	int32 RpcId = 90;
+	int32 Angle = 1;
+	int64 UnitID = 2;
+}
+
 //ResponseType M2C_ItemIncreaseTransferResponse
 //增幅转移
 message C2M_ItemIncreaseTransferRequest // IActorLocationRequest

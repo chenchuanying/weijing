@@ -270,6 +270,14 @@ namespace ET
             zoneScene.GetComponent<SessionComponent>().Session.Call(request).Coroutine();
         }
 
+        public static async ETTask<int> RequestSkillXuanZhuan(Scene zoneScene, int angle)
+        {
+            C2M_SkillXuanZhuanRequest c2M_SkillXuanZhuan = new C2M_SkillXuanZhuanRequest();
+            c2M_SkillXuanZhuan.Angle = angle;
+            M2C_SkillXuanZhuanResponse m2C_SkillXuanZhuan = (M2C_SkillXuanZhuanResponse)await zoneScene.GetComponent<SessionComponent>().Session.Call(c2M_SkillXuanZhuan);
+            return m2C_SkillXuanZhuan.Error;
+        }
+
         public static async ETTask<int> RequestEquipMake(Scene zoneScene, long  baginfoId, int makeId, int plan)
         {
             C2M_MakeEquipRequest request = new C2M_MakeEquipRequest() { BagInfoID = baginfoId, MakeId = makeId , Plan = plan};

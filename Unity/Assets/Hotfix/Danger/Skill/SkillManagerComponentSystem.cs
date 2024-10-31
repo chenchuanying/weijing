@@ -448,6 +448,19 @@ namespace ET
             }
         }
 
+        public static bool HaveSkillType(this SkillManagerComponent self, string skilltype)
+        {
+            int skillcnt = self.Skills.Count;
+            for (int i = skillcnt - 1; i >= 0; i--)
+            {
+                if (self.Skills[i].SkillConf.GameObjectName.Equals(skilltype))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static int CanUseSkill(this SkillManagerComponent self,int itemId, int skillId)
         {
             Unit unit = self.GetParent<Unit>();
@@ -506,8 +519,6 @@ namespace ET
 
             return 0;
         }
-
-
     }
 
 }

@@ -449,12 +449,12 @@ namespace ET
             }
         }
 
-        public static bool HaveChongJi(this SkillManagerComponent self)
+        public static bool HaveSkillType(this SkillManagerComponent self, string skilltype)
         {
             int skillcnt = self.Skills.Count;
             for (int i = skillcnt - 1; i >= 0; i--)
             {
-                if (self.Skills[i].SkillConf.GameObjectName == SkillHelp.ChongJiSkill)
+                if (self.Skills[i].SkillConf.GameObjectName.Equals(skilltype))
                 {
                     return true;
                 }
