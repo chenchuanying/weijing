@@ -505,6 +505,12 @@ namespace ET
                 {
                     continue;
                 }
+
+                if (skillHandler.SkillConf.SkillName.Equals(SkillHelp.Skill_XuanZhuan_Attack_2))
+                {
+                    ifStop = true;  
+                }
+
                 //打断
                 if (ifStop)
                 {
@@ -557,7 +563,7 @@ namespace ET
             {
                 unit.Stop(skillcmd.SkillID);
             }
-           
+
             self.InterruptSing(skillcmd.SkillID,false);
 
             List<SkillHandler> handlerList = new List<SkillHandler>();  
