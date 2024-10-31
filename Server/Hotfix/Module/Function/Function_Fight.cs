@@ -775,6 +775,11 @@ namespace ET
                     actDamge = skillconfig.DamgeChiXuPro;
                     actDamgeValue = skillconfig.DamgeChiXuValue;
                 }
+
+                //如果目标是怪物就附加怪物伤害
+                if (defendUnit.Type == UnitType.Monster && skillconfig.MonsterActDamge != 0 ) {
+                    actDamge += skillconfig.MonsterActDamge;
+                }
                 
 
                 damge = (long)(damge * (actDamge + skillHandler.ActTargetTemporaryAddPro + skillHandler.ActTargetAddPro + skillHandler.GetTianfuProAdd((int)SkillAttributeEnum.AddDamageCoefficient) + skillProAdd)) + actDamgeValue;
