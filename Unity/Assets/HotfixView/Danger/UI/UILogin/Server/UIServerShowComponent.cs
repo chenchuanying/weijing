@@ -73,7 +73,6 @@ namespace ET
                 item_1.transform.Find("ImageButton").GetComponent<Button>().onClick.AddListener(() =>
                 {
                     string texxx = item.Key;
-                    Log.ILog.Debug($" item:  {texxx} ");
                     self.OnClickServerItem(texxx);
                 });
                 self.Iptogameobject.Add(item.Key, item_1);
