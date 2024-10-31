@@ -125,5 +125,6 @@
 +{mongodb://localhost:27017/{"	WJBeta123
 +|mongodb://localhost:27017/|"	WJBeta124
 +}mongodb://localhost:27017/}"	WJBeta125
++~mongodb://localhost:27017/~"	WJBeta126
 5Êmongodb://localhost:27017/Ê"WJBeta202(center)
 4Ëmongodb://localhost:27017/Ë"WJBeta203(robot)
