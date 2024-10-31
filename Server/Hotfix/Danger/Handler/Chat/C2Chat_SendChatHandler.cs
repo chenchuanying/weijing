@@ -52,6 +52,7 @@ namespace ET
                             if (bePortedNumber != null && bePortedNumber.JinYanTime > TimeHelper.ServerNow())
                             {
                                 response.Error = ErrorCode.ERR_Chat_JinYan;
+                                response.Message = "你当前已经被禁言，三天后解封！";
                                 reply();
                                 return;
                             }
