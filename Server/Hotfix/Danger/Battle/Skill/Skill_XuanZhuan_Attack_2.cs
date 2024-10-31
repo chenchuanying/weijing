@@ -37,7 +37,6 @@ namespace ET
                 return;
             }
 
-
             //每间隔一段时间触发一次伤害
             if (serverNow - this.SkillTriggerLastTime >= this.SkillTriggerInvelTime)
             {

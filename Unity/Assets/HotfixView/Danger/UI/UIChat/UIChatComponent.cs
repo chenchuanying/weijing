@@ -173,12 +173,12 @@ namespace ET
 
         public static void CheckSensitiveWords(this UIChatComponent self)
         {
-            //AccountInfoComponent accountInfoComponent = self.ZoneScene().GetComponent<AccountInfoComponent>();
-            //bool gm = GMHelp.GmAccount.Contains(accountInfoComponent.Account);
-            //if (gm)
-            //{
-            //    return;
-            //}
+            AccountInfoComponent accountInfoComponent = self.ZoneScene().GetComponent<AccountInfoComponent>();
+            bool gm = GMHelp.GmAccount.Contains(accountInfoComponent.Account);
+            if (gm)
+            {
+                return;
+            }
             string text_new = "";
             string text_old = self.InputFieldTMP.GetComponent<InputField>().text;
             if (text_old.Equals("#etgm"))
@@ -220,13 +220,6 @@ namespace ET
             bool blackroom = UnitHelper.IsBackRoom(self.ZoneScene());
             if (blackroom)
             {
-                return;
-            }
-
-            if (userInfoComponent.UserInfo.UserId == 2201523168143802368
-                || userInfoComponent.UserInfo.UserId == 2200703739923333120)
-            {
-                ErrorHelp.Instance.ErrorHint(ErrorCode.ERR_Chat_JinYan_3);
                 return;
             }
 

@@ -76,9 +76,9 @@ namespace ET
             c2S_SendChatRequest.ChatInfo.PlayerName = userInfo.Name;
             C2C_SendChatResponse sendChatResponse = (C2C_SendChatResponse)await self.DomainScene().GetComponent<SessionComponent>().Session.Call(c2S_SendChatRequest);
 
-            if (sendChatResponse.Error != ErrorCode.ERR_Success)
+            if (sendChatResponse.Error != ErrorCode.ERR_Success && !string.IsNullOrEmpty(sendChatResponse.Message))
             {
-                ;
+                HintHelp.GetInstance().ShowHint(sendChatResponse.Message);
             }
         }
 

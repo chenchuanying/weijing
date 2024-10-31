@@ -51,8 +51,11 @@ namespace ET
                             chatInfoUnitsComponent.BeReportedNumber.TryGetValue(request.ChatInfo.UserId, out bePortedNumber);
                             if (bePortedNumber != null && bePortedNumber.JinYanTime > TimeHelper.ServerNow())
                             {
-                                response.Error = ErrorCode.ERR_Chat_JinYan;
-                                response.Message = "你当前已经被禁言，三天后解封！";
+                                long leftTime = bePortedNumber.JinYanTime - TimeHelper.ServerNow();
+                                int hour = (int)(leftTime * 1f / TimeHelper.Hour);
+                                hour = Math.Max(hour, 1);
+                                response.Error = ErrorCode.ERR_Chat_JinYan_3;
+                                response.Message = $"你当前已经被禁言，{hour}小时后解封！";
                                 reply();
                                 return;
                             }

@@ -63,6 +63,25 @@ namespace ET
                                 chatInfoUnitsComponent.Remove(unitid);
                             }
                         }
+                        else if (request.MessageType == NoticeType.ClearChat)
+                        {
+                            Console.WriteLine("清空聊天:  " + scene.DomainZone());
+                            chatInfoUnitsComponent.WordChatInfos.Clear();
+                        }
+                        else if (request.MessageType == NoticeType.JinYan)
+                        {
+                            BeReportedInfo bePortedNumber;
+                            string[] jinyaninfo = request.MessageValue.Split(' ');
+                            long JinYanId = long.Parse(jinyaninfo[2]);
+                            chatInfoUnitsComponent.BeReportedNumber.TryGetValue(JinYanId, out bePortedNumber);
+
+                            if (bePortedNumber == null)
+                            {
+                                bePortedNumber = new BeReportedInfo();
+                                chatInfoUnitsComponent.BeReportedNumber.Add(JinYanId, bePortedNumber);
+                            }
+                            bePortedNumber.JinYanTime = TimeHelper.ServerNow() + TimeHelper.OneDay * 3;
+                        }
                         else if (request.MessageType == NoticeType.PaiMai)
                         {
                             M2C_SyncChatInfo m2C_SyncChatInfo = new M2C_SyncChatInfo();
