@@ -91,13 +91,13 @@ namespace ET
                     $"赛季时间:{startTime.Year}.{startTime.Month}.{startTime.Day}-{endTime.Year}.{endTime.Month}.{endTime.Day}";
 
 
-            if (seasonOpenTime.KeyId == 1)
-            {
-                self.SeasonText.GetComponent<Text>().text = "2024第二赛季";
-            }
             if (seasonOpenTime.KeyId == 2)
             {
                 self.SeasonText.GetComponent<Text>().text = "2024第三赛季";
+            }
+            if (seasonOpenTime.KeyId == 3)
+            {
+                self.SeasonText.GetComponent<Text>().text = "2024第四赛季";
             }
 
             int seasonExp = userInfo.SeasonExp;
