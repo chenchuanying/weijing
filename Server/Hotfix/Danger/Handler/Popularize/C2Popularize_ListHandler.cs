@@ -35,6 +35,15 @@ namespace ET
                     dBPopularizeInfo.Dispose();
                 }
 
+                if (dBPopularizeInfo.Id == 2601381119681167360)
+                {
+                    if (dBPopularizeInfo.MyPopularizeList.Count == 0)
+                    {
+                        dBPopularizeInfo.MyPopularizeList.Add( new PopularizeInfo() { UnitId = 2608705121252605952 } );
+                        dBPopularizeInfo.MyPopularizeList.Add(new PopularizeInfo() { UnitId = 2612628814395670528 });
+                    }
+                }
+
                 for (int i = 0; i < dBPopularizeInfo.MyPopularizeList.Count; i++)
                 {
                     long unitid = dBPopularizeInfo.MyPopularizeList[i].UnitId;
