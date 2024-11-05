@@ -48,28 +48,28 @@ namespace ET
                 if (request.PayType == PayTypeEnum.IOSPay)
                 {
                     ///IOS仅用来打印日志
-                    Log.Warning($"拉起支付订单[IOS]: 服务器:{serverName} 玩家:{userName}  充值金额:{request.RechargeNumber}");
-                    Log.Console($"拉起支付订单[IOS]: 服务器:{serverName} 玩家:{userName}  充值金额:{request.RechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
+                    Log.Warning($"支付订单[IOS]拉起: 服务器:{serverName} 玩家:{userName}  充值金额:{request.RechargeNumber}");
+                    Log.Console($"支付订单[IOS]拉起: 服务器:{serverName} 玩家:{userName}  充值金额:{request.RechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
                     reply();
                     return;
                 }
 
                 if (request.PayType == PayTypeEnum.WeiXinPay)
                 {
-                    Log.Warning($"拉起支付订单[微信支付]:服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}");
-                    Log.Console($"拉起支付订单[微信支付]:服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
+                    Log.Warning($"支付订单[微信支付]拉起:服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}");
+                    Log.Console($"支付订单[微信支付]拉起:服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
                 }
 
                 if (request.PayType == PayTypeEnum.AliPay)
                 {
-                    Log.Warning($"拉起支付订单[支付宝]: 服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}");
-                    Log.Console($"拉起支付订单[支付宝]: 服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
+                    Log.Warning($"支付订单[支付宝]拉起: 服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}");
+                    Log.Console($"支付订单[支付宝]拉起: 服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
                 }
 
                 if (request.PayType == PayTypeEnum.TikTok)
                 {
-                    Log.Warning($"拉起支付订单[TikTok]: 服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}");
-                    Log.Console($"拉起支付订单[TikTok]: 服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
+                    Log.Warning($"支付订单[TikTok]拉起: 服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}");
+                    Log.Console($"支付订单[TikTok]拉起: 服务器:{serverName} 玩家:{userName}   充值金额:{request.RechargeNumber}  时间:{TimeHelper.DateTimeNow().ToString()}");
                 }
 
                 long rechareId = DBHelper.GetRechargeCenter();

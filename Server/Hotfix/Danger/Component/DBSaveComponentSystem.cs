@@ -106,7 +106,7 @@ namespace ET
             string offLineInfo = $"{unit.DomainZone()}区： " +
                $"unit.id: {unit.GetComponent<UserInfoComponent>().Id} : " +
                $" {unit.GetComponent<UserInfoComponent>().UserInfo.Name} : " +
-               $"{  TimeHelper.DateTimeNow().ToString()}   二次登录";
+               $"{TimeHelper.DateTimeNow().ToString()}   二次登陆";
 
             if (!unit.IsRobot())
             {
@@ -121,9 +121,9 @@ namespace ET
         {
             Unit unit = self.GetParent<Unit>();
             string offLineInfo = $"{unit.DomainZone()}区： " +
-                $"unit.id: {unit.GetComponent<UserInfoComponent>().Id} : " +
-                $" {unit.GetComponent<UserInfoComponent>().UserInfo.Name} : " +
-                $"{  TimeHelper.DateTimeNow().ToString()}   离线";
+               $"unit.id: {unit.GetComponent<UserInfoComponent>().Id} : " +
+               $" {unit.GetComponent<UserInfoComponent>().UserInfo.Name} : " +
+               $"{TimeHelper.DateTimeNow().ToString()}   离线";
 
             NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
 
