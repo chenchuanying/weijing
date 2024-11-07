@@ -1072,13 +1072,13 @@ namespace ET
                     //普通攻击
                     if (skillconfig.SkillActType == 0 && damgePro > 0)
                     {
-                        damgePro = damgePro * 0.3f;
+                        damgePro = damgePro * 0.25f;
                     }
 
                     //技能攻击
                     if (skillconfig.SkillActType == 1 && damgePro > 0)
                     {
-                        damgePro = damgePro * 0.2f;
+                        damgePro = damgePro * 0.15f;
                     }
 
                     //----------生命之盾相关-----------
