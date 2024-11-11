@@ -1,5 +1,9 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net;
 
 namespace ET
@@ -52,8 +56,20 @@ namespace ET
 
             long unitid = DBHelper.DebugUnitId;
             // int n = (int)((unitid / 99) % 4);
-            Log.Console($"unit.zone0809: {UnitIdStruct.GetUnitZone(unitid)}");
-            Console.WriteLine($"unit.zone0809: {UnitIdStruct.GetUnitZone(unitid)}");
+            Log.Console($"unit.zone1112: {UnitIdStruct.GetUnitZone(unitid)}");
+            Console.WriteLine($"unit.zone1112: {UnitIdStruct.GetUnitZone(unitid)}");
+
+            //string filePath = "C:\\WJ\\WJBeta115\\BagComponent.bson"; // 替换为你的.bson文件路径
+            //var list = new List<BagComponent>();
+            //using (var stream = File.OpenRead(filePath))
+            //{
+            //    while (stream.Position != stream.Length)
+            //    {
+            //        var document = BsonSerializer.Deserialize<BsonDocument>(stream);
+            //        var obj = BsonSerializer.Deserialize<BagComponent>(document);
+            //        list.Add((BagComponent)obj);
+            //    }
+            //}
 
             switch (Game.Options.AppType)
             {
