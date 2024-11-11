@@ -424,7 +424,7 @@ namespace ET
         }
 
         //请求服务器列表【外网】
-        public static async ETTask<int> OnServerListAsyncRelease(Scene zoneScene,VersionMode versionMode)
+        public static async ETTask<int> OnServerListAsyncRelease(Scene zoneScene,VersionMode versionMode, string account)
         {
             try
             {
@@ -433,7 +433,7 @@ namespace ET
                 A2C_ServerList r2CSelectServer;
                 Session session = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(address));
                 {
-                    r2CSelectServer = (A2C_ServerList)await session.Call(new C2A_ServerList() { });
+                    r2CSelectServer = (A2C_ServerList)await session.Call(new C2A_ServerList() { Account = account });
                     CheckServerList(r2CSelectServer.ServerItems, versionMode);
 
                     //存储列表
@@ -498,7 +498,7 @@ namespace ET
             accountInfoComponent.NoticeText = r2CSelectServer.NoticeText;
         }
 
-        public static async ETTask<int> OnServerListAsyncDebug(Scene zoneScene, VersionMode versionMode)
+        public static async ETTask<int> OnServerListAsyncDebug(Scene zoneScene, VersionMode versionMode, string account)
         {
             try
             {
@@ -506,7 +506,7 @@ namespace ET
                 string address = $"{ComHelp.LocalIp}:{GetAccountCenterPort(versionMode)}";
                 Session session = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(address));
                 {
-                    r2CSelectServer = (A2C_ServerList)await session.Call(new C2A_ServerList() { });
+                    r2CSelectServer = (A2C_ServerList)await session.Call(new C2A_ServerList() { Account = account });
                     CheckServerList(r2CSelectServer.ServerItems, versionMode);
 
                     //存储列表

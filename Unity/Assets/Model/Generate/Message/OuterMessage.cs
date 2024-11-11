@@ -1610,6 +1610,9 @@ namespace ET
 		[ProtoMember(91)]
 		public string Message { get; set; }
 
+		[ProtoMember(92)]
+		public string Account { get; set; }
+
 	}
 
 	[Message(OuterOpcode.A2C_ServerList)]

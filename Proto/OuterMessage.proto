@@ -786,6 +786,7 @@ message C2A_ServerList // IRequest
 {
 	int32 RpcId = 90;
 	string Message = 91;
+	string Account = 92;
 }
 
 message A2C_ServerList // IResponse

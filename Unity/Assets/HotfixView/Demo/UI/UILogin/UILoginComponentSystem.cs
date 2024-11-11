@@ -539,13 +539,15 @@ namespace ET
 			{
 				int erroCode = ErrorCode.ERR_Success;
 				long instanceid = self.InstanceId;
-				if (GlobalHelp.IsOutNetMode)
+				string account = self.Account.GetComponent<InputField>().text;
+
+                if (GlobalHelp.IsOutNetMode)
 				{
-					erroCode = await LoginHelper.OnServerListAsyncRelease(self.DomainScene(), GlobalHelp.VersionMode);
+					erroCode = await LoginHelper.OnServerListAsyncRelease(self.DomainScene(), GlobalHelp.VersionMode, account);
 				}
 				else
 				{
-					erroCode = await LoginHelper.OnServerListAsyncDebug(self.DomainScene(), GlobalHelp.VersionMode);
+					erroCode = await LoginHelper.OnServerListAsyncDebug(self.DomainScene(), GlobalHelp.VersionMode, account	);
 				}
 				if (instanceid != self.InstanceId)
 				{

@@ -28,6 +28,12 @@ namespace ET
                         response.ServerItems.Clear();
                         for (int i = 0; i < serverItems.Count; i++)
                         {
+                            //128服只有主播账号才显示。。
+                            if (serverItems[i].ServerId == 128 && !GMHelp.ZhuBoURBossAccount.Contains(request.Account))
+                            {
+                                continue;
+                            }
+
                             if (serverItems[i].Show != 0 && serverItems[i].ServerOpenTime <= serverTime)
                             {
                                 response.ServerItems.Add(serverItems[i]);
