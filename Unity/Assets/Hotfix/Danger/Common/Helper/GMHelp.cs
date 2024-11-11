@@ -25,6 +25,7 @@ namespace ET
         //无限BOSS
         public static List<string> ZhuBoURBossAccount = new List<string>()
         {
+            "18319670288",          //唐
             "7328696482012846884",     //璀璨梦境+南按钮
             "7328726248887376692",     //璀璨梦境+魔王
         };
