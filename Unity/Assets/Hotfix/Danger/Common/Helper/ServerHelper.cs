@@ -369,7 +369,7 @@ namespace ET
 
 
             //128服 指定的主播账号才可以进入。。
-            
+
 
             ///PlatformHelper.GetPlatformName(); 所有渠道ID定义
             List<int> allserverId = new List<int>();
