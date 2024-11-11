@@ -85,7 +85,10 @@ namespace ET
             GameObjectPoolComponent.Instance.DisposeAll();
 
             await ResourcesComponent.Instance.LoadEmptyScene(ABPathHelper.GetScenePath("Empty"));
-            await TimerComponent.Instance.WaitFrameAsync(); 
+            await TimerComponent.Instance.WaitFrameAsync();
+
+            GameObjectPoolComponent.Instance.DisposeAll();
+
             var path = ABPathHelper.GetScenePath(paramss);
             await ResourcesComponent.Instance.LoadSceneAsync(path);
             self.UpdateChuanSong(scene, sceneTypeEnum);
