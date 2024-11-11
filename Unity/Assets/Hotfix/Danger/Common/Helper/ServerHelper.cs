@@ -177,6 +177,11 @@ namespace ET
             string ip = GetLogicServer(innerNet, VersionMode.Beta);
             List<ServerItem> serverItems_1 = ServerItems;
 
+
+            //128服 指定的主播账号才可以进入。。
+            serverItems_1.Add(new ServerItem() { ServerId = 128, ServerIp = $"{ip}:20425", ServerName = "主播专服", ServerOpenTime = 1731236400000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
+
+
             //serverItems_1.Add(new ServerItem() { ServerId = 2, ServerIp = $"{ip}:20325", ServerName = "审核专区", ServerOpenTime = 1662189906681, New = 0, Show = 0 });
             serverItems_1.Add(new ServerItem() { ServerId = 3, ServerIp = $"{ip}:20325", ServerName = "审核专区", ServerOpenTime = 1662189906681, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 4, ServerIp = $"{ip}:20325", ServerName = "审核专区", ServerOpenTime = 1662189906681, New = 0, Show = 0 });
@@ -362,6 +367,9 @@ namespace ET
             //2024/11/08 19:00:00 1731063600000 新区 璀璨梦境 127
             serverItems_1.Add(new ServerItem() { ServerId = 127, ServerIp = $"{ip}:20375", ServerName = "璀璨梦境", ServerOpenTime = 1731063600000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
 
+
+            //128服 指定的主播账号才可以进入。。
+            
 
             ///PlatformHelper.GetPlatformName(); 所有渠道ID定义
             List<int> allserverId = new List<int>();
