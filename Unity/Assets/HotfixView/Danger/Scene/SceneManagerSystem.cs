@@ -87,7 +87,7 @@ namespace ET
             await ResourcesComponent.Instance.LoadEmptyScene(ABPathHelper.GetScenePath("Empty"));
             await TimerComponent.Instance.WaitFrameAsync();
 
-            GameObjectPoolComponent.Instance.DisposeAll();
+            //GameObjectPoolComponent.Instance.DisposeAll();
 
             var path = ABPathHelper.GetScenePath(paramss);
             await ResourcesComponent.Instance.LoadSceneAsync(path);
