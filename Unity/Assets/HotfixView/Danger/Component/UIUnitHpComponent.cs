@@ -534,6 +534,7 @@ namespace ET
                 rc.Get<GameObject>("ReviveTime").SetActive(true);
 
                 TimerComponent.Instance.Remove(ref this.Timer);
+                this.OnTimer();
                 this.Timer = TimerComponent.Instance.NewRepeatedTimer(1000, TimerType.UIUnitReviveTime, this);
             }
         }

@@ -43,6 +43,14 @@ namespace ET
                     return;
                 }
 
+
+                if (session.DomainZone() == 128 && !GMHelp.ZhuBoURBossAccount.Contains(request.AccountName))
+                {
+                    response.Error = ErrorCode.ERR_VersionNoMatch;
+                    reply();
+                    return;
+                }
+
                 if (!request.Password.Equals( request.ThirdLogin ) && !request.Password.Equals(ComHelp.RobotPassWord))
                 {
                     Log.Warning($"登录的账号:  {request.AccountName} {request.Password} {request.ThirdLogin}");

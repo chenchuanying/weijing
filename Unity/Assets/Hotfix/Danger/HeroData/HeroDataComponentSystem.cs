@@ -403,6 +403,11 @@ namespace ET
             {
                 return 0;
             }
+
+            if (self.DomainZone() == 128)
+            {
+                resurrection = 10;
+            }
          
             if (monsterConfig.MonsterType != (int)MonsterTypeEnum.Boss)
             {
