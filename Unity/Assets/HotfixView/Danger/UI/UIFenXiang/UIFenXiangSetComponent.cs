@@ -32,19 +32,20 @@ namespace ET
             self.FenXiang_TikTok = rc.Get<GameObject>("FenXiang_TikTok");
             self.Text_tip1 = rc.Get<GameObject>("Text_tip1");
             self.Button_Taptap = rc.Get<GameObject>("Button_Taptap");
+            self.FenXiang_TikTok.SetActive(false);
 
-            if (GlobalHelp.GetPlatform() == 5)
+            //if (GlobalHelp.GetPlatform() == 5)
+            //{
+            //    //self.FenXiang_TikTok.SetActive(false);
+            //    self.FenXiang_WeiXin.SetActive(false);
+            //    self.FenXiang_QQ.SetActive(true);
+            //    self.FenXiang_QQ.transform.localPosition = new Vector3(0f, 112f, 0f);
+            //    self.Text_tip1.SetActive(false);
+            //    self.Button_AddQQ.SetActive(false);
+            //}
+            //else
             {
-                self.FenXiang_TikTok.SetActive(false);
-                self.FenXiang_WeiXin.SetActive(false);
-                self.FenXiang_QQ.SetActive(true);
-                self.FenXiang_QQ.transform.localPosition = new Vector3(0f, 112f, 0f);
-                self.Text_tip1.SetActive(false);
-                self.Button_AddQQ.SetActive(false);
-            }
-            else
-            {
-                self.FenXiang_TikTok.SetActive(false);
+                //self.FenXiang_TikTok.SetActive(false);
                 self.FenXiang_WeiXin.SetActive(true);
                 self.FenXiang_QQ.SetActive(true);
                 self.FenXiang_QQ.transform.localPosition = new Vector3(-257f, 112f, 0f);

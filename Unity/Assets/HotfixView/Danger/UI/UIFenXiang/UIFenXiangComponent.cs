@@ -71,7 +71,6 @@ namespace ET
             if (GlobalHelp.GetPlatform() == 5 || GlobalHelp.GetPlatform() == 6)
             {
                 self.Btn_Type4.SetActive(false);
-                self.Btn_Type5.SetActive(false);
             }
 
             if (GlobalHelp.IsBanHaoMode)

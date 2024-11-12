@@ -59,18 +59,6 @@ namespace ET
             Log.Console($"unit.zone1112: {UnitIdStruct.GetUnitZone(unitid)}");
             Console.WriteLine($"unit.zone1112: {UnitIdStruct.GetUnitZone(unitid)}");
 
-            //string filePath = "C:\\WJ\\WJBeta115\\BagComponent.bson"; // 替换为你的.bson文件路径
-            //var list = new List<BagComponent>();
-            //using (var stream = File.OpenRead(filePath))
-            //{
-            //    while (stream.Position != stream.Length)
-            //    {
-            //        var document = BsonSerializer.Deserialize<BsonDocument>(stream);
-            //        var obj = BsonSerializer.Deserialize<BagComponent>(document);
-            //        list.Add((BagComponent)obj);
-            //    }
-            //}
-
             switch (Game.Options.AppType)
             {
                 case AppType.Server:

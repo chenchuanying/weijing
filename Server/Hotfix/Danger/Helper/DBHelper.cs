@@ -35,6 +35,7 @@ namespace ET
         public const string DBPopularizeInfo = "DBPopularizeInfo";
         public const string DBDayActivityInfo = "DBDayActivityInfo";
         public const string DBCenterSerialInfo = "DBCenterSerialInfo";
+        public const string DBPaiMainInfo = "DBPaiMainInfo";
 
         public static List<string> UnitCacheKeyList = new List<string>();
 
