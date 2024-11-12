@@ -647,6 +647,16 @@ namespace ET
                 dropAdd_Pro += bossDevelopment.DropAdd;
             }
 
+            //主播专服爆率提升
+            if (main.DomainZone() == 128)
+            {
+                string account = main.GetComponent<UserInfoComponent>().Account;
+                if (GMHelp.ZhuBoURBossAccount.Contains(account))
+                {
+                    dropAdd_Pro *= 3f;
+                }
+            }
+
             //创建掉落
             if (main != null && monsterCof.MonsterSonType == 1)
             {
