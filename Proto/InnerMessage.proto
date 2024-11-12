@@ -2139,6 +2139,7 @@ message M2M_PaiMaiBuyInfoRequest // IActorLocationRequest
   int64 ActorId = 93;
   int64 PlayerId = 1;
   int64 CostGold = 2;
+  int64 BagInfoID = 3;
 }
 
 message M2M_PaiMaiBuyInfoResponse // IActorLocationResponse

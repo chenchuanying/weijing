@@ -151,6 +151,7 @@ namespace ET
                 DBMailInfo dBMainInfo = d2GGetUnit.Component as DBMailInfo;
                 if (dBMainInfo == null)
                 {
+                    //有可能玩家自己删除角色了。。还收到邮件。。列如：道具被拍卖。。。。=====
                     dBMainInfo = (DBMailInfo)await DBHelper.AddDataComponent<DBMailInfo>(zone, userID, DBHelper.DBMailInfo);
                     Console.WriteLine($"AddDataComponent.DBMailInfo  {userID}");
                 }

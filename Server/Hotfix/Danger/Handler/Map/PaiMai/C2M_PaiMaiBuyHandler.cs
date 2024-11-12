@@ -178,7 +178,13 @@ namespace ET
                 {
                     long locationactor = r_GameStatusResponse.PaiMaiItemInfo.UserId;
 
-                    M2M_PaiMaiBuyInfoRequest r2M_RechargeRequest = new M2M_PaiMaiBuyInfoRequest() { PlayerId = unit.Id, CostGold = (long)(needGold * 0.95f) };
+                    long baginfoid = 0;
+                    if (ItemConfigCategory.Instance.Get(r_GameStatusResponse.PaiMaiItemInfo.BagInfo.ItemID).ItemType == ItemTypeEnum.Equipment)
+                    {
+                        baginfoid = r_GameStatusResponse.PaiMaiItemInfo.BagInfo.BagInfoID;
+                    }
+
+                    M2M_PaiMaiBuyInfoRequest r2M_RechargeRequest = new M2M_PaiMaiBuyInfoRequest() { PlayerId = unit.Id, BagInfoID = baginfoid,  CostGold = (long)(needGold * 0.95f) };
                     M2M_PaiMaiBuyInfoResponse m2G_RechargeResponse = (M2M_PaiMaiBuyInfoResponse)await MessageHelper.CallLocationActor(locationactor, r2M_RechargeRequest);
 
                     if (m2G_RechargeResponse.Error != ErrorCode.ERR_Success)
@@ -186,7 +192,7 @@ namespace ET
                         DataCollationComponent dataCollationComponent = await DBHelper.GetComponentCache<DataCollationComponent>(unit.DomainZone(), r_GameStatusResponse.PaiMaiItemInfo.UserId);
                         if (dataCollationComponent != null)
                         {
-                            dataCollationComponent.UpdateBuySelfPlayerList((long)(needGold * 0.95f), unit.Id, false);
+                            dataCollationComponent.UpdateBuySelfPlayerList((long)(needGold * 0.95f), unit.Id, baginfoid, false);
                             DBHelper.SaveComponentCache(unit.DomainZone(), r_GameStatusResponse.PaiMaiItemInfo.UserId, dataCollationComponent).Coroutine();
                         }
 

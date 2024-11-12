@@ -4493,6 +4493,9 @@ namespace ET
 		[ProtoMember(2)]
 		public long CostGold { get; set; }
 
+		[ProtoMember(3)]
+		public long BagInfoID { get; set; }
+
 	}
 
 	[Message(InnerOpcode.M2M_PaiMaiBuyInfoResponse)]

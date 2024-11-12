@@ -229,7 +229,10 @@ namespace ET
                     {
                         scene.GetComponent<FangChenMiComponent>().CheckHoliday().Coroutine();
                     }
-
+                    if (hour == 20)
+                    {
+                       
+                    }
                     LogHelper.CheckLogSize();
                     break;
                 default:

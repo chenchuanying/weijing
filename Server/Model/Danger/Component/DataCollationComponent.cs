@@ -136,6 +136,12 @@ namespace ET
         /// </summary>
         public List<KeyValuePairLong> BuySelfPlayerList = new List<KeyValuePairLong>();
 
+
+        /// <summary>
+        /// 已经出售的道具ID. 目前只记录装备。。
+        /// </summary>
+        public List<long> SoldBagInfoIDList = new List<long>();
+
         //平台
         public string Platform;
 

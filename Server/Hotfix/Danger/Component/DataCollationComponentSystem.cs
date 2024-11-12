@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ET
 {
@@ -93,7 +94,7 @@ namespace ET
         }
 
 
-        public static void UpdateBuySelfPlayerList(this DataCollationComponent self, long addgold, long unitid, bool notice)
+        public static void UpdateBuySelfPlayerList(this DataCollationComponent self, long addgold, long unitid, long baginfoid,  bool notice)
         {
             if (unitid == 0)
             {
@@ -101,6 +102,15 @@ namespace ET
             }
             self.PaiMaiGold += addgold;
 
+            if (self.SoldBagInfoIDList.Contains(baginfoid))
+            {
+                Console.WriteLine($"self.SoldItemIdList: {baginfoid}");
+                Log.Error($"self.SoldItemIdList: {baginfoid}");
+            }
+            else
+            {
+                self.SoldBagInfoIDList.Add(baginfoid);
+            }
 
             for (int i = self.BuySelfPlayerList.Count - 1; i >= 0 ; i--)
             {
