@@ -35,6 +35,8 @@ message R2A_Broadcast // IActorRequest
 
     int32 LoadType = 3;
     string LoadValue = 4;
+
+	ServerInfo ServerInfo = 6;
 }
 
 message A2R_Broadcast // IActorResponse
@@ -1040,6 +1042,23 @@ message R2A_DeleteRoleData // IActorResponse
 	string Message = 92;
 }
 
+//ResponseType P2A_DeleteRoleData
+message A2P_DeleteRoleData // IActorRequest
+{
+	int32 RpcId = 90;
+	int32 DeleXuhaoID = 2;
+	int64 DeleUserID = 3;
+	int64 AccountId = 4;
+	int32 DeleteType = 5;
+}
+
+message P2A_DeleteRoleData // IActorResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
 //ResponseType R2M_DBServerInfoResponse
 message M2R_DBServerInfoRequest // IActorRequest
 {
@@ -1405,6 +1424,21 @@ message G2M_KickPlayerRequest // IActorLocationMessage
 	int64 ActorId = 93;
 	int64 UnitId = 2;
 	int64 SceneId = 3;
+}
+
+//ResponseType M2A_KickOutPlayerResponse
+message A2M_KickOutPlayerRequest // IActorRequest
+{
+	int32 RpcId = 90;
+	int64 ActorId = 93;
+	int64 UnitID = 2;
+}
+
+message M2A_KickOutPlayerResponse // IActorResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
 }
 
 //排行榜刷新

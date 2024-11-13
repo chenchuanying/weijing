@@ -84,6 +84,7 @@ namespace ET
         public const int ERR_IllegalPhoneError = 200129;
         public const int ERR_PaiMaiSellLimit = 200130;
         public const int ERR_BuyMaxLimit = 200131;                             //拍卖达到最大页数
+        public const int ERR_Archiveing = 200132;
 
         //300001-400001 服务器提示性错误码
         //角色

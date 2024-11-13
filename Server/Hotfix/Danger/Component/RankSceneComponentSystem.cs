@@ -89,6 +89,21 @@ namespace ET
             long fubenCenterId = DBHelper.GetFubenCenterId(self.DomainZone());
             R2F_WorldLvUpdateRequest request    = new R2F_WorldLvUpdateRequest() {  ServerInfo = self.DBServerInfo.ServerInfo };
             F2R_WorldLvUpdateResponse response = (F2R_WorldLvUpdateResponse)await ActorMessageSenderComponent.Instance.Call(fubenCenterId, request);
+
+            List<StartProcessConfig> listprogress = StartProcessConfigCategory.Instance.GetAll().Values.ToList();
+            for (int i = 0; i < listprogress.Count; i++)
+            {
+                List<StartSceneConfig> processScenes = StartSceneConfigCategory.Instance.GetByProcess(listprogress[i].Id);
+                if (processScenes.Count == 0 || listprogress[i].Id == 203)  //机器人进程
+                {
+                    continue;
+                }
+
+                StartSceneConfig startSceneConfig = processScenes[0];
+                long mapInstanceId = StartSceneConfigCategory.Instance.GetBySceneName(startSceneConfig.Zone, startSceneConfig.Name).InstanceId;
+                A2R_Broadcast createUnit = (A2R_Broadcast)await ActorMessageSenderComponent.Instance.Call(
+                    mapInstanceId, new R2A_Broadcast() { LoadType = 2, LoadValue = self.DomainZone().ToString(), ServerInfo = self.DBServerInfo.ServerInfo  });
+            }
         }
 
         public static void ClearRankingTrial(this RankSceneComponent self)

@@ -12,9 +12,16 @@ namespace ET
 
             switch (request.LoadType)
             {
-                case 1: //狩猎
+                case 1: 
+                    //狩猎
                     ConfigData.ShowLieOpen = request.LoadValue == "1";
                     Console.WriteLine($" ConfigData.ShowLieOpen:  {ConfigData.ShowLieOpen}");
+                    break;
+                 case 2:
+                    //等级
+                    int zone = int.Parse(request.LoadValue);
+                    ConfigData.ServerInfoList[zone] = request.ServerInfo;
+                    Console.WriteLine($" ConfigData.ServerInfoList:  {zone}  {request.ServerInfo.WorldLv}");
                     break;
             }
 

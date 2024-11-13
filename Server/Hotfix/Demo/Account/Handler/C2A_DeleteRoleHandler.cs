@@ -47,6 +47,15 @@ namespace ET
                         DeleUserID = request.DeleUserID,
                         AccountId = request.AccountId
                     });
+                    long paimaiInstanceid = DBHelper.GetPaiMaiServerId(session.DomainZone());
+                    P2A_DeleteRoleData deleteResponse2 = (P2A_DeleteRoleData)await ActorMessageSenderComponent.Instance.Call
+                   (paimaiInstanceid, new A2P_DeleteRoleData()
+                   {
+                       DeleUserID = request.DeleUserID,
+                       AccountId = request.AccountId,
+                       DeleteType = 0,
+                   });
+
                     DBHelper.DeleteUnitCache(session.DomainZone(), request.DeleUserID).Coroutine();
                     UserInfoComponent userInfoComponent = await DBHelper.GetComponentCache<UserInfoComponent>(zone, request.DeleUserID);
                     NumericComponent numericComponent = await DBHelper.GetComponentCache<NumericComponent>(zone, request.DeleUserID);

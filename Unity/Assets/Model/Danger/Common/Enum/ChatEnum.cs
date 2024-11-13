@@ -45,6 +45,7 @@ namespace ET
         public const int PaiMai = 22;
         public const int ClearChat = 23;
         public const int JinYan = 24;   
+        public const int Archive = 25;
     }
 
 }

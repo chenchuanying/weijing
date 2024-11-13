@@ -229,9 +229,10 @@ namespace ET
                     {
                         scene.GetComponent<FangChenMiComponent>().CheckHoliday().Coroutine();
                     }
-                    if (hour == 20)
+                    if (hour == 22)
                     {
-                       
+                        Console.WriteLine("savedb 0");
+                        Game.EventSystem.Publish(new EventType.GMCommonRequest() { Context = "savedb 0" });
                     }
                     LogHelper.CheckLogSize();
                     break;

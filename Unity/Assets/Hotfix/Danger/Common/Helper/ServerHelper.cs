@@ -164,6 +164,20 @@ namespace ET
             return servernumber > 1;
         }
 
+        public static int GetFirstServerId()
+        {
+            int firstserver = 3;
+            for (int i = 0; i < ServerItems.Count; i++)
+            {
+                if (ServerItems[i].Show == 1)
+                {
+                    firstserver = ServerItems[i].ServerId;
+                    break;
+                }
+            }
+            return firstserver;
+        }
+
         public static List<ServerItem> GetServerList(bool innerNet)
         {
             if (ServerItems.Count > 0 && UpdateServerList == 1)

@@ -71,6 +71,9 @@ namespace ET
 		[ProtoMember(4)]
 		public string LoadValue { get; set; }
 
+		[ProtoMember(6)]
+		public ServerInfo ServerInfo { get; set; }
+
 	}
 
 	[Message(InnerOpcode.A2R_Broadcast)]
@@ -2204,6 +2207,43 @@ namespace ET
 
 	}
 
+	[ResponseType(nameof(P2A_DeleteRoleData))]
+	[Message(InnerOpcode.A2P_DeleteRoleData)]
+	[ProtoContract]
+	public partial class A2P_DeleteRoleData: Object, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public int DeleXuhaoID { get; set; }
+
+		[ProtoMember(3)]
+		public long DeleUserID { get; set; }
+
+		[ProtoMember(4)]
+		public long AccountId { get; set; }
+
+		[ProtoMember(5)]
+		public int DeleteType { get; set; }
+
+	}
+
+	[Message(InnerOpcode.P2A_DeleteRoleData)]
+	[ProtoContract]
+	public partial class P2A_DeleteRoleData: Object, IActorResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
 	[ResponseType(nameof(R2M_DBServerInfoResponse))]
 	[Message(InnerOpcode.M2R_DBServerInfoRequest)]
 	[ProtoContract]
@@ -2950,6 +2990,37 @@ namespace ET
 
 		[ProtoMember(3)]
 		public long SceneId { get; set; }
+
+	}
+
+	[ResponseType(nameof(M2A_KickOutPlayerResponse))]
+	[Message(InnerOpcode.A2M_KickOutPlayerRequest)]
+	[ProtoContract]
+	public partial class A2M_KickOutPlayerRequest: Object, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(2)]
+		public long UnitID { get; set; }
+
+	}
+
+	[Message(InnerOpcode.M2A_KickOutPlayerResponse)]
+	[ProtoContract]
+	public partial class M2A_KickOutPlayerResponse: Object, IActorResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
 
 	}
 

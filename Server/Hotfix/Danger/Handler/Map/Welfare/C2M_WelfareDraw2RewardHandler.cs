@@ -14,8 +14,9 @@ namespace ET
                 reply();
                 return;
             }
-
-            List<string> rewardItems = ActivityHelper.GetWelfareChouKaReward(unit.GetComponent<BagComponent>().GetAllItems());
+            int occ = unit.GetComponent<UserInfoComponent>().UserInfo.Occ;
+            int occTwo = unit.GetComponent<UserInfoComponent>().UserInfo.OccTwo;
+            List<string> rewardItems = ActivityHelper.GetWelfareChouKaReward(unit.GetComponent<BagComponent>().GetAllItems(occ, occTwo));
             string reward = rewardItems[index - 1];
 
             unit.GetComponent<BagComponent>().OnAddItemData(reward, $"{ItemGetWay.Welfare}_{TimeHelper.ServerNow()}");

@@ -249,20 +249,21 @@ namespace ET
             ItemHelper.ItemLitSort(ItemTypeList);
         }
 
-        public static void CheckValiedItem(this BagComponent self, List<BagInfo> bagInfos)
+        public static void CheckValiedItem(this BagComponent self, List<BagInfo> bagInfos, int occ, int occTwo)
         {
             Unit unit = self.GetParent<Unit>();
-            int occ = unit.GetComponent<UserInfoComponent>().UserInfo.Occ;
-            int occTwo = unit.GetComponent<UserInfoComponent>().UserInfo.OccTwo;
+           
             for (int i = bagInfos.Count - 1; i >= 0; i--)
             {
                 if (!ItemConfigCategory.Instance.Contain(bagInfos[i].ItemID))
                 {
+                    Console.WriteLine($"CheckValiedItem11:  {bagInfos[i].ItemID}   {bagInfos[i].ItemNum}");
                     bagInfos.RemoveAt(i);
                     continue;
                 }
                 if (bagInfos[i].ItemNum <= 0)
                 {
+                    Console.WriteLine($"CheckValiedItem22:  {bagInfos[i].ItemID}   {bagInfos[i].ItemNum}");
                     bagInfos[i].ItemNum = 1;
                 }
 
@@ -298,18 +299,30 @@ namespace ET
         }
 
         //获取自身所有的道具
-        public static List<BagInfo> GetAllItems(this BagComponent self)
+        public static List<BagInfo> GetAllItems(this BagComponent self, int occ, int occTwo)
         {
             List<BagInfo> bagList = new List<BagInfo>();
 
-            self.CheckValiedItem(self.GemList);
-            self.CheckValiedItem(self.BagItemList);
-            self.CheckValiedItem(self.EquipList);
-            self.CheckValiedItem(self.BagItemPetHeXin);
-            self.CheckValiedItem(self.Warehouse1);
-            self.CheckValiedItem(self.Warehouse2);
-            self.CheckValiedItem(self.Warehouse3);
-            self.CheckValiedItem(self.Warehouse4);
+            self.CheckValiedItem(self.GemList, occ, occTwo);
+            self.CheckValiedItem(self.BagItemList, occ, occTwo);
+            self.CheckValiedItem(self.EquipList, occ, occTwo);
+            self.CheckValiedItem(self.BagItemPetHeXin, occ, occTwo);
+            self.CheckValiedItem(self.PetHeXinList, occ, occTwo);
+            self.CheckValiedItem(self.Warehouse1, occ, occTwo);
+            self.CheckValiedItem(self.Warehouse2, occ, occTwo);
+            self.CheckValiedItem(self.Warehouse3, occ, occTwo);
+            self.CheckValiedItem(self.Warehouse4, occ, occTwo);
+            //self.CheckValiedItem(self.JianYuanWareHouse1, occ, occTwo);
+            //self.CheckValiedItem(self.JianYuanWareHouse2, occ, occTwo);
+            //self.CheckValiedItem(self.JianYuanWareHouse3, occ, occTwo);
+            //self.CheckValiedItem(self.JianYuanWareHouse4, occ, occTwo);
+            //self.CheckValiedItem(self.JianYuanTreasureMapStorage1, occ, occTwo);
+            //self.CheckValiedItem(self.JianYuanTreasureMapStorage2, occ, occTwo);
+            //self.CheckValiedItem(self.ChouKaWarehouse, occ, occTwo);
+            self.CheckValiedItem(self.EquipList_2, occ, occTwo);
+            //self.CheckValiedItem(self.SeasonJingHe, occ, occTwo);
+            //self.CheckValiedItem(self.PetEquipList, occ, occTwo);
+            //self.CheckValiedItem(self.GemWareHouse1, occ, occTwo);
 
             for (int i =  self.EquipList.Count - 1; i >=0; i--)
             {

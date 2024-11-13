@@ -54,6 +54,10 @@ namespace ET
                 {
                     self.AddOrUpdate(entity);
                 }
+                if (self.DomainZone() == 5)
+                {
+                    Console.WriteLine($"Get.UnitCache :{entity!=null}  {self.DomainZone()} {unitId}  {self.key}");
+                }
             }
 
             if (entity!= null && entity.Id == DBHelper.DebugUnitId)
@@ -68,6 +72,11 @@ namespace ET
         {
             if (self.CacheCompoenntsDictionary.TryGetValue(id, out Entity entity))
             {
+                if (self.DomainZone() == 5)
+                {
+                    Console.WriteLine($"Delete.UnitCache:  {self.DomainZone()} {id}  {self.key}");
+                }
+
                 entity.Dispose();
                 self.CacheCompoenntsDictionary.Remove(id);
             }

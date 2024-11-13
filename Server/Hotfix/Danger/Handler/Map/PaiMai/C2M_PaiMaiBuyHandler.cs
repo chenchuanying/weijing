@@ -172,17 +172,19 @@ namespace ET
                 //   });
                 //if (g2M_UpdateUnitResponse.PlayerState == (int)PlayerState.Game && g2M_UpdateUnitResponse.SessionInstanceId > 0)
                 //{ 
-
                 //}
+
+
+                long baginfoid = 0;
+                if (ItemConfigCategory.Instance.Get(r_GameStatusResponse.PaiMaiItemInfo.BagInfo.ItemID).ItemType == ItemTypeEnum.Equipment)
+                {
+                    baginfoid = r_GameStatusResponse.PaiMaiItemInfo.BagInfo.BagInfoID;
+                }
+
+
                 if (unit.Id != r_GameStatusResponse.PaiMaiItemInfo.UserId)
                 {
                     long locationactor = r_GameStatusResponse.PaiMaiItemInfo.UserId;
-
-                    long baginfoid = 0;
-                    if (ItemConfigCategory.Instance.Get(r_GameStatusResponse.PaiMaiItemInfo.BagInfo.ItemID).ItemType == ItemTypeEnum.Equipment)
-                    {
-                        baginfoid = r_GameStatusResponse.PaiMaiItemInfo.BagInfo.BagInfoID;
-                    }
 
                     M2M_PaiMaiBuyInfoRequest r2M_RechargeRequest = new M2M_PaiMaiBuyInfoRequest() { PlayerId = unit.Id, BagInfoID = baginfoid,  CostGold = (long)(needGold * 0.95f) };
                     M2M_PaiMaiBuyInfoResponse m2G_RechargeResponse = (M2M_PaiMaiBuyInfoResponse)await MessageHelper.CallLocationActor(locationactor, r2M_RechargeRequest);
@@ -209,7 +211,7 @@ namespace ET
                 {
                     DataCollationComponent dataCollationComponent = unit.GetComponent<DataCollationComponent>();
                     NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
-                    dataCollationComponent.UpdateBuySelfPlayerList((long)(needGold * 0.95f), unit.Id, true);
+                    dataCollationComponent.UpdateBuySelfPlayerList((long)(needGold * 0.95f), unit.Id, baginfoid, true);
                     long paimaigold = numericComponent.GetAsLong(NumericType.PaiMaiTodayGold)+(long)(needGold * 0.95f);
                     numericComponent.ApplyValue(NumericType.PaiMaiTodayGold, paimaigold, true);
                 }

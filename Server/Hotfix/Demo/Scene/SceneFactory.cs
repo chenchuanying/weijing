@@ -26,7 +26,7 @@ namespace ET
                     scene.AddComponent<TokenComponent>();
                     scene.AddComponent<AccountSessionsComponent>();
                     scene.AddComponent<ObjectWait>();
-                    scene.AddComponent<PlayerIpListCompoent>();
+                    scene.AddComponent<PlayerInfoListComponent>();
                     break;
                 case SceneType.LoginCenter:
                     scene.AddComponent<LoginInfoRecordComponent>();
@@ -42,7 +42,7 @@ namespace ET
                 case SceneType.Realm:
                     scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
                     scene.AddComponent<TokenComponent>();
-                    scene.AddComponent<PlayerIpListCompoent>();
+                    scene.AddComponent<PlayerInfoListComponent>();
                     break;
                 case SceneType.Queue:
                     scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
@@ -52,7 +52,7 @@ namespace ET
                     scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamDispatcherType.SessionStreamDispatcherServerOuter);
                     scene.AddComponent<PlayerComponent>();
                     scene.AddComponent<GateSessionKeyComponent>();
-                    scene.AddComponent<PlayerIpListCompoent>();
+                    scene.AddComponent<PlayerInfoListComponent>();
                     break;
                 case SceneType.GateMap:
                     scene.AddComponent<UnitComponent>();

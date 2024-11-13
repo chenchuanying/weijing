@@ -11,8 +11,10 @@ namespace ET
 		{
 			BagComponent bagComponent = unit.GetComponent<BagComponent>();
 
-			//读取数据库
-			List<BagInfo> bagInfos = bagComponent.GetAllItems();
+            //读取数据库
+            int occ = unit.GetComponent<UserInfoComponent>().UserInfo.Occ;
+            int occTwo = unit.GetComponent<UserInfoComponent>().UserInfo.OccTwo;
+            List<BagInfo> bagInfos = bagComponent.GetAllItems(occ, occTwo);
 
 			/*
 			for (int i = 0; i < bagInfos.Count; i++) {
@@ -53,7 +55,6 @@ namespace ET
 
 			if (bagComponent.FashionEquipList.Count == 0)
 			{
-				int occ = unit.GetComponent<UserInfoComponent>().UserInfo.Occ;
                 OccupationConfig occupationConfig = OccupationConfigCategory.Instance.Get(occ);
 				for (int i = 0; i < occupationConfig.FashionBase.Length; i++)
 				{
@@ -62,7 +63,6 @@ namespace ET
 			}
             if (bagComponent.FashionActiveIds.Count == 0)
             {
-                int occ = unit.GetComponent<UserInfoComponent>().UserInfo.Occ;
                 OccupationConfig occupationConfig = OccupationConfigCategory.Instance.Get(occ);
                 for (int i = 0; i < occupationConfig.FashionBase.Length; i++)
                 {

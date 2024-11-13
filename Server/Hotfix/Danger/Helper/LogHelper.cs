@@ -450,7 +450,9 @@ namespace ET
             }
 
             BagComponent bagComponent = unit.GetComponent<BagComponent>();
-            List<BagInfo> bagInfos =  bagComponent.GetAllItems();
+            int occ = unit.GetComponent<UserInfoComponent>().UserInfo.Occ;
+            int occTwo = unit.GetComponent<UserInfoComponent>().UserInfo.OccTwo;
+            List<BagInfo> bagInfos =  bagComponent.GetAllItems(occ, occTwo  );
             for (int i = 0; i < bagInfos.Count; i++)
             {
                 if (bagInfos[i].ItemID > 100 && bagInfos[i].ItemNum >= 10000)

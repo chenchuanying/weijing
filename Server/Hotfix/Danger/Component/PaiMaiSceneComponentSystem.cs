@@ -602,6 +602,41 @@ namespace ET
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="deleteType">0删角 1回档</param>
+        /// <param name="userId"></param>
+        public static void OnDeleteRole(this PaiMaiSceneComponent self, int deleteType, long userId)
+        {
+            if (userId <= 0)
+            {
+                return;
+            }
+            Console.WriteLine($"OnDeleteRole :  {self.DomainZone()} {userId}");
+            self.OnDeleteRole_ByType(userId, self.dBPaiMainInfo_Consume);
+            self.OnDeleteRole_ByType(userId, self.dBPaiMainInfo_Material);
+            self.OnDeleteRole_ByType(userId, self.dBPaiMainInfo_Gemstone);
+            self.OnDeleteRole_ByType(userId, self.dBPaiMainInfo_Equipment);
+        }
+
+        public static void OnDeleteRole_ByType(this PaiMaiSceneComponent self, long userId, DBPaiMainInfo dBPaiMainInfo)
+        {
+            List<PaiMaiItemInfo> paimaiItems = dBPaiMainInfo.PaiMaiItemInfos;
+
+            for (int i = paimaiItems.Count - 1; i >= 0; i--)
+            {
+                PaiMaiItemInfo paiMaiItem = paimaiItems[i];
+                if (paiMaiItem.UserId != userId)
+                {
+                    continue;
+                }
+
+                dBPaiMainInfo.PaiMaiItemInfos.RemoveAt(i);
+            }
+        }
+
         //遍历上架道具
         public static void UpdateShangJiaItems(this PaiMaiSceneComponent self)
         {

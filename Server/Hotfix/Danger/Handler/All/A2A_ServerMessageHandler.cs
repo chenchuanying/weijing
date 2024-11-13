@@ -14,6 +14,17 @@ namespace ET
             {
                 switch (scene.SceneType)
                 {
+                    case SceneType.Account:
+                        if (request.MessageType == NoticeType.Archive)
+                        {
+                            // MessageValue = $"{acccout} {unitid} {archive}",
+                            string[] sssvalue = request.MessageValue.Split(' ');
+                            string account = sssvalue[0];
+                            long unitid = long.Parse(sssvalue[1]);
+                            int archive = int.Parse(sssvalue[2]);
+                            scene.GetComponent<PlayerInfoListComponent>().OnAddArchive(account, unitid, archive);
+                        }
+                        break;
                     case SceneType.Team:
                         if (request.MessageType == NoticeType.PlayerExit)
                         {
