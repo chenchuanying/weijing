@@ -648,7 +648,7 @@ namespace ET
             }
 
             //主播专服爆率提升
-            if (ComHelp.IsZhuBoZone(main.DomainZone())
+            if (ComHelp.IsZhuBoZone(main.DomainZone()))
             {
                 string account = main.GetComponent<UserInfoComponent>().Account;
                 if (GMHelp.ZhuBoURBossAccount.Contains(account))
