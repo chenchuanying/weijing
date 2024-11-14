@@ -519,9 +519,16 @@ namespace ET
                 if (tiliKillNumber >= 4)
                 {
                     numericComponent.ApplyValue(NumericType.TiLiKillNumber, 0, false);
-                   
+
                     numericComponent.ApplyChange(null, NumericType.CostTiLi, 1, 0);
-                    self.UpdateRoleData(UserDataType.PiLao, "-1", true);
+                    if ( ComHelp.IsZhuBoZone(self.DomainZone()) && self.UserInfo.PiLao < 2)
+                    {
+                        self.UpdateRoleData(UserDataType.PiLao, "100", true);
+                    }
+                    else
+                    {
+                        self.UpdateRoleData(UserDataType.PiLao, "-1", true);
+                    }
                 }
                 else
                 {

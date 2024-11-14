@@ -25,6 +25,11 @@ namespace ET
             return zone == 3;
         }
 
+        public static bool IsZhuBoZone(int zone)
+        {
+            return zone == 128;
+        }
+
         /// <summary>
         /// 3内部区 3版号区 202中心区 203机器人
         /// </summary>

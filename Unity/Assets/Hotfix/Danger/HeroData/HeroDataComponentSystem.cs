@@ -404,13 +404,13 @@ namespace ET
                 return 0;
             }
 
-            if (self.DomainZone() == 128)
-            {
-                resurrection = 10;
-            }
-         
             if (monsterConfig.MonsterType != (int)MonsterTypeEnum.Boss)
             {
+                if (ComHelp.IsZhuBoZone(self.DomainZone()))
+                {
+                    resurrection = 10;
+                }
+
                 //unit.DomainScene().GetComponent<YeWaiRefreshComponent>().OnAddRefreshList(unit, resurrection * 1000);
                 if (mapComponent.SceneTypeEnum == (int)SceneTypeEnum.LocalDungeon
                  || mapComponent.SceneTypeEnum == (int)SceneTypeEnum.MiJing
@@ -432,6 +432,11 @@ namespace ET
                     BossDevelopment bossDevelopment = ConfigHelper.GetBossDevelopmentByKill(chpaterid , killNumber);
                     resurrection = (int)(resurrection * bossDevelopment.ReviveTimeAdd);
 
+                    if (ComHelp.IsZhuBoZone(self.DomainZone()))
+                    {
+                        resurrection = 180;
+                    }
+
                     resurrectionTime = TimeHelper.ServerNow() + resurrection * 1000;
                     unit.GetComponent<NumericComponent>().ApplyValue(NumericType.ReviveTime, resurrectionTime);
                     userInfoComponent.OnAddRevive(unit.ConfigId, resurrectionTime);
@@ -446,6 +451,11 @@ namespace ET
                 {
                     if (mapComponent.SceneTypeEnum == (int)SceneTypeEnum.MiJing)
                     {
+                        if (ComHelp.IsZhuBoZone(self.DomainZone()))
+                        {
+                            resurrection = 180;
+                        }
+
                         resurrectionTime = TimeHelper.ServerNow() + resurrection * 1000;
                         unit.GetComponent<NumericComponent>().ApplyValue(NumericType.ReviveTime, resurrectionTime);
 

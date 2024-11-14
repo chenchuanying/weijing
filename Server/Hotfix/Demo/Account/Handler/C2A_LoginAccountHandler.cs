@@ -50,7 +50,8 @@ namespace ET
                     reply();
                     return;
                 }
-                if (session.DomainZone() == 128 && !GMHelp.ZhuBoURBossAccount.Contains(request.AccountName))
+
+                if (ComHelp.IsZhuBoZone(session.DomainZone()) && !GMHelp.ZhuBoURBossAccount.Contains(request.AccountName))
                 {
                     response.Error = ErrorCode.ERR_VersionNoMatch;
                     session.Disconnect().Coroutine();
