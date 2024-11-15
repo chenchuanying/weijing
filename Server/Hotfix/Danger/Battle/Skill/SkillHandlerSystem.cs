@@ -334,6 +334,11 @@ namespace ET
                     self.SkillBuff(buffInitAdd[k], uu);
                 }
             }
+
+            //if (RandomHelper.RandFloat01() > 0.5f && uu.Type == UnitType.Player)
+            //{
+            //    self.SkillBuff(97050403, uu);
+            //}
         }
 
         public static void SetSkillState(this SkillHandler self, SkillState state)
