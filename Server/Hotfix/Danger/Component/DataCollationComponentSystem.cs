@@ -102,12 +102,7 @@ namespace ET
             }
             self.PaiMaiGold += addgold;
 
-            if (self.SoldBagInfoIDList.Contains(baginfoid))
-            {
-                Console.WriteLine($"self.SoldItemIdList: {baginfoid}");
-                Log.Error($"self.SoldItemIdList: {baginfoid}");
-            }
-            else
+            if(baginfoid > 0 && !self.SoldBagInfoIDList.Contains(baginfoid))
             {
                 self.SoldBagInfoIDList.Add(baginfoid);
             }
