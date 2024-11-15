@@ -10,9 +10,6 @@ namespace ET
                 return;
             }
 
-            CameraComponent cameraComponent = args.ZoneScene.CurrentScene().GetComponent<CameraComponent>();
-            cameraComponent.CameraMoveType = args.OperateType == 1 ? CameraMoveType.BuffBounce : CameraMoveType.Normal;
-
             UIUnitHpComponent uIUnitHpComponent = args.Unit.GetComponent<UIUnitHpComponent>();
 
             uIUnitHpComponent.EnableHeadBarUI(args.OperateType == 1);
