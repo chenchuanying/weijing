@@ -160,6 +160,7 @@ namespace ET
             //}
         }
 
+
         public void EnterHide()
         {
             if (this.GameObject == null)
@@ -305,7 +306,7 @@ namespace ET
             this.UIPlayerHpText.transform.SetParent(UIEventComponent.Instance.BloodText.transform);
             this.UIPlayerHpText.transform.localScale = Vector3.one;
             HeadBarUI HeadBarUI_1 = this.UIPlayerHpText.GetComponent<HeadBarUI>();
-            HeadBarUI_1.enabled = !unit.MainHero;
+            HeadBarUI_1.enabled = true;    /// !unit.MainHero;
             HeadBarUI_1.HeadPos = UIPosition;
             HeadBarUI_1.HeadBar = this.UIPlayerHpText;
             HeadBarUI_1.UiCamera = UIComponent.Instance.UICamera;
@@ -313,7 +314,7 @@ namespace ET
             HeadBarUI_1.UpdatePostion();
 
             HeadBarUI HeadBarUI_2 = this.GameObject.GetComponent<HeadBarUI>();
-            HeadBarUI_2.enabled =  !unit.MainHero;
+            HeadBarUI_2.enabled = true;    /// !unit.MainHero;
             HeadBarUI_2.HeadPos = UIPosition;
             HeadBarUI_2.HeadBar = GameObject;
             HeadBarUI_2.UiCamera = UIComponent.Instance.UICamera;
@@ -352,30 +353,38 @@ namespace ET
             }
         }
 
+        public  void EnableHeadBarUI(bool enable)
+        {
+            //HeadBarUI HeadBarUI_1 = this.UIPlayerHpText.GetComponent<HeadBarUI>();
+            //HeadBarUI_1.enabled = enable;
+            //HeadBarUI HeadBarUI_2 = this.GameObject.GetComponent<HeadBarUI>();
+            //HeadBarUI_2.enabled = enable;
+        }
+
         public void OnUpdateHorse(  )
         {
-            if (this.GameObject == null)
-            {
-                return;
-            }
+            //if (this.GameObject == null)
+            //{
+            //    return;
+            //}
 
-            Unit unit = this.GetParent<Unit>();
-            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
-            int horseRide = numericComponent.GetAsInt(NumericType.HorseRide);
+            //Unit unit = this.GetParent<Unit>();
+            //NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            //int horseRide = numericComponent.GetAsInt(NumericType.HorseRide);
 
-            Vector3 vector3_zuoqi = new Vector3(0f, 180f, 0f);
-            Vector3 vector3_normal = new Vector3(0f, 120f, 0f);
-            if (horseRide > 0)
-            {
-                ZuoQiShowConfig zuoQiShowConfig = ZuoQiShowConfigCategory.Instance.Get(horseRide);
-                vector3_zuoqi.y +=(float) zuoQiShowConfig.NameShowUp;
-            }
+            //Vector3 vector3_zuoqi = new Vector3(0f, 180f, 0f);
+            //Vector3 vector3_normal = new Vector3(0f, 120f, 0f);
+            //if (horseRide > 0)
+            //{
+            //    ZuoQiShowConfig zuoQiShowConfig = ZuoQiShowConfigCategory.Instance.Get(horseRide);
+            //    vector3_zuoqi.y +=(float) zuoQiShowConfig.NameShowUp;
+            //}
        
-            this.GameObject.transform.localPosition = horseRide > 0 ? vector3_zuoqi : vector3_normal;
-            if (unit.MainHero)
-            {
-                this.UIPlayerHpText.transform.localPosition = horseRide > 0 ? vector3_zuoqi : vector3_normal;
-            }
+            //this.GameObject.transform.localPosition = horseRide > 0 ? vector3_zuoqi : vector3_normal;
+            //if (unit.MainHero)
+            //{
+            //    this.UIPlayerHpText.transform.localPosition = horseRide > 0 ? vector3_zuoqi : vector3_normal;
+            //}
         }
 
         public void OnUpdateUnionName()

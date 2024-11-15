@@ -223,11 +223,22 @@ namespace ET
         {
             if (self.Type == UnitType.Npc || self.Type == UnitType.DropItem
                 || self.Type == UnitType.Chuansong || self.Type == UnitType.JingLing
-                || self.Type == UnitType.Pasture || self.Type == UnitType.Plant 
+                || self.Type == UnitType.Pasture || self.Type == UnitType.Plant
                 || self.Type == UnitType.Bullet || self.Type == UnitType.Stall)
+            {
                 return false;
+            }
+
             if (self.Type == UnitType.Monster && (self.GetMonsterType() == (int)MonsterTypeEnum.SceneItem))
+            {
                 return false;
+            }
+                
+            StateComponent stateComponent = self.GetComponent<StateComponent>();
+            if (stateComponent.StateTypeGet(StateTypeEnum.JiTui))
+            {
+                return false;
+            }
 
             if (checkdead)
             {

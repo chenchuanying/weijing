@@ -63,7 +63,7 @@ namespace ET
             ErrorHintList.Add(ErrorCode.ERR_CanNotMove_Rigidity, "僵直状态无法移动!");
             ErrorHintList.Add(ErrorCode.ERR_CanNotMove_NetWait, "消息未返回无法移动!");
             ErrorHintList.Add(ErrorCode.ERR_CanNotMove_Dizziness, "眩晕状态无法移动!");
-            ErrorHintList.Add(ErrorCode.ERR_CanNotMove_JiTui, "击退状态无法移动!");
+            ErrorHintList.Add(ErrorCode.ERR_CanNotMove_JiTui, "当前状态无法移动!");
             ErrorHintList.Add(ErrorCode.ERR_CanNotMove_Shackle, "禁锢状态无法移动!");
             ErrorHintList.Add(ErrorCode.ERR_CanNotMove_Sleep, "沉睡状态无法移动!");
             ErrorHintList.Add(ErrorCode.ERR_CanNotMove_Fear,"恐惧状态无法移动!");

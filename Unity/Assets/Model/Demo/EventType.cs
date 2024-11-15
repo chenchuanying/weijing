@@ -736,6 +736,15 @@ namespace ET
             public Unit Unit;
         }
 
+        public class BuffBounce : DisposeObject
+        {
+            public static readonly BuffBounce Instance = new BuffBounce();
+            public int OperateType;    //0开始 1结束
+
+            public Scene ZoneScene;
+            public Unit Unit;
+        }
+
         public class JingLingGet : DisposeObject
         {
             public static readonly JingLingGet Instance = new JingLingGet();

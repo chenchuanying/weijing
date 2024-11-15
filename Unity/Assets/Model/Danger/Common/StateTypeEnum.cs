@@ -117,6 +117,7 @@ namespace ET
         /// 隐藏状态
         /// </summary>
 
-        public const long Hide = 1 << 22;   
+        public const long Hide = 1 << 22;
+
     }
 }
