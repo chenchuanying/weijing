@@ -56,7 +56,7 @@ namespace ET
                 }
                 if (self.DomainZone() == 5)
                 {
-                    Console.WriteLine($"Get.UnitCache :{entity!=null}  {self.DomainZone()} {unitId}  {self.key}");
+                    //Console.WriteLine($"Get.UnitCache :{entity!=null}  {self.DomainZone()} {unitId}  {self.key}");
                 }
             }
 

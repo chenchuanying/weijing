@@ -27,13 +27,11 @@ namespace ET
                 if (leftTime <= 0f)
                 {
                     this.TheUnitBelongto.Position = this.BuffData.TargetPostion;
-                    Log.ILog.Debug($"leftTime: {leftTime}   {this.BuffData.TargetPostion.x} {this.BuffData.TargetPostion.z}");
                     break;
                 }
                 else
                 {
                     this.TheUnitBelongto.Position = this.StartPosition + (this.BuffData.TargetPostion - this.StartPosition).normalized * (float)this.mSkillBuffConf.buffParameterValue * this.PassTime;
-                    Log.ILog.Debug($"leftTime: {leftTime}   {this.TheUnitBelongto.Position.x} {this.TheUnitBelongto.Position.z}");
                 }
                 await TimerComponent.Instance.WaitFrameAsync();
                 if (this.BuffState != BuffState.Running)
