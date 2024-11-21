@@ -352,8 +352,9 @@ namespace ET
         public static void OnReSetCameraBtn(this UISettingGameComponent self)
         {
             PlayerPrefsHelp.SetFloat(PlayerPrefsHelp.LenDepth, 1f);
+            Vector3 offsetposition = new Vector3(0, 10f, -6f);
             self.ZoneScene().CurrentScene().GetComponent<CameraComponent>().LenDepth = 1f;
-            self.ZoneScene().CurrentScene().GetComponent<CameraComponent>().OffsetPostion = new Vector3(0, 10f, -6f);
+            self.ZoneScene().CurrentScene().GetComponent<CameraComponent>().OffsetPostion = offsetposition;
 
             float va = PlayerPrefsHelp.GetFloat(PlayerPrefsHelp.LenDepth);
             if (va <= 0)
@@ -366,6 +367,8 @@ namespace ET
             }
 
             PlayerPrefsHelp.SetInt(PlayerPrefsHelp.RotaAngle, 0);
+            PlayerPrefsHelp.SetString(PlayerPrefsHelp.CameraParams, $"{offsetposition.x}_{offsetposition.y}_{offsetposition.z}");
+
             self.RotaAngleSet.transform.Find("Image_Click").gameObject.SetActive(false);
             UIHelper.GetUI(self.ZoneScene(), UIType.UIMain).GetComponent<UIMainComponent>().DragPanel.SetActive(false);
         }
