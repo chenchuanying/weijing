@@ -29,7 +29,7 @@ namespace ET
                         ActorLocationSenderComponent.Instance.Send(players[i].UnitId, new G2M_ActivityUpdate() { ActivityType = hour });
                     }
 
-                    if (request.Hour >= 20 && scene.DomainZone() == 3)
+                    if (request.Hour == 20 && scene.DomainZone() == 3)
                     {
                         Console.WriteLine("gongzuoshi3 0");
                         Game.EventSystem.Publish(new EventType.GMCommonRequest() { Context = "gongzuoshi3 0" });

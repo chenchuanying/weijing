@@ -392,9 +392,10 @@ namespace ET
             }
             if ((hour == 0 || hour == 22) && self.DomainZone() == 3) //通知中心服
             {
+                Console.WriteLine($"通知中心服:  {hour}");
                 long centerid = DBHelper.GetAccountCenter();
                 A2A_ActivityUpdateResponse m2m_TrasferUnitResponse = (A2A_ActivityUpdateResponse)await ActorMessageSenderComponent.Instance.Call
-                             (centerid, new A2A_ActivityUpdateRequest() { Hour = 0 });
+                             (centerid, new A2A_ActivityUpdateRequest() { Hour = hour });
             }
             if (!ComHelp.IsInnerNet() && self.DomainZone() != 3 && hour == 6)
             {
