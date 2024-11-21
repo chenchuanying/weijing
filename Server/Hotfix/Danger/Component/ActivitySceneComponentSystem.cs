@@ -390,7 +390,7 @@ namespace ET
                 self.InitPetMineExtend();
                 self.InitFunctionButton();
             }
-            if ((hour == 0 || hour == 22) && self.DomainZone() == 3) //通知中心服
+            if ((hour == 0 || hour == 21) && self.DomainZone() == 3) //通知中心服
             {
                 Console.WriteLine($"通知中心服:  {hour}");
                 long centerid = DBHelper.GetAccountCenter();
