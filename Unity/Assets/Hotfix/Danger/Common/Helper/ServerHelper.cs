@@ -377,14 +377,14 @@ namespace ET
             serverItems_1.Add(new ServerItem() { ServerId = 125, ServerIp = $"{ip}:20605", ServerName = "断桥残雪", ServerOpenTime = 1729854000000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 126, ServerIp = $"{ip}:20615", ServerName = "南屏晚钟", ServerOpenTime = 1730458800000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 127, ServerIp = $"{ip}:20375", ServerName = "璀璨梦境", ServerOpenTime = 1731063600000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
-
-
             //128服 指定的主播账号才可以进入。。
-            //2024/11/15 19:00:00 1731668400000 合区 太平盛世-欢度国庆 121/122
-            //2024/11/15 19:00:00 1731668400000 新区 永恒结界 129
             serverItems_1.Add(new ServerItem() { ServerId = 129, ServerIp = $"{ip}:20455", ServerName = "永恒结界", ServerOpenTime = 1731668400000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
 
-            
+
+            //2024/11/22 19:00:00 1732273200000 新区 巅峰对决 130
+            serverItems_1.Add(new ServerItem() { ServerId = 130, ServerIp = $"{ip}:20505", ServerName = "巅峰对决", ServerOpenTime = 1732273200000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
+
+
             ///PlatformHelper.GetPlatformName(); 所有渠道ID定义
             List<int> allserverId = new List<int>();
             for (int i = 0; i < serverItems_1.Count; i++)
