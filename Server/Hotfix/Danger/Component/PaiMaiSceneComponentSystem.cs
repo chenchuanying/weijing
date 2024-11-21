@@ -614,7 +614,7 @@ namespace ET
             {
                 return;
             }
-            Console.WriteLine($"OnDeleteRole :  {self.DomainZone()} {userId}");
+            //Console.WriteLine($"OnDeleteRole.PaiMai :  {self.DomainZone()} {userId}");
             self.OnDeleteRole_ByType(userId, self.dBPaiMainInfo_Consume);
             self.OnDeleteRole_ByType(userId, self.dBPaiMainInfo_Material);
             self.OnDeleteRole_ByType(userId, self.dBPaiMainInfo_Gemstone);

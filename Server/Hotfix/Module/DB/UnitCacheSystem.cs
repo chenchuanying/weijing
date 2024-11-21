@@ -74,7 +74,7 @@ namespace ET
             {
                 if (self.DomainZone() == 5)
                 {
-                    Console.WriteLine($"Delete.UnitCache:  {self.DomainZone()} {id}  {self.key}");
+                    //Console.WriteLine($"Delete.UnitCache:  {self.DomainZone()} {id}  {self.key}");
                 }
 
                 entity.Dispose();

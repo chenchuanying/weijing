@@ -390,7 +390,7 @@ namespace ET
                 self.InitPetMineExtend();
                 self.InitFunctionButton();
             }
-            if (hour == 0 && self.DomainZone() == 3) //通知中心服
+            if ((hour == 0 || hour == 22) && self.DomainZone() == 3) //通知中心服
             {
                 long centerid = DBHelper.GetAccountCenter();
                 A2A_ActivityUpdateResponse m2m_TrasferUnitResponse = (A2A_ActivityUpdateResponse)await ActorMessageSenderComponent.Instance.Call
