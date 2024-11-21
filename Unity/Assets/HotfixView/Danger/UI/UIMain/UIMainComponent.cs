@@ -538,11 +538,21 @@ namespace ET
             self.AngleY = (pdata.position.y - self.PreviousPressPosition.y) * self.DRAG_TO_ANGLE;
             self.ZoneScene().CurrentScene().GetComponent<CameraComponent>().Rotate(-self.AngleX, -self.AngleY);
             self.PreviousPressPosition = pdata.position;
+
+            self.RecordCameraParams();
         }
 
         public static void EndDrag(this UIMainComponent self, PointerEventData pdata)
         {
             self.ZoneScene().CurrentScene().GetComponent<CameraComponent>().EndRotate();
+
+            self.RecordCameraParams();
+        }
+
+        public static void RecordCameraParams(this UIMainComponent self)
+        {
+            Vector3 offsetposition = self.ZoneScene().CurrentScene().GetComponent<CameraComponent>().OffsetPostion;
+            PlayerPrefsHelp.SetString(PlayerPrefsHelp.CameraParams, $"{offsetposition.x}_{offsetposition.y}_{offsetposition.z}");
         }
 
         public static async ETTask RequestChatList(this UIMainComponent self)

@@ -24,6 +24,7 @@ namespace ET
         public static string ZhuBo = "WJa_ZhuBo";
         public static string TapRepRegister = "TapRepRegister0815";
         public static string TapRepCiLiu = "TapRepCiLiu";
+        public static string CameraParams = "WJa_CameraParams";
 
         public static string LastAccount(string loginType)
         {

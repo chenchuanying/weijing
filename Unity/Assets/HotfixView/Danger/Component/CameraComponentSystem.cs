@@ -36,7 +36,20 @@ namespace ET
 		public static void Awake(this CameraComponent self)
 		{
 			self.MainCamera = GameObject.Find("Global/Main Camera").GetComponent<Camera>();
-			self.OffsetPostion = new Vector3(0, 10f, -6f);
+
+            // $"{offsetposition.x}_{offsetposition.y}_{offsetposition.z}
+            string camerainfo =  PlayerPrefsHelp.GetString(PlayerPrefsHelp.CameraParams);
+
+			if (string.IsNullOrEmpty(camerainfo))
+			{
+                self.OffsetPostion = new Vector3(0, 10f, -6f);
+            }
+			else
+			{
+				string[] infolist = camerainfo.Split('_');
+                self.OffsetPostion = new Vector3(float.Parse(infolist[0]), float.Parse(infolist[1]), float.Parse(infolist[2]));
+            }
+
 			self.PullRate = 1f;
 			self.CameraMoveType = CameraMoveType.Normal;
 			self.MainUnit = UnitHelper.GetMyUnitFromZoneScene(self.ZoneScene());
