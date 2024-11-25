@@ -50,7 +50,18 @@ namespace ET
                 self.OffsetPostion = new Vector3(float.Parse(infolist[0]), float.Parse(infolist[1]), float.Parse(infolist[2]));
             }
 
-			self.PullRate = 1f;
+			float lendepth = PlayerPrefsHelp.GetFloat(PlayerPrefsHelp.LenDepth);
+            if (lendepth == 0f)
+			{
+				self.LenDepth = 1f;
+			}
+			else
+			{
+				self.LenDepth = lendepth;
+			}
+
+
+            self.PullRate = 1f;
 			self.CameraMoveType = CameraMoveType.Normal;
 			self.MainUnit = UnitHelper.GetMyUnitFromZoneScene(self.ZoneScene());
 			
