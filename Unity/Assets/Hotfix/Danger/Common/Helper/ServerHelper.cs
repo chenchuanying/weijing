@@ -369,7 +369,7 @@ namespace ET
             //2024/11/29 19:00:00 1732878000000 合区 春花秋月-光明之旅 123-124
             serverItems_1.Add(new ServerItem() { ServerId = 123, ServerIp = $"{ip}:20525", ServerName = "春花秋月", ServerOpenTime = 1728644400000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 124, ServerIp = $"{ip}:20525", ServerName = "光明之旅", ServerOpenTime = 1729249200000, New = 0, Show = 0, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
-           
+
             
             serverItems_1.Add(new ServerItem() { ServerId = 125, ServerIp = $"{ip}:20605", ServerName = "断桥残雪", ServerOpenTime = 1729854000000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 126, ServerIp = $"{ip}:20615", ServerName = "南屏晚钟", ServerOpenTime = 1730458800000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
