@@ -81,7 +81,7 @@ namespace ET
                         long accountCrateTime = centerAccountList[0].CreateTime;
 						long serverNowTime = TimeHelper.ServerNow();
 						long serverOpenTime = ServerHelper.GetOpenServerTime(false, session.DomainZone());
-						if (!centerAccountList[0].Password.Equals(ComHelp.RobotPassWord) && accountCrateTime > 0 && (accountCrateTime - serverOpenTime >= TimeHelper.OneDay * 14))
+						if (!ComHelp.IsZhuBoZone(session.DomainZone()) && !centerAccountList[0].Password.Equals(ComHelp.RobotPassWord) && accountCrateTime > 0 && (accountCrateTime - serverOpenTime >= TimeHelper.OneDay * 14))
 						{
                             response.Error = ErrorCode.ERR_CreateRole_Limit_2;
                             reply();

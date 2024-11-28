@@ -32,8 +32,9 @@ namespace ET
             "17329208770",           //永恒结界+尘
             "15518723386",           //永恒结界+与其
             "19139260839",           //永恒结界+高手
+            "15225266399",           //巅峰对决+人生
         };
-
+        
 
         public static Dictionary<long, string> DebugPlayerList = new Dictionary<long, string>()
         {
