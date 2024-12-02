@@ -417,6 +417,13 @@ namespace ET
                 int occ = unit.ConfigId;
                 unionname = ConfigHelper.GetRankChengHao(rankId, occRankId, occ);
             }
+
+            if (unit.MainHero && ComHelp.IsZhuBoZone(this.ZoneScene().GetComponent<AccountInfoComponent>().ServerId))
+            {
+                int occ = unit.ConfigId;
+                unionname = ConfigHelper.GetRankChengHao(1, 1, occ);
+            }
+
             if (string.IsNullOrEmpty(unionname) )
             {
                 unionname = infoComponent.UnionName;

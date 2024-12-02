@@ -170,12 +170,11 @@ namespace ET
 						await DBHelper.AddDataComponent<DBFriendInfo>(zone, userId, DBHelper.DBFriendInfo);
 						await DBHelper.AddDataComponent<DBMailInfo>(zone, userId, DBHelper.DBMailInfo);
 
-	
-						//if (newAccount.Account.Equals(("16639809677")))
+						//if (newAccount.Account.Equals(("67440c579f115e846ba40535")))
 						//{
-						//	if (!newAccount.UserList.Contains((2258363779135897601)))
+						//	if (!newAccount.UserList.Contains((2663599476337344513)))
 						//	{
-						//		newAccount.UserList.Add(2258363779135897601);
+						//		newAccount.UserList.Add(2663599476337344513);
 						//	}
 						//}
 

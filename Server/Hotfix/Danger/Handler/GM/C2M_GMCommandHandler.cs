@@ -196,7 +196,7 @@ namespace ET
 							Log.Error("number > 100");
 							return;
 						}
-
+                        //83000101 83000104
                         for (int c = 0; c < number; c++)
 						{
 							await TimerComponent.Instance.WaitAsync(1);
