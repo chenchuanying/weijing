@@ -1,0 +1,13 @@
+{"list":[{"_t":"StartProcessConfig","_id":1,"MachineId":1,"InnerPort":10302,"dll":"Server","AppName":"Server","Title":"Gate"},
+{"_t":"StartProcessConfig","_id":2,"MachineId":1,"InnerPort":10303,"dll":"Server","AppName":"Server","Title":"Map101"},
+{"_t":"StartProcessConfig","_id":3,"MachineId":1,"InnerPort":10304,"dll":"Server","AppName":"Server","Title":"DBCache"},
+{"_t":"StartProcessConfig","_id":4,"MachineId":1,"InnerPort":10305,"dll":"Server","AppName":"Server","Title":"ReCharge"},
+{"_t":"StartProcessConfig","_id":5,"MachineId":1,"InnerPort":10306,"dll":"Server","AppName":"Server","Title":"LocalDungeon1"},
+{"_t":"StartProcessConfig","_id":6,"MachineId":1,"InnerPort":10307,"dll":"Server","AppName":"Server","Title":"LocalDungeon2"},
+{"_t":"StartProcessConfig","_id":7,"MachineId":1,"InnerPort":10308,"dll":"Server","AppName":"Server","Title":"LocalDungeon3"},
+{"_t":"StartProcessConfig","_id":8,"MachineId":1,"InnerPort":10309,"dll":"Server","AppName":"Server","Title":"LocalDungeon4"},
+{"_t":"StartProcessConfig","_id":9,"MachineId":1,"InnerPort":10310,"dll":"Server","AppName":"Server","Title":"Battle"},
+{"_t":"StartProcessConfig","_id":10,"MachineId":1,"InnerPort":10311,"dll":"Server","AppName":"Server","Title":"Activity"},
+{"_t":"StartProcessConfig","_id":202,"MachineId":3,"InnerPort":10312,"dll":"AccountCenter","AppName":"Server","Title":"AccountCenter"},
+{"_t":"StartProcessConfig","_id":203,"MachineId":2,"InnerPort":10312,"dll":"Robot","AppName":"Server","Title":"Robot"},
+]}
