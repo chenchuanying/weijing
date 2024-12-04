@@ -196,11 +196,12 @@ namespace ET
 							Log.Error("number > 100");
 							return;
 						}
+
                         //83000101 83000104
                         for (int c = 0; c < number; c++)
 						{
 							await TimerComponent.Instance.WaitAsync(1);
-							Vector3 vector3 = new Vector3(posX + RandomHelper.RandomNumberFloat(-1, 1), posY, RandomHelper.RandomNumberFloat(-1, 1));
+							Vector3 vector3 = new Vector3(posX + RandomHelper.RandomNumberFloat(-1, 1), posY, posZ + RandomHelper.RandomNumberFloat(-1, 1));
 							Unit monster = UnitFactory.CreateMonster(unit.DomainScene(), monsterId, vector3, new CreateMonsterInfo()
 							{ 
 								Camp = CampEnum.CampMonster1
