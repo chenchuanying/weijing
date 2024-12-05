@@ -82,7 +82,9 @@ namespace ET
                 }
                 
 
-                int errorCode = await EnterFubenHelp.RequestTransfer(self.ZoneScene(), SceneTypeEnum.LocalDungeon, self.ChapterId,
+                int errorCode = await EnterFubenHelp.RequestTransfer(self.ZoneScene(),
+                    SceneTypeEnum.LocalDungeon, 
+                    self.ChapterId,
                     self.ZoneScene().GetComponent<MapComponent>().FubenDifficulty);
                 if (errorCode != ErrorCode.ERR_Success)
                 {

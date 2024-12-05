@@ -94,7 +94,11 @@ namespace ET
             {
                 return;
             }
-            EnterFubenHelp.RequestTransfer(self.ZoneScene(), (int)SceneTypeEnum.LocalDungeon, 0, 0, self.GetParent<Unit>().ConfigId.ToString()).Coroutine();
+            EnterFubenHelp.RequestTransfer(self.ZoneScene(),
+                (int)SceneTypeEnum.LocalDungeon,
+                0,
+                self.ZoneScene().GetComponent<MapComponent>().FubenDifficulty,
+                self.GetParent<Unit>().ConfigId.ToString() ).Coroutine();
         }
 
         public static void StartTimer(this TransferUIComponent self)

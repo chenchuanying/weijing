@@ -311,7 +311,18 @@ namespace ET
                         }
 
                         LocalDungeonComponent localDungeon = unit.DomainScene().GetComponent<LocalDungeonComponent>();
-                        request.Difficulty = localDungeon != null ? localDungeon.FubenDifficulty : request.Difficulty;
+
+                        if (localDungeon != null && localDungeon.FubenDifficulty != request.Difficulty)
+                        {
+                            //int diff = Math.Max(localDungeon.FubenDifficulty, request.Difficulty);
+                            request.Difficulty = request.Difficulty;
+                            Console.WriteLine($"FubenDifficulty != request.Difficulty: {unit.Id}  {localDungeon.FubenDifficulty} {request.Difficulty}");
+                        }
+                        else
+                        {
+                            request.Difficulty = localDungeon != null ? localDungeon.FubenDifficulty : request.Difficulty;
+                        }
+
                         unit.GetComponent<SkillManagerComponent>()?.OnFinish(false);
                         int errorCode = await TransferHelper.LocalDungeonTransfer(unit, request.SceneId, int.Parse(request.paramInfo), request.Difficulty);
                         if (errorCode != ErrorCode.ERR_Success)
