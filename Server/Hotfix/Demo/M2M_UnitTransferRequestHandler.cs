@@ -27,10 +27,9 @@ namespace ET
 				}
 				else
 				{
-					Log.Debug($"LoginTest M2M_UnitTransfer:  {scene.DomainZone()}  {request.Unit.Id}  {request.SceneType}");
+					Log.Debug($"LoginTest M2M_UnitTransfer:  {scene.DomainZone()}  {request.Unit.Id}  {request.SceneType}  {request.Difficulty}  {request.ParamInfo}");
 				}
-                //Log.Console($"LoginTest M2M_UnitTransfer:  {scene.DomainZone()}  {request.Unit.Id}  {request.SceneType} {request.ChapterId}");
-
+                
                 Unit unit = request.Unit;
                 unitComponent.AddChild(unit);
 				unitComponent.Add(unit);
