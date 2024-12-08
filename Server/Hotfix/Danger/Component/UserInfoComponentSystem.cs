@@ -245,6 +245,22 @@ namespace ET
                     self.UserInfo.UnionKeJiList.Add(UnionKeJiConfigCategory.Instance.GetFristId( keji ) );
                 }
             }
+
+            if (self.IsZhuBoLevel16())
+            {
+                self.UserInfo.Lv = 16;
+            }
+        }
+
+        private static bool IsZhuBoLevel16(this UserInfoComponent self)
+        {
+            if (!ComHelp.IsZhuBoZone(self.DomainZone()))
+            {
+                return false;
+
+            }
+
+            return self.Id == 2648795239413776384 || self.Id == 2641338471813283840;
         }
 
         public static void OnOffLine(this UserInfoComponent self)
@@ -819,11 +835,21 @@ namespace ET
                     saveValue = self.UserInfo.Name;
                     break;
                 case UserDataType.Exp:
+                    if (self.IsZhuBoLevel16())
+                    {
+                        return;
+                    }
+
                     self.Role_AddExp(long.Parse(value), notice);
                     //saveValue = self.UserInfo.Exp.ToString();
                     longValue = self.UserInfo.Exp;
                     break;
                 case UserDataType.Lv:
+                    if (self.IsZhuBoLevel16())
+                    {
+                        return;
+                    }
+
                     self.UserInfo.Lv += int.Parse(value);
                     saveValue = self.UserInfo.Lv.ToString();
                     long maxHp = unit.GetComponent<NumericComponent>().GetAsLong((int)NumericType.Now_MaxHp);

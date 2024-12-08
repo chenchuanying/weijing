@@ -27,9 +27,7 @@ namespace ET
             ReferenceCollector rc = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             self.ButtonTunShi = rc.Get<GameObject>("ButtonTunShi");
-            ButtonHelp.AddListenerEx(self.ButtonTunShi, () =>{
-                self.OnButtonTunShi().Coroutine();
-            });
+            ButtonHelp.AddListenerEx(self.ButtonTunShi, self.OnButtonTunShi);
 
             self.ButtonClose = rc.Get<GameObject>("ButtonClose");
             self.ButtonClose.GetComponent<Button>().onClick.AddListener(() =>
@@ -78,32 +76,51 @@ namespace ET
             }
         }
 
-        public static async ETTask OnButtonTunShi(this UIShouJiSelectComponent self)
+        public static  void OnButtonTunShi(this UIShouJiSelectComponent self)
         {
             KeyValuePairInt keyValuePairInt = self.ShoujiComponent.GetTreasureInfo(self.ShouJIId);
             
             ShouJiItemConfig shouJiItemConfig = ShouJiItemConfigCategory.Instance.Get(self.ShouJIId);
             long number = keyValuePairInt != null ? keyValuePairInt.Value : 0;
-            List<long> selects = self.GetSelectItems();
+
+            var returnvalue =  self.GetSelectItems();
+            List<long> selects = returnvalue.Item1;
+            bool havegem = returnvalue.Item2;
 
             if (selects.Count == 0)
             {
                 FloatTipManager.Instance.ShowFloatTip("请选择道具！");
                 return;
             }
+
             if (number + selects.Count > shouJiItemConfig.AcitveNum)
             {
                 FloatTipManager.Instance.ShowFloatTip("吞噬数量超出！");
                 return;
             }
 
+
+            if (havegem)
+            {
+                PopupTipHelp.OpenPopupTip(  self.ZoneScene(), "系统提示", "装备有橙色宝石，是否继续？" , ()=>
+                {
+                    self.RequestShouJiTreasure(selects, self.ShouJIId).Coroutine();
+                }).Coroutine();
+                return;
+            }
+
+            self.RequestShouJiTreasure(selects, self.ShouJIId).Coroutine();
+        }
+
+        private static async ETTask RequestShouJiTreasure(this UIShouJiSelectComponent self, List<long> selects, int shoujiId)
+        {
             long instanceId = self.InstanceId;
-            C2M_ShouJiTreasureRequest  request = new C2M_ShouJiTreasureRequest() { ItemIds = selects, ShouJiId = self.ShouJIId };
+            C2M_ShouJiTreasureRequest request = new C2M_ShouJiTreasureRequest() { ItemIds = selects, ShouJiId = shoujiId };
             M2C_ShouJiTreasureResponse response = (M2C_ShouJiTreasureResponse)await self.ZoneScene().GetComponent<SessionComponent>().Session.Call(request);
-          
+
             if (instanceId != self.InstanceId)
             {
-                return;    
+                return;
             }
             if (response.Error == ErrorCode.ERR_Success)
             {
@@ -112,26 +129,46 @@ namespace ET
 
             UI uI = UIHelper.GetUI(self.ZoneScene(), UIType.UIShouJi);
             uI.GetComponent<UIShouJiComponent>().OnShouJiTreasure();
-            
+
             // 更新被选择道具的红点
             self.UpdateRedDotAction.Invoke();
-            
+
             FloatTipManager.Instance.ShowFloatTip("吞噬道具完成。");
-            
+
             UIHelper.Remove(self.ZoneScene(), UIType.UIShouJiSelect);
         }
 
-        public static List<long> GetSelectItems(this UIShouJiSelectComponent self)
+        public static (List<long>, bool) GetSelectItems(this UIShouJiSelectComponent self)
         { 
             List<long> ids =  new List<long>();
+            bool havgreengem = false;
             for (int i = 0; i < self.UIItems.Count; i++)
             {
                 if (self.UIItems[i].Image_XuanZhong.activeSelf)
                 {
-                    ids.Add(self.UIItems[i].Baginfo.BagInfoID);
+                    BagInfo bagInfo = self.UIItems[i].Baginfo;
+
+                    string gemStr = bagInfo.GemIDNew;
+                    string[] gem = gemStr.Split('_');
+                    for (int j = 0; j < gem.Length; j++)
+                    {
+                        
+                        if (ComHelp.IfNull(gem[j]) )
+                        {
+                            continue;
+                        }
+
+                        ItemConfig gemItemCof = ItemConfigCategory.Instance.Get(int.Parse(gem[j]));
+                        if (gemItemCof.ItemSubType == 110)
+                        {
+                            havgreengem = true;
+                        }
+                    }
+
+                    ids.Add(bagInfo.BagInfoID);
                 }
             }
-            return ids;
+            return (ids, havgreengem);
         }
 
         public static void OnSelectItem(this UIShouJiSelectComponent self, BagInfo bagInfo)
