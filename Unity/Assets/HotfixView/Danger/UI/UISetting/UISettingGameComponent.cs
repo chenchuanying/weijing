@@ -465,7 +465,6 @@ namespace ET
             self.PickSet.transform.Find("Image_Click_0").gameObject.SetActive(setvalues2[0] == "1");
             self.PickSet.transform.Find("Image_Click_1").gameObject.SetActive(setvalues2[1] == "1");
             
-
             self.UpdateYaoGan();
             self.UpdateShadow();
             self.UpdateHighFps();
@@ -478,6 +477,20 @@ namespace ET
             Unit unit = UnitHelper.GetMyUnitFromZoneScene(self.ZoneScene());
             long lastTime = unit.GetComponent<NumericComponent>().GetAsLong(NumericType.LastGameTime);
             self.LastLoginTime.GetComponent<Text>().text = TimeInfo.Instance.ToDateTime(lastTime).ToString();
+        }
+
+        public static async ETTask UpdatePosition(this UISettingGameComponent self)
+        {
+            await TimerComponent.Instance.WaitAsync(200);
+            if (self.IsDisposed )
+                return;
+
+            ///self.ScrollRect.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+            //RectTransform rectTransform = self.ChatContent.GetComponent<RectTransform>();
+            //if (rectTransform.sizeDelta.y > 600)
+            //{
+            //    rectTransform.anchoredPosition = new Vector2(0, rectTransform.sizeDelta.y - 600);
+            //}
         }
 
         public static void UpdateAttackMode(this UISettingGameComponent self)
