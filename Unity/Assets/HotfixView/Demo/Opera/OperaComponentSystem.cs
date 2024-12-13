@@ -507,7 +507,7 @@ namespace ET
                     int sceneId = self.ZoneScene().GetComponent<MapComponent>().SceneId;
                     int chapterid = DungeonConfigCategory.Instance.DungeonToChapter[sceneId];
                     int mysterDungeonid = DungeonSectionConfigCategory.Instance.GetMysteryDungeon(chapterid);
-                    EnterFubenHelp.RequestTransfer(self.ZoneScene(), SceneTypeEnum.LocalDungeon, mysterDungeonid, 0, "0").Coroutine();
+                    EnterFubenHelp.RequestTransfer(self.ZoneScene(), SceneTypeEnum.LocalDungeon, mysterDungeonid, mapComponent.FubenDifficulty, "0").Coroutine();
                 }, null).Coroutine();
             }
             else if (self.NpcId == 40000004)
