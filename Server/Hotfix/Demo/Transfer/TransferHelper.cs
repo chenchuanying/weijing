@@ -315,7 +315,7 @@ namespace ET
                         if (localDungeon != null && localDungeon.FubenDifficulty != request.Difficulty)
                         {
                             //int diff = Math.Max(localDungeon.FubenDifficulty, request.Difficulty);
-                            request.Difficulty = request.Difficulty;
+                            request.Difficulty = localDungeon.FubenDifficulty;
                             Console.WriteLine($"FubenDifficulty != request.Difficulty: {unit.Id}  {localDungeon.FubenDifficulty} {request.Difficulty}");
                         }
                         else

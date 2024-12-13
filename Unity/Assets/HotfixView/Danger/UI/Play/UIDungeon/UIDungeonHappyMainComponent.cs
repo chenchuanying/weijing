@@ -117,7 +117,8 @@ namespace ET
                 }
                 else
                 {
-                    EnterFubenHelp.RequestTransfer(self.ZoneScene(), SceneTypeEnum.LocalDungeon, sceneid, 0, "0").Coroutine();
+                    MapComponent mapComponent = self.ZoneScene().GetComponent<MapComponent>();
+                    EnterFubenHelp.RequestTransfer(self.ZoneScene(), SceneTypeEnum.LocalDungeon, sceneid, mapComponent.FubenDifficulty, "0").Coroutine();
                 }
                 return;
             }
