@@ -22,7 +22,7 @@ namespace ET
             }
             catch (Exception ex)
             {
-                Log.Warning("邮件发送失败！" + ex.ToString());
+                Log.Warning("邮件发送失败！" + ex.ToString() + "   " + request.MailInfo);
                 errorCode = ErrorCode.ERR_Parameter;
             }
 

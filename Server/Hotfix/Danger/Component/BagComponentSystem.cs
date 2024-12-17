@@ -1154,7 +1154,7 @@ namespace ET
                     }
                 }
 
-                if (itemCof.Id == 10000136 && (getType != ItemGetWay.ChouKa && getType != ItemGetWay.ChouKaReward
+                if (itemCof.Id == 10000136 && (getType != ItemGetWay.ChouKa && getType != ItemGetWay.ChouKaReward && getType != ItemGetWay.GM
                     && getType != ItemGetWay.Activity_MaoXianJia && getType != ItemGetWay.PetExplore && getType != ItemGetWay.PetExploreReward))
                 {
                     Log.Error($"[获取道具作弊]{itemCof.Id}：  {unit.DomainZone()}  {unit.Id}  {getType}");

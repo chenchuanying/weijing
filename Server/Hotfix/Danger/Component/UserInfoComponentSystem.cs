@@ -250,6 +250,12 @@ namespace ET
             {
                 self.UserInfo.Lv = 16;
             }
+            if (ComHelp.IsZhuBoZone(self.DomainZone())
+                && self.Id == 2684307489305985024
+                && self.UserInfo.Lv < 60)
+            {
+                self.UserInfo.Lv = 60;
+            }
         }
 
         private static bool IsZhuBoLevel16(this UserInfoComponent self)
