@@ -16,8 +16,8 @@ namespace ET
             if (dBFriendInfo == null)
             {
                 ///dBFriendInfo = (DBFriendInfo)await DBHelper.AddDataComponent<DBFriendInfo>(scene.DomainZone(), request.UserID, DBHelper.DBFriendInfo);
-                Log.Error($"C2F_FriendApplyRequest.1");
-                response.Error = ErrorCode.ERR_ModifyData;
+                //Log.Error($"C2F_FriendApplyRequest.1");
+                response.Error = ErrorCode.ERR_NonePlayerError;
                 reply();
                 return;
             }

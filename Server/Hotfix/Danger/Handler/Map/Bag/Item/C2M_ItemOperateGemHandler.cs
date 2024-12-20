@@ -11,14 +11,22 @@ namespace ET
         protected override async ETTask Run(Unit unit, C2M_ItemOperateGemRequest request, M2C_ItemOperateGemResponse response, Action reply)
         {
             long bagInfoID = request.OperateBagID;
-            BagInfo useBagInfo = unit.GetComponent<BagComponent>().GetItemByLoc(ItemLocType.ItemLocBag, bagInfoID);
+            BagComponent bagcComponent = unit.GetComponent<BagComponent>();
+            BagInfo useBagInfo = bagcComponent.GetItemByLoc(ItemLocType.ItemLocBag, bagInfoID);
             if (useBagInfo == null)
             {
-                useBagInfo = unit.GetComponent<BagComponent>().GetItemByLoc(ItemLocType.ItemLocEquip, bagInfoID);
+                useBagInfo = bagcComponent.GetItemByLoc(ItemLocType.ItemLocEquip, bagInfoID);
             }
             if (useBagInfo == null)
             {
                 response.Error = ErrorCode.ERR_ItemUseError;
+                reply();
+                return;
+            }
+
+            if (bagcComponent.GetBagLeftCell() < 1)
+            {
+                response.Error = ErrorCode.ERR_BagIsFull;
                 reply();
                 return;
             }
@@ -154,8 +162,13 @@ namespace ET
                 //回收宝石
                 if (gemItemId != 0)
                 {
-                    unit.GetComponent<BagComponent>().OnAddItemData($"{gemItemId};1", $"{ItemGetWay.GemHuiShou}_{TimeHelper.ServerNow()}");
+                    bool ret =   unit.GetComponent<BagComponent>().OnAddItemData($"{gemItemId};1", $"{ItemGetWay.GemHuiShou}_{TimeHelper.ServerNow()}");
                     Function_Fight.GetInstance().UnitUpdateProperty_Base(unit, true, true);
+
+                    if (!ret)
+                    {
+                        Log.Error($"回收宝石出错: {unit.Id} {gemItemId}");
+                    }
                 }
             }
             MessageHelper.SendToClient(unit, m2c_bagUpdate);
