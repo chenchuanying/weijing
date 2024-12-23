@@ -56,26 +56,26 @@ namespace ET
 
             long unitid = DBHelper.DebugUnitId;
             // int n = (int)((unitid / 99) % 4);
-            Log.Console($"unit.zone1112: {UnitIdStruct.GetUnitZone(unitid)}");
-            Console.WriteLine($"unit.zone1112: {UnitIdStruct.GetUnitZone(unitid)}");
+            Log.Console($"unit.zone1230: {UnitIdStruct.GetUnitZone(unitid)}");
+            Console.WriteLine($"unit.zone1230: {UnitIdStruct.GetUnitZone(unitid)}");
 
             switch (Game.Options.AppType)
             {
                 case AppType.Server:
                 {
-                    if (!string.IsNullOrEmpty(Game.Options.Parameters))
-                    {
-                        DyncCSHelper.Test_2(Game.Options.Parameters);
-                    }
-                    Game.Scene.AddComponent<NetInnerComponent, IPEndPoint, int>(processConfig.InnerIPPort, SessionStreamDispatcherType.SessionStreamDispatcherServerInner);
+                        if (!string.IsNullOrEmpty(Game.Options.Parameters))
+                        {
+                            DyncCSHelper.Test_2(Game.Options.Parameters);
+                        }
+                        Game.Scene.AddComponent<NetInnerComponent, IPEndPoint, int>(processConfig.InnerIPPort, SessionStreamDispatcherType.SessionStreamDispatcherServerInner);
 
-                    var processScenes = StartSceneConfigCategory.Instance.GetByProcess(Game.Options.Process);
-                    foreach (StartSceneConfig startConfig in processScenes)
-                    {
-                         SceneFactory.Create(Game.Scene, startConfig.Id, startConfig.InstanceId, startConfig.Zone, startConfig.Name,
-                            startConfig.Type, startConfig);
-                    }
-                    break;
+                        var processScenes = StartSceneConfigCategory.Instance.GetByProcess(Game.Options.Process);
+                        foreach (StartSceneConfig startConfig in processScenes)
+                        {
+                            SceneFactory.Create(Game.Scene, startConfig.Id, startConfig.InstanceId, startConfig.Zone, startConfig.Name,
+                               startConfig.Type, startConfig);
+                        }
+                        break;
                 }
                 case AppType.MergeZone:
                     //Parameters=31_30   31区合并到30区
