@@ -13,6 +13,14 @@ namespace ET
 
         private async ETTask RunAsync(EventType.LoginError args)
         {
+            if (args.ErrorCore == ErrorCode.ERR_LoginInfoExpire)
+            {
+                UI uilogin = UIHelper.GetUI( args.ZoneScene, UIType.UILogin );
+                if (uilogin!=null)
+                {
+                    uilogin.GetComponent<UILoginComponent>().OnRegister();
+                }
+            }
             if (args.ErrorCore == ErrorCode.ERR_FangChengMi_Tip1)
             {
                 string content = ErrorHelp.Instance.ErrorHintList[args.ErrorCore];

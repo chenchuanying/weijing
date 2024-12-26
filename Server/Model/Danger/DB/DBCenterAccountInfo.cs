@@ -35,6 +35,8 @@ namespace ET
 
         public string BanAccount;  //关联封禁帐号
 
+        public string DeviceID;
+
         public List<KeyValuePairLong> CreateRoleList = new List<KeyValuePairLong>();
 
 

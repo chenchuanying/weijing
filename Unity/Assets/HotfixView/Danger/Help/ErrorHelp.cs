@@ -22,7 +22,8 @@ namespace ET
             ErrorHintList.Add(ErrorCode.ERR_RequestRepeatedly, "请求重复");
             ErrorHintList.Add(ErrorCode.ERR_EnterQueue, "服务器已满,进入排队系统");
             ErrorHintList.Add(ErrorCode.ERR_RequestExitFuben, "请先退出副本");
-     
+            ErrorHintList.Add(ErrorCode.ERR_LoginInfoExpire, "请重新登陆！");
+
             ErrorHintList.Add(ErrorCode.ERR_StopServer, "停服维护");
             ErrorHintList.Add(ErrorCode.ERR_BingPhoneError_1, "手机号已经注册过账号");
             ErrorHintList.Add(ErrorCode.ERR_BingPhoneError_2, "手机号只能绑定一个账号");

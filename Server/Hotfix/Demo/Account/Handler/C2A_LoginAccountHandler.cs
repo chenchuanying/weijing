@@ -18,7 +18,7 @@ namespace ET
                     return;
                 }
                 session.RemoveComponent<SessionAcceptTimeoutComponent>();
-
+               
                 if (session.GetComponent<SessionLockingComponent>() != null)
                 {
                     response.Error = ErrorCode.ERR_RequestRepeatedly;
@@ -133,10 +133,20 @@ namespace ET
                             {
                                 AccountName = request.AccountName,
                                 Password = request.Password,
-                                ThirdLogin = request.ThirdLogin
+                                ThirdLogin = request.ThirdLogin,
+                                DeviceID = request.DeviceID
                             });
-                            PlayerInfo playerInfo = centerAccount.PlayerInfo != null ? centerAccount.PlayerInfo : null;
 
+                            if (centerAccount.Error == ErrorCode.ERR_LoginInfoExpire)
+                            {
+                                Log.Console($"ErrorCode.ERR_LoginInfoExpire: {request.AccountName}");
+                                response.Error = ErrorCode.ERR_LoginInfoExpire;
+                                reply();
+                                session.Disconnect().Coroutine();
+                                return;
+                            }
+
+                            PlayerInfo playerInfo = centerAccount.PlayerInfo != null ? centerAccount.PlayerInfo : null;
                             //没有则注册
                             if (centerAccount.PlayerInfo == null)
                             {

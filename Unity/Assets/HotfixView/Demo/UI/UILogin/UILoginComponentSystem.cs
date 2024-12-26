@@ -778,8 +778,16 @@ namespace ET
 
 		public static void OnButtonCommitCode(this UILoginComponent self)
 		{
-			string phone = self.PhoneNumber.GetComponent<InputField>().text;
-			string code =  self.TextPhoneCode.GetComponent<InputField>().text;
+            string phone = self.PhoneNumber.GetComponent<InputField>().text;
+            string code = self.TextPhoneCode.GetComponent<InputField>().text;
+            if (GlobalHelp.IsEditorMode)
+			{
+#if UNITY_EDITOR
+				self.OnCommitCodeHandler(phone);
+                return;
+#endif
+			}
+
             GlobalHelp.OnButtonCommbitCode(self.OnCommitCodeHandler, phone, code);
 		}
 

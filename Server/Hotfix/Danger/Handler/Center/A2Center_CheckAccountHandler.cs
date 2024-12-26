@@ -28,10 +28,7 @@ namespace ET
             DBCenterAccountInfo dBCenterAccountInfo = centerAccountInfoList != null && centerAccountInfoList.Count > 0 ? centerAccountInfoList[0] : null;
             response.PlayerInfo = dBCenterAccountInfo != null ? dBCenterAccountInfo.PlayerInfo : null;
             response.AccountId = dBCenterAccountInfo != null ? dBCenterAccountInfo.Id : 0;
-            //if (dBCenterAccountInfo != null && dBCenterAccountInfo.AccountType == (int)AccountType.Delete)
-            //{
-            //    response.PlayerInfo = null;
-            //}
+            
             if (response.PlayerInfo != null)
             {
                 for (int i = 0; i < response.PlayerInfo.RechargeInfos.Count; i++)
@@ -51,10 +48,28 @@ namespace ET
                     response.TaprepRequest = dBCenterTaprep.callback;
                 }
             }
-
+     
             response.IsHoliday = scene.GetComponent<FangChenMiComponent>().IsHoliday;
             response.StopServer = scene.GetComponent<FangChenMiComponent>().StopServer;
             response.Message = dBCenterAccountInfo!=null? dBCenterAccountInfo.AccountType.ToString():string.Empty;
+
+
+            if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(dBCenterAccountInfo.DeviceID) && !dBCenterAccountInfo.DeviceID.Equals(request.DeviceID))
+            {
+                if (request.ThirdLogin == "3" || request.ThirdLogin == "4")
+                {
+                    response.Error = ErrorCode.ERR_LoginInfoExpire;
+                    Console.WriteLine($"无效设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
+                }
+            }
+            if (dBCenterAccountInfo != null && (string.IsNullOrEmpty(dBCenterAccountInfo.DeviceID) || !dBCenterAccountInfo.DeviceID.Equals(request.DeviceID)))
+            {
+                dBCenterAccountInfo.DeviceID = request.DeviceID;    
+                await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, dBCenterAccountInfo);
+
+                Console.WriteLine($"更新设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
+            }
+           
             reply();
             await ETTask.CompletedTask;
         }
