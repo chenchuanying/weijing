@@ -379,14 +379,12 @@ namespace ET
             serverItems_1.Add(new ServerItem() { ServerId = 131, ServerIp = $"{ip}:20515", ServerName = "花满楼", ServerOpenTime = 1732878000000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 132, ServerIp = $"{ip}:20445", ServerName = "星辰之怒", ServerOpenTime = 1733482800000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 133, ServerIp = $"{ip}:20495", ServerName = "奇迹之光", ServerOpenTime = 1734087600000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
-
-
-            //2024/12/20 19:00:00 1734692400000 新区 风暴之怒 134
-            //2024/12/20 19:00:00 1734692400000 合区 萤火森林-长风破浪 97/101
-            //2024/12/20 19:00:00 1734692400000 合区 朝花夕拾-龙焰平原 117/119
-            //2024/12/20 19:00:00 1734692400000 合区 断桥残雪-南屏晚钟 125/126
-            //2024/12/20 19:00:00 1734692400000 合区 璀璨梦境-永恒结界 127/129
             serverItems_1.Add(new ServerItem() { ServerId = 134, ServerIp = $"{ip}:20565", ServerName = "风暴之怒", ServerOpenTime = 1734692400000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
+
+
+            //2024/12/27 19:00:00 1735297200000 新区 永恒之境 135
+            //2024/12/27 19:00:00 1735297200000 合区 XXXX-YYYY X/Y
+            serverItems_1.Add(new ServerItem() { ServerId = 135, ServerIp = $"{ip}:20405", ServerName = "永恒之境", ServerOpenTime = 1735297200000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
 
 
             ///PlatformHelper.GetPlatformName(); 所有渠道ID定义
