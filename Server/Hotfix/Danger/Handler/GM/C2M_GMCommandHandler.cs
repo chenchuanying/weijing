@@ -169,7 +169,7 @@ namespace ET
 					unit.GetComponent<TaskComponent>().CompletCurrentTask();
 					return;
 				}
-				if (message.GMMsg.Contains("#addack"))  //#addack#30090010
+				if (message.GMMsg.Contains("#addack"))  //#addack#400000
                 {
 					int addAck = int.Parse(commands[2]);
 					unit.GetComponent<NumericComponent>().Set(NumericType.Extra_Buff_MaxAct_Add, addAck);
