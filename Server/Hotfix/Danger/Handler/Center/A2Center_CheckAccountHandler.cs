@@ -62,7 +62,7 @@ namespace ET
                     Console.WriteLine($"无效设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
                 }
             }
-            if (dBCenterAccountInfo != null && (string.IsNullOrEmpty(dBCenterAccountInfo.DeviceID) || !dBCenterAccountInfo.DeviceID.Equals(request.DeviceID)))
+            if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(request.DeviceID)  && !dBCenterAccountInfo.DeviceID.Equals(request.DeviceID))
             {
                 dBCenterAccountInfo.DeviceID = request.DeviceID;    
                 await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, dBCenterAccountInfo);
