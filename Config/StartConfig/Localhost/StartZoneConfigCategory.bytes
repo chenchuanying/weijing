@@ -108,10 +108,10 @@
 +jmongodb://localhost:27017/i"	WJBeta106
 +kmongodb://localhost:27017/i"	WJBeta107
 +lmongodb://localhost:27017/i"	WJBeta108
-+mmongodb://localhost:27017/m"	WJBeta109
-+nmongodb://localhost:27017/m"	WJBeta110
-+omongodb://localhost:27017/m"	WJBeta111
-+pmongodb://localhost:27017/m"	WJBeta112
++mmongodb://localhost:27017/i"	WJBeta109
++nmongodb://localhost:27017/i"	WJBeta110
++omongodb://localhost:27017/i"	WJBeta111
++pmongodb://localhost:27017/i"	WJBeta112
 +qmongodb://localhost:27017/q"	WJBeta113
 +rmongodb://localhost:27017/q"	WJBeta114
 +smongodb://localhost:27017/q"	WJBeta115
@@ -129,11 +129,12 @@
 +mongodb://localhost:27017/"	WJBeta127
 -Ämongodb://localhost:27017/Ä"	WJBeta128
 ,Åmongodb://localhost:27017/"	WJBeta129
--Çmongodb://localhost:27017/Ç"	WJBeta130
+,Çmongodb://localhost:27017/"	WJBeta130
 -Émongodb://localhost:27017/É"	WJBeta131
--Ñmongodb://localhost:27017/Ñ"	WJBeta132
+-Ñmongodb://localhost:27017/É"	WJBeta132
 -Ömongodb://localhost:27017/Ö"	WJBeta133
 -Ümongodb://localhost:27017/Ü"	WJBeta134
 -ámongodb://localhost:27017/á"	WJBeta135
+-àmongodb://localhost:27017/à"	WJBeta136
 5 mongodb://localhost:27017/ "WJBeta202(center)
 4Àmongodb://localhost:27017/À"WJBeta203(robot)
