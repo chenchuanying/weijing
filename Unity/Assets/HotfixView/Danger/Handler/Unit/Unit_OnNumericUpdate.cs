@@ -166,6 +166,7 @@ namespace ET
                     zoneScene.GetComponent<UserInfoComponent>().ClearDayData();
                     zoneScene.GetComponent<TaskComponent>().OnZeroClockUpdate();
                     zoneScene.GetComponent<ActivityComponent>().OnZeroClockUpdate();
+                    zoneScene.GetComponent<AccountInfoComponent>().TodayCreateRole = 0;
                     UIHelper.GetUI(zoneScene, UIType.UIMain).GetComponent<UIMainComponent>().OnZeroClockUpdate();
                     break;
                 case NumericType.HongBao:

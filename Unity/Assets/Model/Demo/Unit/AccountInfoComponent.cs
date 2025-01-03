@@ -24,6 +24,8 @@ namespace ET
 
 		public string TaprepRequest;
 
+		public int TodayCreateRole;
+
         //当前登录角色
         public int ServerId;
 		public string ServerIp;

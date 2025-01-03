@@ -158,6 +158,7 @@ message Center2A_CheckAccount // IActorResponse
 	bool IsHoliday = 3;
 	bool StopServer = 4;
 	string TaprepRequest = 5;
+	int32 TodayCreateRole = 13;
 }
 
 //ResponseType Center2A_SaveAccount

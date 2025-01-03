@@ -198,6 +198,25 @@ namespace ET
                 FloatTipManager.Instance.ShowFloatTip(GameSettingLanguge.LoadLocalization("已掉线，请重新连接!"));
                 return;
             }
+
+
+            int TodayCreateRole = self.ZoneScene().GetComponent<AccountInfoComponent>().TodayCreateRole;
+            if (TodayCreateRole < 5)
+            {
+                self.RequestCreateRole(createName).Coroutine();
+            }
+            else
+            {
+                PopupTipHelp.OpenPopupTip(self.ZoneScene(), "系统提示", $"每天只能建立8个角色,当前已经创建了{TodayCreateRole}个角色", () =>
+                {
+                    self.RequestCreateRole(createName).Coroutine();
+                }, null).Coroutine();
+
+            }
+        }
+
+        public static async ETTask RequestCreateRole(this UICreateRoleComponent self, string createName)
+        {
             long instanceid = self.InstanceId;
             A2C_CreateRoleData g2cCreateRole = await LoginHelper.CreateRole(self.DomainScene(), self.Occ, createName);
             if (g2cCreateRole == null || g2cCreateRole.Error != 0 || instanceid != self.InstanceId)
@@ -206,6 +225,7 @@ namespace ET
             }
 
             self.DomainScene().GetComponent<AccountInfoComponent>().CreateRoleList.Add(g2cCreateRole.createRoleInfo);
+            self.ZoneScene().GetComponent<AccountInfoComponent>().TodayCreateRole++;
             UI uI = await UIHelper.Create(self.DomainScene(), UIType.UILobby);
             uI.GetComponent<UILobbyComponent>().OnCreateRoleData(g2cCreateRole.createRoleInfo, self.PageIndex);
 

@@ -192,7 +192,8 @@ namespace ET
                         //返回角色信息
                         CreateRoleInfo roleList = Function_Role.GetInstance().GetRoleListInfo(userInfo,  userId);
 						response.createRoleInfo = roleList;
-						reply();
+						response.TodayCreateRole = ComHelp.GetTodayCreateRoleNumber(centerAccountList[0].CreateRoleList);
+                        reply();
 					}
 				}
 			}

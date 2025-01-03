@@ -415,6 +415,7 @@ namespace ET
                             response.RoleLists.Add(roleList);
                         }
 
+                        response.TodayCreateRole = centerAccount.TodayCreateRole;
                         response.TaprepRequest = centerAccount.TaprepRequest;
                         response.PlayerInfo = centerPlayerInfo;
                         response.AccountId = account.Id;

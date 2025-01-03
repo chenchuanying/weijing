@@ -347,6 +347,9 @@ namespace ET
 		[ProtoMember(5)]
 		public string TaprepRequest { get; set; }
 
+		[ProtoMember(13)]
+		public int TodayCreateRole { get; set; }
+
 	}
 
 	[ResponseType(nameof(Center2A_SaveAccount))]

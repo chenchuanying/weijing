@@ -220,6 +220,9 @@ namespace ET
 		[ProtoMember(1)]
 		public CreateRoleInfo createRoleInfo { get; set; }
 
+		[ProtoMember(13)]
+		public int TodayCreateRole { get; set; }
+
 	}
 
 	[ResponseType(nameof(A2C_DeleteRoleData))]
@@ -1270,9 +1273,6 @@ namespace ET
 		[ProtoMember(12)]
 		public string OAID { get; set; }
 
-		[ProtoMember(13)]
-		public int TodayCreateRole { get; set; }
-
 	}
 
 	[Message(OuterOpcode.A2C_LoginAccount)]
@@ -1308,6 +1308,9 @@ namespace ET
 
 		[ProtoMember(10)]
 		public string TaprepRequest { get; set; }
+
+		[ProtoMember(13)]
+		public int TodayCreateRole { get; set; }
 
 	}
 
@@ -1685,9 +1688,6 @@ namespace ET
 
 		[ProtoMember(4)]
 		public long Money { get; set; }
-
-		[ProtoMember(13)]
-		public int TodayCreateRole { get; set; }
 
 	}
 

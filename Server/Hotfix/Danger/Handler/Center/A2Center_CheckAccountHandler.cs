@@ -57,10 +57,8 @@ namespace ET
             if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(dBCenterAccountInfo.DeviceID) &&  dBCenterAccountInfo.DeviceID != request.DeviceID)
             {
                 //if (request.ThirdLogin == "3" || request.ThirdLogin == "4")
-                {
-                    response.Error = ErrorCode.ERR_LoginInfoExpire;
-                    Console.WriteLine($"无效设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
-                }
+                response.Error = ErrorCode.ERR_LoginInfoExpire;
+                Console.WriteLine($"无效设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
             }
             if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(request.DeviceID)  && dBCenterAccountInfo.DeviceID!=request.DeviceID)
             {
@@ -69,7 +67,15 @@ namespace ET
 
                 Console.WriteLine($"更新设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
             }
-           
+            if (dBCenterAccountInfo != null)
+            {
+                response.TodayCreateRole = ComHelp.GetTodayCreateRoleNumber(dBCenterAccountInfo.CreateRoleList);
+            }
+            else
+            {
+                response.TodayCreateRole = 0;
+            }
+
             reply();
             await ETTask.CompletedTask;
         }

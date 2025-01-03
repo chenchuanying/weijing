@@ -105,6 +105,7 @@ message A2C_CreateRoleData // IResponse
 	int32 Error = 91;
 	string Message = 92;
 	CreateRoleInfo createRoleInfo = 1;
+	int32 TodayCreateRole = 13;
 }
 
 //ResponseType A2C_DeleteRoleData
@@ -625,7 +626,6 @@ message C2A_LoginAccount // IRequest
 	int32 Simulator = 7;
 	string DeviceID = 11;
 	string OAID = 12;
-	int32 TodayCreateRole = 13;
 }
 
 message A2C_LoginAccount // IResponse
@@ -642,6 +642,7 @@ message A2C_LoginAccount // IResponse
 	PlayerInfo PlayerInfo = 8;
 	repeated CreateRoleInfo RoleLists = 9;
 	string TaprepRequest = 10;
+	int32 TodayCreateRole = 13;
 }
 
 message A2C_Disconnect	//IMessage
@@ -818,7 +819,6 @@ message G2C_CreateRole // IResponse
 	int32 RoleLv = 2;
 	int64 RoleLvExp = 3;
 	int64 Money = 4;
-	int32 TodayCreateRole = 13;
 }
 
 message M2C_PetDataUpdate // IActorMessage
