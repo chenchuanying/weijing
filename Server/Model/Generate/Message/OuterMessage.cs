@@ -1270,6 +1270,9 @@ namespace ET
 		[ProtoMember(12)]
 		public string OAID { get; set; }
 
+		[ProtoMember(13)]
+		public int TodayCreateRole { get; set; }
+
 	}
 
 	[Message(OuterOpcode.A2C_LoginAccount)]
@@ -1682,6 +1685,9 @@ namespace ET
 
 		[ProtoMember(4)]
 		public long Money { get; set; }
+
+		[ProtoMember(13)]
+		public int TodayCreateRole { get; set; }
 
 	}
 
