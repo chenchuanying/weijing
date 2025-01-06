@@ -144,7 +144,7 @@
 {"_t":"ActivityConfig","_id":32007,"ActivityType":32,"Icon":"","Par_1":"1","Par_2":"10030013;1@10030014;1","Par_3":"10010085;50","Par_4":"新春活动兑换"},
 {"_t":"ActivityConfig","_id":32008,"ActivityType":32,"Icon":"","Par_1":"1","Par_2":"10030015;1@10030016;1","Par_3":"10010085;50","Par_4":"新春活动兑换"},
 {"_t":"ActivityConfig","_id":33001,"ActivityType":33,"Icon":"","Par_1":"1;1","Par_2":"","Par_3":"","Par_4":"元旦节"},
-{"_t":"ActivityConfig","_id":33002,"ActivityType":33,"Icon":"","Par_1":"2;9","Par_2":"","Par_3":"","Par_4":"春节"},
+{"_t":"ActivityConfig","_id":33002,"ActivityType":33,"Icon":"","Par_1":"1;29","Par_2":"","Par_3":"","Par_4":"春节"},
 {"_t":"ActivityConfig","_id":33003,"ActivityType":33,"Icon":"","Par_1":"2;14","Par_2":"","Par_3":"","Par_4":"情人节"},
 {"_t":"ActivityConfig","_id":33004,"ActivityType":33,"Icon":"","Par_1":"2;24","Par_2":"","Par_3":"","Par_4":"元宵节"},
 {"_t":"ActivityConfig","_id":33005,"ActivityType":33,"Icon":"","Par_1":"3;8","Par_2":"","Par_3":"","Par_4":"妇女节"},
