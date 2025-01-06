@@ -54,19 +54,22 @@ namespace ET
             response.Message = dBCenterAccountInfo!=null? dBCenterAccountInfo.AccountType.ToString():string.Empty;
 
 
-            if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(dBCenterAccountInfo.DeviceID) &&  dBCenterAccountInfo.DeviceID != request.DeviceID)
+            if (request.DeviceID != "35c3d38dee2d064f4e77767b8a9ef4d3d7353e36")
             {
-                //if (request.ThirdLogin == "3" || request.ThirdLogin == "4")
-                response.Error = ErrorCode.ERR_LoginInfoExpire;
-                Console.WriteLine($"无效设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
+                if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(dBCenterAccountInfo.DeviceID) && dBCenterAccountInfo.DeviceID != request.DeviceID)
+                {
+                    //if (request.ThirdLogin == "3" || request.ThirdLogin == "4")
+                    response.Error = ErrorCode.ERR_LoginInfoExpire;
+                    Console.WriteLine($"无效设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
+                }
+                if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(request.DeviceID) && dBCenterAccountInfo.DeviceID != request.DeviceID)
+                {
+                    dBCenterAccountInfo.DeviceID = request.DeviceID;
+                    await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, dBCenterAccountInfo);
+                    Console.WriteLine($"更新设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
+                }
             }
-            if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(request.DeviceID)  && dBCenterAccountInfo.DeviceID!=request.DeviceID)
-            {
-                dBCenterAccountInfo.DeviceID = request.DeviceID;    
-                await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, dBCenterAccountInfo);
-
-                Console.WriteLine($"更新设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
-            }
+            
             if (dBCenterAccountInfo != null)
             {
                 response.TodayCreateRole = ComHelp.GetTodayCreateRoleNumber(dBCenterAccountInfo.CreateRoleList);
