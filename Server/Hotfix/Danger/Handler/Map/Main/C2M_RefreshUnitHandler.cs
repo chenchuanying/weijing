@@ -9,7 +9,7 @@ namespace ET
         protected override async ETTask Run(Unit unit, C2M_RefreshUnitRequest request)
         {
             M2C_CreateUnits createUnits = new M2C_CreateUnits();
-            Dictionary<long, AOIEntity> dict = unit.GetBeSeePlayers();
+            Dictionary<long, AOIEntity> dict = unit.GetSeeUnits();
             foreach (AOIEntity u in dict.Values)
             {
                 UnitHelper.GetUnitInfo(u.Unit, createUnits);

@@ -118,6 +118,11 @@ namespace ET
             return self.GetComponent<AOIEntity>().GetBeSeePlayers();
         }
 
+        public static Dictionary<long, AOIEntity> GetSeeUnits(this Unit self)
+        {
+            return self.GetComponent<AOIEntity>().GetSeeUnits();
+        }
+
         public static void NoticeUnitAdd(Unit unit, Unit sendUnit)
         {
             //非自己击杀的怪物。不同步
