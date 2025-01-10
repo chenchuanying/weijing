@@ -15,6 +15,7 @@ namespace ET
             "18319670288",          //唐
             "64800138035c4e5736112c0f" , //唐 taptap
             "7303474616922905355",  //唐 tiktok
+            "qq1DCADAC180C577AEDE05D15B788AE770",   //唐 qq
         };
 
         public static List<long> BanChatPlayer = new List<long>()

@@ -377,6 +377,7 @@ namespace ET
                 "test01",
                 "18652422521",
                 "18319670288",
+                "qq1DCADAC180C577AEDE05D15B788AE770",   //唐 qq
             };
             self.Btn_GM.SetActive(AdminAccount.Contains(self.ZoneScene().GetComponent<AccountInfoComponent>().Account));
             self.Button_ActivityV1.SetActive(GMHelp.GmAccount.Contains(self.ZoneScene().GetComponent<AccountInfoComponent>().Account));
