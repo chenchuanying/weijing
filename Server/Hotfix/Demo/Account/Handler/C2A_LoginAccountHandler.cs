@@ -264,6 +264,7 @@ namespace ET
                         }
                         
                         if (centerAccount.Message == "2"
+                            && !request.AccountName.Contains("testcn")
                             && !session.RemoteAddress.ToString().Contains("119.39.6.47")
                             && !session.RemoteAddress.ToString().Contains("119.39.6.77")
                             && !session.RemoteAddress.ToString().Contains("117.152.141.41")) //黑名单

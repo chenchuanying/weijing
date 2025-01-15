@@ -62,13 +62,13 @@ namespace ET
                             reply();
                             return;
                         }
-						if (ComHelp.GetTodayCreateRoleNumber(centerAccountList[0].CreateRoleList) >= 8)
+
+						if (!ComHelp.IsBanHaoZone(session.DomainZone()) &&  ComHelp.GetTodayCreateRoleNumber(centerAccountList[0].CreateRoleList) >= 8)
 						{
                             response.Error = ErrorCode.ERR_CreateRole_Limit;
                             reply();
                             return;
                         }
-
 
                         //if (request.CreateOcc == 4 && !GMHelp.GmAccount.Contains(centerAccountList[0].Account) && !centerAccountList[0].Account.Equals("wxoVumu0vBTnqtjfSv-3ppgR_vh7WQ"))
                         //{
@@ -77,15 +77,17 @@ namespace ET
                         //    return;
                         //}
 
-
                         long accountCrateTime = centerAccountList[0].CreateTime;
 						long serverNowTime = TimeHelper.ServerNow();
 						long serverOpenTime = ServerHelper.GetOpenServerTime(false, session.DomainZone());
-						if (!ComHelp.IsZhuBoZone(session.DomainZone()) && !centerAccountList[0].Password.Equals(ComHelp.RobotPassWord) && accountCrateTime > 0 && (accountCrateTime - serverOpenTime >= TimeHelper.OneDay * 14))
+						if (!ComHelp.IsBanHaoZone(session.DomainZone()) && !ComHelp.IsZhuBoZone(session.DomainZone()))
 						{
-                            response.Error = ErrorCode.ERR_CreateRole_Limit_2;
-                            reply();
-                            return;
+                            if (!centerAccountList[0].Password.Equals(ComHelp.RobotPassWord) && accountCrateTime > 0 && (accountCrateTime - serverOpenTime >= TimeHelper.OneDay * 14))
+                            {
+                                response.Error = ErrorCode.ERR_CreateRole_Limit_2;
+                                reply();
+                                return;
+                            }
                         }
                         //if (!centerAccountList[0].Password.Equals(ComHelp.RobotPassWord) && accountCrateTime == 0 && (serverNowTime - serverOpenTime >= TimeHelper.OneDay * 14))
                         //{

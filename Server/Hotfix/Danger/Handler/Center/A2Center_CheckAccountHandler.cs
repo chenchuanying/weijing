@@ -53,8 +53,7 @@ namespace ET
             response.StopServer = scene.GetComponent<FangChenMiComponent>().StopServer;
             response.Message = dBCenterAccountInfo!=null? dBCenterAccountInfo.AccountType.ToString():string.Empty;
 
-
-            if (request.DeviceID != "35c3d38dee2d064f4e77767b8a9ef4d3d7353e36")
+            if (request.DeviceID != "35c3d38dee2d064f4e77767b8a9ef4d3d7353e36" && !request.AccountName.Contains("testcn"))
             {
                 if (dBCenterAccountInfo != null && !string.IsNullOrEmpty(dBCenterAccountInfo.DeviceID) && dBCenterAccountInfo.DeviceID != request.DeviceID)
                 {
