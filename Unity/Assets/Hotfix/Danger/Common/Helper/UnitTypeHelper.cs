@@ -132,7 +132,7 @@ namespace ET
 
         public static long GetTeamId(this Unit self)
         {
-            return self.GetComponent<NumericComponent>().GetAsInt(NumericType.TeamId);
+            return self.GetComponent<NumericComponent>().GetAsLong(NumericType.TeamId);
         }
 
         public static long GetUnionId(this Unit self)
