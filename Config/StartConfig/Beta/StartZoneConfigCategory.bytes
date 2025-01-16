@@ -116,14 +116,14 @@
 +rmongodb://localhost:27017/q"	WJBeta114
 +smongodb://localhost:27017/q"	WJBeta115
 +tmongodb://localhost:27017/q"	WJBeta116
-+umongodb://localhost:27017/u"	WJBeta117
-+vmongodb://localhost:27017/u"	WJBeta118
-+wmongodb://localhost:27017/u"	WJBeta119
-+xmongodb://localhost:27017/u"	WJBeta120
++umongodb://localhost:27017/q"	WJBeta117
++vmongodb://localhost:27017/q"	WJBeta118
++wmongodb://localhost:27017/q"	WJBeta119
++xmongodb://localhost:27017/q"	WJBeta120
 +ymongodb://localhost:27017/y"	WJBeta121
 +zmongodb://localhost:27017/y"	WJBeta122
-+{mongodb://localhost:27017/{"	WJBeta123
-+|mongodb://localhost:27017/{"	WJBeta124
++{mongodb://localhost:27017/y"	WJBeta123
++|mongodb://localhost:27017/y"	WJBeta124
 +}mongodb://localhost:27017/}"	WJBeta125
 +~mongodb://localhost:27017/}"	WJBeta126
 +mongodb://localhost:27017/"	WJBeta127
@@ -133,9 +133,10 @@
 -ƒmongodb://localhost:27017/ƒ"	WJBeta131
 -„mongodb://localhost:27017/ƒ"	WJBeta132
 -…mongodb://localhost:27017/…"	WJBeta133
--†mongodb://localhost:27017/†"	WJBeta134
+-†mongodb://localhost:27017/…"	WJBeta134
 -‡mongodb://localhost:27017/‡"	WJBeta135
 -ˆmongodb://localhost:27017/ˆ"	WJBeta136
 -‰mongodb://localhost:27017/‰"	WJBeta137
+-Šmongodb://localhost:27017/Š"	WJBeta138
 5Êmongodb://localhost:27017/Ê"WJBeta202(center)
 4Ëmongodb://localhost:27017/Ë"WJBeta203(robot)
