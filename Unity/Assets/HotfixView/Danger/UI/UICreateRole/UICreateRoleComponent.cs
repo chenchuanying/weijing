@@ -213,6 +213,7 @@ namespace ET
                 }, null).Coroutine();
 
             }
+            await ETTask.CompletedTask;
         }
 
         public static async ETTask RequestCreateRole(this UICreateRoleComponent self, string createName)
