@@ -25,16 +25,23 @@ namespace ET
                 int bigversion = GlobalHelp.GetBigVersion();
 				int platform = GlobalHelp.GetPlatform();
 
+#if UNITY_IPHONE || UNITY_IOS
+				if(bigversion == 21 && Application.version == "2.2.0")
+				{
+					self.IOSReview = true;
+				}
+#endif
+
 #if UNITY_ANDROID
-    //            if (bigversion < 18)
-				//{
-				//	string apk_Extension = (platform == 5 || platform == 6) ? "tiktok" : "taptap";
-    //                apk_Extension  = apk_Extension  + ".apk";
-				//    string apk_Url =	"http://verification.weijinggame.com/weijing/apk/weijing_" + apk_Extension;
-    //                Application.OpenURL(apk_Url);	
-				//	return;
-				//}
-#endif 
+                //            if (bigversion < 18)
+                //{
+                //	string apk_Extension = (platform == 5 || platform == 6) ? "tiktok" : "taptap";
+                //                apk_Extension  = apk_Extension  + ".apk";
+                //    string apk_Url =	"http://verification.weijinggame.com/weijing/apk/weijing_" + apk_Extension;
+                //                Application.OpenURL(apk_Url);	
+                //	return;
+                //}
+#endif
 
                 self.InitSdk();
 				Application.runInBackground = true;
