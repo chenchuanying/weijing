@@ -46,6 +46,8 @@ namespace ET
         public Vector2 Img_backVector2;
         public float Lab_ItemNameWidth;
         public List<string> AssetPath = new List<string>();
+
+        public long LastGemTime = 0;
     }
 
     public class UIItemTipsComponentAwakeSystem : AwakeSystem<UIItemTipsComponent>
@@ -235,9 +237,20 @@ namespace ET
             self.OnCloseTips();
         }
 
-        public static void RequestXiangQianGem(this UIItemTipsComponent self, string usrPar)
+        public static async ETTask RequestXiangQianGem(this UIItemTipsComponent self, string usrPar)
         {
-            self.ZoneScene().GetComponent<BagComponent>().SendXiangQianGem(self.BagInfo, usrPar).Coroutine();
+            if (TimeHelper.ServerNow() - self.LastGemTime < 2000)
+            {
+                return;
+            }
+
+            self.LastGemTime = TimeHelper.ServerNow();
+            long intanceId = self.InstanceId;   
+            await self.ZoneScene().GetComponent<BagComponent>().SendXiangQianGem(self.BagInfo, usrPar);
+            if (intanceId != self.InstanceId)
+            {
+                return;
+            }
             //注销Tips
             self.OnCloseTips();
         }
@@ -385,12 +398,12 @@ namespace ET
                 {
                     PopupTipHelp.OpenPopupTip(self.ZoneScene(), "镶嵌宝石", "是否需要覆盖宝石?\n覆盖后原有位置得宝石会自动销毁哦!", () =>
                     {
-                        self.RequestXiangQianGem(usrPar);
+                        self.RequestXiangQianGem(usrPar).Coroutine();
                     }).Coroutine();
                 }
                 else
                 {
-                    self.RequestXiangQianGem(usrPar);
+                    self.RequestXiangQianGem(usrPar).Coroutine();
                 }
                 return;
             }
