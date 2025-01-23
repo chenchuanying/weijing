@@ -382,7 +382,7 @@ namespace ET
             serverItems_1.Add(new ServerItem() { ServerId = 137, ServerIp = $"{ip}:20445", ServerName = "千山万水", ServerOpenTime = 1736506800000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 138, ServerIp = $"{ip}:20455", ServerName = "凤凰于飞", ServerOpenTime = 1737111600000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
 
-
+           
             //2025/01/24 19:00:00 1737716400000 合区 a-b x/y
             //2025/01/24 19:00:00 1737716400000 新区 新区139 139
             serverItems_1.Add(new ServerItem() { ServerId = 139, ServerIp = $"{ip}:20475", ServerName = "新区139", ServerOpenTime = 1737716400000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
@@ -391,7 +391,7 @@ namespace ET
             //2025/02/07 19:00:00 1738926000000 新区 新区141 141
             serverItems_1.Add(new ServerItem() { ServerId = 141, ServerIp = $"{ip}:20525", ServerName = "新区141", ServerOpenTime = 1738926000000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
 
-
+            
             ///PlatformHelper.GetPlatformName(); 所有渠道ID定义
             List<int> allserverId = new List<int>();
             for (int i = 0; i < serverItems_1.Count; i++)
