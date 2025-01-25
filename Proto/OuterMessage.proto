@@ -982,6 +982,7 @@ message SkillInfo
 	int64 SkillBeginTime = 11;
 	int64 SkillEndTime = 12;
 	float SingValue = 13;
+	int32 SkillID = 14;
 }
 
 message C2M_CreateSpiling // IActorLocationMessage

@@ -2080,6 +2080,9 @@ namespace ET
 		[ProtoMember(13)]
 		public float SingValue { get; set; }
 
+		[ProtoMember(14)]
+		public int SkillID { get; set; }
+
 	}
 
 	[Message(OuterOpcode.C2M_CreateSpiling)]
