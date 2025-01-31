@@ -97,7 +97,7 @@ namespace ET
             }
             if (seasonOpenTime.KeyId == 4)
             {
-                self.SeasonText.GetComponent<Text>().text = "2024第五赛季";
+                self.SeasonText.GetComponent<Text>().text = "2025第一赛季";
             }
 
             int seasonExp = userInfo.SeasonExp;
