@@ -274,6 +274,9 @@ namespace ET
                 if (self.SkillSecond == 1)
                 {
                     //用二段技能
+                    SkillSetComponent skillSetComponent = self.ZoneScene().GetComponent<SkillSetComponent>();
+                    skillId = SkillHelp.GetNewSkill(skillSetComponent.SkillList, skillId);
+
                     skillId = (int)SkillConfigCategory.Instance.BuffSecondSkill[skillId].Value2;
                     skillManagerComponent.AddSkillSecond(self.SkillBaseConfig.Id, skillId);
                 }
