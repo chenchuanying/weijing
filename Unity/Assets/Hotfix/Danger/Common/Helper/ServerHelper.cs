@@ -381,17 +381,16 @@ namespace ET
             serverItems_1.Add(new ServerItem() { ServerId = 136, ServerIp = $"{ip}:20415", ServerName = "烽火狼烟", ServerOpenTime = 1735902000000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 137, ServerIp = $"{ip}:20445", ServerName = "千山万水", ServerOpenTime = 1736506800000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 138, ServerIp = $"{ip}:20455", ServerName = "凤凰于飞", ServerOpenTime = 1737111600000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
-
-
-            //2025/01/24 19:00:00 1737716400000 合区 a-b x/y
-            //2025/01/24 19:00:00 1737716400000 新区 吉祥如意 139
             serverItems_1.Add(new ServerItem() { ServerId = 139, ServerIp = $"{ip}:20475", ServerName = "吉祥如意", ServerOpenTime = 1737716400000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
-            //2025/01/31 19:00:00 1738321200000 新区 新年快乐 140
             serverItems_1.Add(new ServerItem() { ServerId = 140, ServerIp = $"{ip}:20505", ServerName = "新年快乐", ServerOpenTime = 1738321200000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
-            //2025/02/07 19:00:00 1738926000000 新区 吉祥如意 141
             serverItems_1.Add(new ServerItem() { ServerId = 141, ServerIp = $"{ip}:20525", ServerName = "恭喜发财", ServerOpenTime = 1738926000000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
 
-            
+
+            //2025/02/14 19:00:00 1739530800000 合区 a-b x/y
+            //2025/02/14 19:00:00 1739530800000 新区 元宵佳节 142
+            serverItems_1.Add(new ServerItem() { ServerId = 142, ServerIp = $"{ip}:20565", ServerName = "元宵佳节", ServerOpenTime = 1739530800000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
+
+
             ///PlatformHelper.GetPlatformName(); 所有渠道ID定义
             List<int> allserverId = new List<int>();
             for (int i = 0; i < serverItems_1.Count; i++)
