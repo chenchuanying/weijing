@@ -15982,41 +15982,6 @@ public:
 		m_Items[index] = value;
 	}
 };
-// System.Char[]
-struct CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34  : public RuntimeArray
-{
-public:
-	ALIGN_FIELD (8) Il2CppChar m_Items[1];
-
-public:
-	inline Il2CppChar GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline Il2CppChar* GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, Il2CppChar value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-	}
-	inline Il2CppChar GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline Il2CppChar* GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, Il2CppChar value)
-	{
-		m_Items[index] = value;
-	}
-};
 // System.Single[]
 struct SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA  : public RuntimeArray
 {
@@ -16048,6 +16013,41 @@ public:
 		return m_Items + index;
 	}
 	inline void SetAtUnchecked(il2cpp_array_size_t index, float value)
+	{
+		m_Items[index] = value;
+	}
+};
+// System.Char[]
+struct CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34  : public RuntimeArray
+{
+public:
+	ALIGN_FIELD (8) Il2CppChar m_Items[1];
+
+public:
+	inline Il2CppChar GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline Il2CppChar* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, Il2CppChar value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline Il2CppChar GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Il2CppChar* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Il2CppChar value)
 	{
 		m_Items[index] = value;
 	}
@@ -16883,6 +16883,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_mC0995D847F6A95B1A55
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Range__ctor_mBBEF6A111D88427B1386873EE4010321D8F496EA (Range_t5B1117332C99FDF3C5879023136D29BA339EE18E * __this, uint32_t ___index0, uint32_t ___length1, const RuntimeMethod* method);
 // System.Void ILRuntime.Mono.Cecil.ReaderParameters::.ctor(ILRuntime.Mono.Cecil.ReadingMode)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReaderParameters__ctor_mF5DAEB6F47E6EE0C29E55F117E0183614B281EEF (ReaderParameters_t39538322F7391F4DF92AA864E8DD625EFA05BD67 * __this, int32_t ___readingMode0, const RuntimeMethod* method);
+// System.IntPtr ET.Recast::RecastLoad(System.Int32,System.Byte[],System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Recast_RecastLoad_mE34FB5DF3C3DBF8DBDCB83C107617658786FA5D8 (int32_t ___id0, ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* ___buffer1, int32_t ___n2, const RuntimeMethod* method);
+// System.Int64 System.IntPtr::ToInt64()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t IntPtr_ToInt64_m521F809F5D9ECAF93E808CFFFE45F67620C7879A (intptr_t* __this, const RuntimeMethod* method);
+// System.IntPtr ET.Recast::RecastGet(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Recast_RecastGet_mB8CB482910FA964130F7EF47E2B38C144AA9870D (int32_t ___id0, const RuntimeMethod* method);
+// System.Int32 System.IntPtr::ToInt32()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t IntPtr_ToInt32_m94C1C0E438A3B7E040B0A087FDDC0D4F90BABB08 (intptr_t* __this, const RuntimeMethod* method);
+// System.Void System.IntPtr::.ctor(System.Int64)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IntPtr__ctor_m2CDDF5A1715E7BCFDFB6823D7A18339BD8EB0E90 (intptr_t* __this, int64_t ___value0, const RuntimeMethod* method);
+// System.Int32 ET.Recast::RecastFind(System.IntPtr,System.Single[],System.Single[],System.Single[],System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFind_m7B4B5F20F901D108AB4CC7BE4BDB8001E2D9F2BD (intptr_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___startPos2, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___endPos3, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___straightPath4, const RuntimeMethod* method);
+// System.Int32 ET.Recast::RecastFindNearestPoint(System.IntPtr,System.Single[],System.Single[],System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindNearestPoint_mBD346906C44FC16214864666C974BB818852090C (intptr_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___pos2, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___nearestPos3, const RuntimeMethod* method);
+// System.Int32 ET.Recast::RecastFindRandomPointAroundCircle(System.IntPtr,System.Single[],System.Single[],System.Single,System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindRandomPointAroundCircle_m6B2EE2981361A463FDC71FBBA8192936F055C94B (intptr_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___centerPos2, float ___radius3, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___randomPos4, const RuntimeMethod* method);
+// System.Int32 ET.Recast::RecastFindRandomPoint(System.IntPtr,System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindRandomPoint_mEC80012030D47EC1A1DD8CF8F8F6C55ED2181321 (intptr_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___randomPos1, const RuntimeMethod* method);
 // System.Boolean ET.RecastInterface::recast_init()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RecastInterface_recast_init_m67DB56B8A919E829B7100B7B4710BDF5E85539F6 (const RuntimeMethod* method);
 // System.Void ET.RecastInterface::recast_fini()
@@ -17825,6 +17843,13 @@ inline void Collection_1_Add_m398EFED88893C7691D1C4F8E3085350CBB5525C9 (Collecti
 {
 	((  void (*) (Collection_1_t1A95BA714B557BCB8D6E3DE6D37A9941E0C255BD *, SequencePoint_tCD20E14B7F2A8119F93C468F9B96C49AE26E9029 *, const RuntimeMethod*))Collection_1_Add_mD3FFE86C60B42194144363BB7C64A6DA7AC14079_gshared)(__this, ___item0, method);
 }
+IL2CPP_EXTERN_C intptr_t CDECL RecastLoad(int32_t, uint8_t*, int32_t);
+IL2CPP_EXTERN_C intptr_t CDECL RecastGet(int32_t);
+IL2CPP_EXTERN_C void CDECL RecastClear();
+IL2CPP_EXTERN_C int32_t CDECL RecastFind(intptr_t, float*, float*, float*, float*);
+IL2CPP_EXTERN_C int32_t CDECL RecastFindNearestPoint(intptr_t, float*, float*, float*);
+IL2CPP_EXTERN_C int32_t CDECL RecastFindRandomPointAroundCircle(intptr_t, float*, float*, float, float*);
+IL2CPP_EXTERN_C int32_t CDECL RecastFindRandomPoint(intptr_t, float*);
 IL2CPP_EXTERN_C void DEFAULT_CALL __iosGetversion(char*);
 IL2CPP_EXTERN_C void DEFAULT_CALL __iosGetsupportedcountrycode(char*);
 IL2CPP_EXTERN_C void DEFAULT_CALL __iosGetmobileauthtoken(char*);
@@ -24017,12 +24042,259 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReaderParameters__ctor_mF5DAEB6F47E6EE0C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.IntPtr ET.Recast::RecastLoad(System.Int32,System.Byte[],System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Recast_RecastLoad_mE34FB5DF3C3DBF8DBDCB83C107617658786FA5D8 (int32_t ___id0, ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* ___buffer1, int32_t ___n2, const RuntimeMethod* method)
+{
+	typedef intptr_t (CDECL *PInvokeFunc) (int32_t, uint8_t*, int32_t);
+
+	// Marshaling of parameter '___buffer1' to native representation
+	uint8_t* ____buffer1_marshaled = NULL;
+	if (___buffer1 != NULL)
+	{
+		____buffer1_marshaled = reinterpret_cast<uint8_t*>((___buffer1)->GetAddressAtUnchecked(0));
+	}
+
+	// Native function invocation
+	intptr_t returnValue = reinterpret_cast<PInvokeFunc>(RecastLoad)(___id0, ____buffer1_marshaled, ___n2);
+
+	return returnValue;
+}
 // System.Int64 ET.Recast::RecastLoadLong(System.Int32,System.Byte[],System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t Recast_RecastLoadLong_mDF927918F2A80CBB7EE8DEF691CDC193824FDEB3 (int32_t ___id0, ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* ___buffer1, int32_t ___n2, const RuntimeMethod* method)
 {
+	intptr_t V_0;
+	memset((&V_0), 0, sizeof(V_0));
 	{
-		// return 1;// RecastLoad(id, buffer, n).ToInt64();
-		return ((int64_t)((int64_t)1));
+		// return RecastLoad(id, buffer, n).ToInt64();
+		int32_t L_0 = ___id0;
+		ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* L_1 = ___buffer1;
+		int32_t L_2 = ___n2;
+		intptr_t L_3;
+		L_3 = Recast_RecastLoad_mE34FB5DF3C3DBF8DBDCB83C107617658786FA5D8(L_0, L_1, L_2, /*hidden argument*/NULL);
+		V_0 = (intptr_t)L_3;
+		int64_t L_4;
+		L_4 = IntPtr_ToInt64_m521F809F5D9ECAF93E808CFFFE45F67620C7879A((intptr_t*)(&V_0), /*hidden argument*/NULL);
+		return L_4;
+	}
+}
+// System.IntPtr ET.Recast::RecastGet(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Recast_RecastGet_mB8CB482910FA964130F7EF47E2B38C144AA9870D (int32_t ___id0, const RuntimeMethod* method)
+{
+	typedef intptr_t (CDECL *PInvokeFunc) (int32_t);
+
+	// Native function invocation
+	intptr_t returnValue = reinterpret_cast<PInvokeFunc>(RecastGet)(___id0);
+
+	return returnValue;
+}
+// System.Int64 ET.Recast::RecastGetLong(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t Recast_RecastGetLong_m7D92DE57A5A1DBC2497C047F16CAE0F18E11B2DE (int32_t ___id0, const RuntimeMethod* method)
+{
+	intptr_t V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		// return RecastGet(id).ToInt32();
+		int32_t L_0 = ___id0;
+		intptr_t L_1;
+		L_1 = Recast_RecastGet_mB8CB482910FA964130F7EF47E2B38C144AA9870D(L_0, /*hidden argument*/NULL);
+		V_0 = (intptr_t)L_1;
+		int32_t L_2;
+		L_2 = IntPtr_ToInt32_m94C1C0E438A3B7E040B0A087FDDC0D4F90BABB08((intptr_t*)(&V_0), /*hidden argument*/NULL);
+		return ((int64_t)((int64_t)L_2));
+	}
+}
+// System.Void ET.Recast::RecastClear()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Recast_RecastClear_mB642A7330ED87F0D3B58EAE7FCC176899BC2F0CD (const RuntimeMethod* method)
+{
+	typedef void (CDECL *PInvokeFunc) ();
+
+	// Native function invocation
+	reinterpret_cast<PInvokeFunc>(RecastClear)();
+
+}
+// System.Int32 ET.Recast::RecastFind(System.IntPtr,System.Single[],System.Single[],System.Single[],System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFind_m7B4B5F20F901D108AB4CC7BE4BDB8001E2D9F2BD (intptr_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___startPos2, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___endPos3, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___straightPath4, const RuntimeMethod* method)
+{
+	typedef int32_t (CDECL *PInvokeFunc) (intptr_t, float*, float*, float*, float*);
+
+	// Marshaling of parameter '___extents1' to native representation
+	float* ____extents1_marshaled = NULL;
+	if (___extents1 != NULL)
+	{
+		____extents1_marshaled = reinterpret_cast<float*>((___extents1)->GetAddressAtUnchecked(0));
+	}
+
+	// Marshaling of parameter '___startPos2' to native representation
+	float* ____startPos2_marshaled = NULL;
+	if (___startPos2 != NULL)
+	{
+		____startPos2_marshaled = reinterpret_cast<float*>((___startPos2)->GetAddressAtUnchecked(0));
+	}
+
+	// Marshaling of parameter '___endPos3' to native representation
+	float* ____endPos3_marshaled = NULL;
+	if (___endPos3 != NULL)
+	{
+		____endPos3_marshaled = reinterpret_cast<float*>((___endPos3)->GetAddressAtUnchecked(0));
+	}
+
+	// Marshaling of parameter '___straightPath4' to native representation
+	float* ____straightPath4_marshaled = NULL;
+	if (___straightPath4 != NULL)
+	{
+		____straightPath4_marshaled = reinterpret_cast<float*>((___straightPath4)->GetAddressAtUnchecked(0));
+	}
+
+	// Native function invocation
+	int32_t returnValue = reinterpret_cast<PInvokeFunc>(RecastFind)(___navPtr0, ____extents1_marshaled, ____startPos2_marshaled, ____endPos3_marshaled, ____straightPath4_marshaled);
+
+	return returnValue;
+}
+// System.Int32 ET.Recast::RecastFind(System.Int64,System.Single[],System.Single[],System.Single[],System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFind_m8DD2BD52A5D8DC7C526FC4E66537904117A20C5B (int64_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___startPos2, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___endPos3, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___straightPath4, const RuntimeMethod* method)
+{
+	{
+		// return RecastFind(new IntPtr(navPtr), extents, startPos, endPos, straightPath);
+		int64_t L_0 = ___navPtr0;
+		intptr_t L_1;
+		memset((&L_1), 0, sizeof(L_1));
+		IntPtr__ctor_m2CDDF5A1715E7BCFDFB6823D7A18339BD8EB0E90((&L_1), L_0, /*hidden argument*/NULL);
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_2 = ___extents1;
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_3 = ___startPos2;
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_4 = ___endPos3;
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_5 = ___straightPath4;
+		int32_t L_6;
+		L_6 = Recast_RecastFind_m7B4B5F20F901D108AB4CC7BE4BDB8001E2D9F2BD((intptr_t)L_1, L_2, L_3, L_4, L_5, /*hidden argument*/NULL);
+		return L_6;
+	}
+}
+// System.Int32 ET.Recast::RecastFindNearestPoint(System.IntPtr,System.Single[],System.Single[],System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindNearestPoint_mBD346906C44FC16214864666C974BB818852090C (intptr_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___pos2, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___nearestPos3, const RuntimeMethod* method)
+{
+	typedef int32_t (CDECL *PInvokeFunc) (intptr_t, float*, float*, float*);
+
+	// Marshaling of parameter '___extents1' to native representation
+	float* ____extents1_marshaled = NULL;
+	if (___extents1 != NULL)
+	{
+		____extents1_marshaled = reinterpret_cast<float*>((___extents1)->GetAddressAtUnchecked(0));
+	}
+
+	// Marshaling of parameter '___pos2' to native representation
+	float* ____pos2_marshaled = NULL;
+	if (___pos2 != NULL)
+	{
+		____pos2_marshaled = reinterpret_cast<float*>((___pos2)->GetAddressAtUnchecked(0));
+	}
+
+	// Marshaling of parameter '___nearestPos3' to native representation
+	float* ____nearestPos3_marshaled = NULL;
+	if (___nearestPos3 != NULL)
+	{
+		____nearestPos3_marshaled = reinterpret_cast<float*>((___nearestPos3)->GetAddressAtUnchecked(0));
+	}
+
+	// Native function invocation
+	int32_t returnValue = reinterpret_cast<PInvokeFunc>(RecastFindNearestPoint)(___navPtr0, ____extents1_marshaled, ____pos2_marshaled, ____nearestPos3_marshaled);
+
+	return returnValue;
+}
+// System.Int32 ET.Recast::RecastFindNearestPoint(System.Int64,System.Single[],System.Single[],System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindNearestPoint_mFF9B15D5F3519BEC3416A1D9E6C785FADD42CF92 (int64_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___pos2, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___nearestPos3, const RuntimeMethod* method)
+{
+	{
+		// return RecastFindNearestPoint(new IntPtr(navPtr), extents, pos, nearestPos);
+		int64_t L_0 = ___navPtr0;
+		intptr_t L_1;
+		memset((&L_1), 0, sizeof(L_1));
+		IntPtr__ctor_m2CDDF5A1715E7BCFDFB6823D7A18339BD8EB0E90((&L_1), L_0, /*hidden argument*/NULL);
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_2 = ___extents1;
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_3 = ___pos2;
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_4 = ___nearestPos3;
+		int32_t L_5;
+		L_5 = Recast_RecastFindNearestPoint_mBD346906C44FC16214864666C974BB818852090C((intptr_t)L_1, L_2, L_3, L_4, /*hidden argument*/NULL);
+		return L_5;
+	}
+}
+// System.Int32 ET.Recast::RecastFindRandomPointAroundCircle(System.IntPtr,System.Single[],System.Single[],System.Single,System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindRandomPointAroundCircle_m6B2EE2981361A463FDC71FBBA8192936F055C94B (intptr_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___centerPos2, float ___radius3, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___randomPos4, const RuntimeMethod* method)
+{
+	typedef int32_t (CDECL *PInvokeFunc) (intptr_t, float*, float*, float, float*);
+
+	// Marshaling of parameter '___extents1' to native representation
+	float* ____extents1_marshaled = NULL;
+	if (___extents1 != NULL)
+	{
+		____extents1_marshaled = reinterpret_cast<float*>((___extents1)->GetAddressAtUnchecked(0));
+	}
+
+	// Marshaling of parameter '___centerPos2' to native representation
+	float* ____centerPos2_marshaled = NULL;
+	if (___centerPos2 != NULL)
+	{
+		____centerPos2_marshaled = reinterpret_cast<float*>((___centerPos2)->GetAddressAtUnchecked(0));
+	}
+
+	// Marshaling of parameter '___randomPos4' to native representation
+	float* ____randomPos4_marshaled = NULL;
+	if (___randomPos4 != NULL)
+	{
+		____randomPos4_marshaled = reinterpret_cast<float*>((___randomPos4)->GetAddressAtUnchecked(0));
+	}
+
+	// Native function invocation
+	int32_t returnValue = reinterpret_cast<PInvokeFunc>(RecastFindRandomPointAroundCircle)(___navPtr0, ____extents1_marshaled, ____centerPos2_marshaled, ___radius3, ____randomPos4_marshaled);
+
+	return returnValue;
+}
+// System.Int32 ET.Recast::RecastFindRandomPointAroundCircle(System.Int64,System.Single[],System.Single[],System.Single,System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindRandomPointAroundCircle_mB0E9D518BA06F6916F38F03314957169D5222D83 (int64_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___extents1, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___centerPos2, float ___radius3, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___randomPos4, const RuntimeMethod* method)
+{
+	{
+		// return RecastFindRandomPointAroundCircle(new IntPtr(navPtr), extents, centerPos, radius, randomPos);
+		int64_t L_0 = ___navPtr0;
+		intptr_t L_1;
+		memset((&L_1), 0, sizeof(L_1));
+		IntPtr__ctor_m2CDDF5A1715E7BCFDFB6823D7A18339BD8EB0E90((&L_1), L_0, /*hidden argument*/NULL);
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_2 = ___extents1;
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_3 = ___centerPos2;
+		float L_4 = ___radius3;
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_5 = ___randomPos4;
+		int32_t L_6;
+		L_6 = Recast_RecastFindRandomPointAroundCircle_m6B2EE2981361A463FDC71FBBA8192936F055C94B((intptr_t)L_1, L_2, L_3, L_4, L_5, /*hidden argument*/NULL);
+		return L_6;
+	}
+}
+// System.Int32 ET.Recast::RecastFindRandomPoint(System.IntPtr,System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindRandomPoint_mEC80012030D47EC1A1DD8CF8F8F6C55ED2181321 (intptr_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___randomPos1, const RuntimeMethod* method)
+{
+	typedef int32_t (CDECL *PInvokeFunc) (intptr_t, float*);
+
+	// Marshaling of parameter '___randomPos1' to native representation
+	float* ____randomPos1_marshaled = NULL;
+	if (___randomPos1 != NULL)
+	{
+		____randomPos1_marshaled = reinterpret_cast<float*>((___randomPos1)->GetAddressAtUnchecked(0));
+	}
+
+	// Native function invocation
+	int32_t returnValue = reinterpret_cast<PInvokeFunc>(RecastFindRandomPoint)(___navPtr0, ____randomPos1_marshaled);
+
+	return returnValue;
+}
+// System.Int32 ET.Recast::RecastFindRandomPoint(System.Int64,System.Single[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Recast_RecastFindRandomPoint_m6A1B0156D8492B01DDAC1C1E92CBB1FCB85ABC79 (int64_t ___navPtr0, SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* ___randomPos1, const RuntimeMethod* method)
+{
+	{
+		// return RecastFindRandomPoint(new IntPtr(navPtr), randomPos);
+		int64_t L_0 = ___navPtr0;
+		intptr_t L_1;
+		memset((&L_1), 0, sizeof(L_1));
+		IntPtr__ctor_m2CDDF5A1715E7BCFDFB6823D7A18339BD8EB0E90((&L_1), L_0, /*hidden argument*/NULL);
+		SingleU5BU5D_t47E8DBF5B597C122478D1FFBD9DD57399A0650FA* L_2 = ___randomPos1;
+		int32_t L_3;
+		L_3 = Recast_RecastFindRandomPoint_mEC80012030D47EC1A1DD8CF8F8F6C55ED2181321((intptr_t)L_1, L_2, /*hidden argument*/NULL);
+		return L_3;
 	}
 }
 #ifdef __clang__
