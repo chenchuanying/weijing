@@ -38,6 +38,14 @@ namespace ET
             unit.GetComponent<DBSaveComponent>().NoFindPath = 0;
             skillManagerComponent.InterruptSing(0, true);
 
+            M2C_PathfindingResult m2C_PathfindingResult = new M2C_PathfindingResult();
+            m2C_PathfindingResult.Id = unit.Id;
+            m2C_PathfindingResult.YaoGan = true;
+            m2C_PathfindingResult.Xs = message.Xs;
+            m2C_PathfindingResult.Ys = message.Ys;
+            m2C_PathfindingResult.Zs = message.Zs;
+            MessageHelper.Broadcast(unit, m2C_PathfindingResult);
+
             using (ListComponent<Vector3> list = ListComponent<Vector3>.Create())
             {
                 for (int i = 0; i < message.Xs.Count; i++ )
