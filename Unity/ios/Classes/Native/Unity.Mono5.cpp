@@ -758,6 +758,7 @@ IL2CPP_EXTERN_C RuntimeClass* WaitForSeconds_t8F9189BE6E467C98C99177038881F8982E
 IL2CPP_EXTERN_C RuntimeClass* zstring_t4E96C637A6792FFF9E5091B9E41FE41E2A015A0E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral02C9905EEC5E042D2ACABA43DDD141D0063C510D;
 IL2CPP_EXTERN_C String_t* _stringLiteral0CC3AD572C8336C94F4F31B762116AC8B8813371;
+IL2CPP_EXTERN_C String_t* _stringLiteral187F2F759F0E46388023B9CCE364A22D8DDE10B7;
 IL2CPP_EXTERN_C String_t* _stringLiteral1C3DADF747222A06E10D7B296CB0476E11E17E92;
 IL2CPP_EXTERN_C String_t* _stringLiteral1D8DA7DBABBA89A2726481E115EFCF69C86E4D3D;
 IL2CPP_EXTERN_C String_t* _stringLiteral218E07FCCF49A41F79C415EF5ED098033FC13A20;
@@ -15592,6 +15593,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadGameSceneU3Ed__47_MoveNext_m9E15B
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MessageBox_t1261C214E997EF7BA3564C326365517295A6ABDA_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral02C9905EEC5E042D2ACABA43DDD141D0063C510D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral187F2F759F0E46388023B9CCE364A22D8DDE10B7);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1C3DADF747222A06E10D7B296CB0476E11E17E92);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1D8DA7DBABBA89A2726481E115EFCF69C86E4D3D);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2782D58A3A7EF675E1D9A0CECA75185DC4CEFCE5);
@@ -15639,15 +15641,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadGameSceneU3Ed__47_MoveNext_m9E15B
 			}
 			case 2:
 			{
-				goto IL_0190;
+				goto IL_019a;
 			}
 			case 3:
 			{
-				goto IL_01d4;
+				goto IL_01de;
 			}
 			case 4:
 			{
-				goto IL_0244;
+				goto IL_024e;
 			}
 		}
 	}
@@ -15686,7 +15688,7 @@ IL_005c:
 		L_8 = String_IsNullOrEmpty_m9AFBB5335B441B94E884B8A9D4A27AD60E3D7F7C(L_7, /*hidden argument*/NULL);
 		if (!L_8)
 		{
-			goto IL_01f8;
+			goto IL_0202;
 		}
 	}
 	{
@@ -15709,6 +15711,8 @@ IL_005c:
 		Assets_AddSearchPath_m1367D679B13D52C2A95EEBD7A65F8F4AA9BD46F1(_stringLiteralF360534030360E703888F3DE9E4C3038503ECB26, /*hidden argument*/NULL);
 		// Assets.AddSearchPath("Assets/Bundles/Independent");
 		Assets_AddSearchPath_m1367D679B13D52C2A95EEBD7A65F8F4AA9BD46F1(_stringLiteralC3C9C754BCB9E0A3FFE8D14C69EC38A989B304B1, /*hidden argument*/NULL);
+		// Assets.AddSearchPath("Assets/Bundles/Recast");
+		Assets_AddSearchPath_m1367D679B13D52C2A95EEBD7A65F8F4AA9BD46F1(_stringLiteral187F2F759F0E46388023B9CCE364A22D8DDE10B7, /*hidden argument*/NULL);
 		// Assets.AddSearchPath("Assets/Bundles/Unit");
 		Assets_AddSearchPath_m1367D679B13D52C2A95EEBD7A65F8F4AA9BD46F1(_stringLiteral5837071FD58B372CDB563CE1B6FEB755EAA2EE9F, /*hidden argument*/NULL);
 		// Assets.AddSearchPath("Assets/Bundles/Icon");
@@ -15762,7 +15766,7 @@ IL_005c:
 		int32_t L_24 = V_4;
 		if ((((int32_t)L_23) >= ((int32_t)L_24)))
 		{
-			goto IL_01c0;
+			goto IL_01ca;
 		}
 	}
 	{
@@ -15786,7 +15790,7 @@ IL_005c:
 		return (bool)1;
 	}
 
-IL_0190:
+IL_019a:
 	{
 		__this->set_U3CU3E1__state_0((-1));
 		// if (mb.isOk)
@@ -15796,7 +15800,7 @@ IL_0190:
 		L_35 = MessageBox_get_isOk_m60562DAAD8745FA95AAF5B4594F0FF5635107A1B_inline(L_34, /*hidden argument*/NULL);
 		if (!L_35)
 		{
-			goto IL_01b1;
+			goto IL_01bb;
 		}
 	}
 	{
@@ -15804,10 +15808,10 @@ IL_0190:
 		String_t* L_36 = __this->get_U3CdownloadUrlU3E5__3_4();
 		Application_OpenURL_m4AED08D5321E5395FAC8D91C2C428DBE60C5FD4E(L_36, /*hidden argument*/NULL);
 		// }
-		goto IL_01b7;
+		goto IL_01c1;
 	}
 
-IL_01b1:
+IL_01bb:
 	{
 		// Quit();
 		Updater_t55F11D8BF25783236336CEF177C35362D3247467 * L_37 = V_1;
@@ -15815,14 +15819,14 @@ IL_01b1:
 		Updater_Quit_m3D9C59BE93DAAF7D970D1734FA12E4A614C9E978(L_37, /*hidden argument*/NULL);
 	}
 
-IL_01b7:
+IL_01c1:
 	{
 		// }
 		__this->set_U3CmbU3E5__4_5((MessageBox_t1261C214E997EF7BA3564C326365517295A6ABDA *)NULL);
-		goto IL_01ef;
+		goto IL_01f9;
 	}
 
-IL_01c0:
+IL_01ca:
 	{
 		// yield return LoadHelper.PreLoad();
 		RuntimeObject* L_38;
@@ -15832,7 +15836,7 @@ IL_01c0:
 		return (bool)1;
 	}
 
-IL_01d4:
+IL_01de:
 	{
 		__this->set_U3CU3E1__state_0((-1));
 		// GameObject.Find("Global").GetComponent<Init>().OnHotUpdateComplete();
@@ -15845,14 +15849,14 @@ IL_01d4:
 		Init_OnHotUpdateComplete_m7D783E9DDB6D3EA416F539C698C153508F0B5EBC(L_40, /*hidden argument*/NULL);
 	}
 
-IL_01ef:
+IL_01f9:
 	{
 		// }
 		__this->set_U3CdownloadUrlU3E5__3_4((String_t*)NULL);
-		goto IL_0251;
+		goto IL_025b;
 	}
 
-IL_01f8:
+IL_0202:
 	{
 		// init.Release();
 		ManifestRequest_t3DA8D8812F711BD55A327AFBBA11D6DA038684A0 * L_41 = __this->get_U3CinitU3E5__2_3();
@@ -15876,7 +15880,7 @@ IL_01f8:
 		return (bool)1;
 	}
 
-IL_0244:
+IL_024e:
 	{
 		__this->set_U3CU3E1__state_0((-1));
 		// Quit();
@@ -15885,7 +15889,7 @@ IL_0244:
 		Updater_Quit_m3D9C59BE93DAAF7D970D1734FA12E4A614C9E978(L_47, /*hidden argument*/NULL);
 	}
 
-IL_0251:
+IL_025b:
 	{
 		// }
 		return (bool)0;

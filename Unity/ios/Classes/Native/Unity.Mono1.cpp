@@ -31729,9 +31729,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Init__ctor_mB2E83C132074BA8C2F2CDD17A603
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// public int BigVersion = 21;      //17部分包含抖音sdk能力 18(模拟器检测) 19 3D视角  20 Tap实名  21tap设备Id
+		// public int BigVersion = 21;
 		__this->set_BigVersion_7(((int32_t)21));
-		// public int BigVersionIOS = 21;   //17部分包含抖音sdk能力 18(模拟器检测) 19 3D视角  20 Tap实名  21tap设备Id Apple登陆
+		// public int BigVersionIOS = 21;
 		__this->set_BigVersionIOS_8(((int32_t)21));
 		// public string WXAppID = "wx638f7f0efe37a825";           //危境  74俄罗斯消除
 		__this->set_WXAppID_23(_stringLiteral2CAC5728A89D00923ED5168238F58B135B1AC4D3);
