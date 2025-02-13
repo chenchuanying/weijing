@@ -1,3 +1,6 @@
+using System;
+using UnityEngine;
+
 namespace ET
 {
     public class AppStart_Init: AEvent<EventType.AppStart>
@@ -13,6 +16,12 @@ namespace ET
         public void TestAOTGeneric()
         {
 
+        }
+
+        public static byte[] Read(string name)
+        {
+            return  ResourcesComponent.Instance.LoadAsset<TextAsset>($"Assets/Bundles/Recast/{name}.bytes").bytes;
+            //return File.ReadAllBytes(Path.Combine("../Config/RecastNavData", name));
         }
 
         private async ETTask RunAsync(EventType.AppStart args)
@@ -50,6 +59,8 @@ namespace ET
             Game.Scene.AddComponent<GameObjectPoolComponent>();
 
             Game.Scene.AddComponent<IosPurchasingComponent>();
+
+            Game.Scene.AddComponent<NavmeshComponent, Func<string, byte[]>>(Read);
 
             TimeInfo.Instance.TimeZone = 8;
             //await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");

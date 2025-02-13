@@ -527,6 +527,10 @@ namespace ET
                         Transform topTf = unit.GetComponent<HeroTransformComponent>().GetTranform(PosType.Head).transform;
                         NpcLocalHelper.OnMainHero(topTf, go.transform, mapComponent.SceneTypeEnum);
                     }
+                    if (unit.MainHero && SettingHelper.ClintFindPath)
+                    {
+                        unit.OnMainHeroPath(mapComponent);
+                    }
                     if (self.BianShenEffect)
                     {
                         self.BianShenEffect = false;

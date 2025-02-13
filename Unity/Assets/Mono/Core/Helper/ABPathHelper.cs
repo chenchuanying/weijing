@@ -104,5 +104,10 @@
         {
             return $"Assets/Bundles/Text/{text}.txt";
         }
+
+        public static string GetRecastPath(string text)
+        {
+            return $"Assets/Bundles/Recast/{text}.bytes";
+        }
     }
 }

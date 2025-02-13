@@ -9,7 +9,7 @@ namespace ET
         public int NavMeshId;
         public int SceneTypeEnum;
         public long LastQuitTime = 0;
-        public bool OldNavMesh = true;
+        public bool OldNavMesh = false;
         public int FubenDifficulty = 0;
 
     }

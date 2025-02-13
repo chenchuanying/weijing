@@ -221,7 +221,7 @@ namespace ET
             TimerComponent.Instance?.Remove(ref self.Timer);
             self.Timer = TimerComponent.Instance.NewFrameTimer(TimerType.JoystickTimer, self);
 
-            if (SettingHelper.MoveMode == 1)
+            if (SettingHelper.ClintFindPath)
             {
                 EventType.MoveStart.Instance.Unit = unit;
                 Game.EventSystem.PublishClass(EventType.MoveStart.Instance);
@@ -333,7 +333,7 @@ namespace ET
                 if (obstruct != 0)
                 {
                     self.ShowObstructTip(obstruct);
-                    if (SettingHelper.MoveMode == 1)
+                    if (SettingHelper.ClintFindPath)
                     {
                         EventType.MoveStart.Instance.Unit = unit;
                         Game.EventSystem.PublishClass(EventType.MoveStart.Instance);
@@ -352,7 +352,7 @@ namespace ET
             float distance;
             float speed = self.NumericComponent.GetAsFloat(NumericType.Now_Speed);
             speed = Mathf.Max(speed, 4f);
-            if (SettingHelper.MoveMode == 1)
+            if (SettingHelper.ClintFindPath )
             {
                 List<Vector3> pathfind = new List<Vector3>();
                 newv3 = self.CanMovePosition(unit, rotation, pathfind);
@@ -364,41 +364,49 @@ namespace ET
                     return;
                 }
 
-                Vector3 initpos = pathfind[0];
+                bool oldfunction = false;
                 List<Vector3> pathfind_2 = new List<Vector3>();
-                pathfind_2.Add(initpos);
-
-                for (int i = 1; i < pathfind.Count; i++)
+                if (oldfunction)
                 {
-                    //if (!pathfind[i].y.Equals(pathfind[i-1].y))
-                    if (Math.Abs(pathfind[i].y - pathfind[i - 1].y) > 0.05f)
-                    {
-                        pathfind_2.Add(pathfind[i]);
-                    }
-                }
+                    Vector3 initpos = pathfind[0];
+                    pathfind_2.Add(initpos);
 
-                if (pathfind_2.Count > 2)
-                {
-                    int distance_init = 0;
-                    for (int i = 1; i < pathfind_2.Count;)
+                    for (int i = 1; i < pathfind.Count; i++)
                     {
-                        float distance_cur = Vector3.Distance(pathfind_2[i], pathfind_2[distance_init]);
-                        if (distance_cur < 0.5f)
+                        //if (!pathfind[i].y.Equals(pathfind[i-1].y))
+                        if (Math.Abs(pathfind[i].y - pathfind[i - 1].y) > 0.05f)
                         {
-                            pathfind_2.RemoveAt(i);
-                        }
-                        else
-                        {
-                            distance_init = i;
-                            i++;
+                            pathfind_2.Add(pathfind[i]);
                         }
                     }
-                }
-                /////////--------------------------------
 
-                if (pathfind_2.Count < 2)
+                    if (pathfind_2.Count > 2)
+                    {
+                        int distance_init = 0;
+                        for (int i = 1; i < pathfind_2.Count;)
+                        {
+                            float distance_cur = Vector3.Distance(pathfind_2[i], pathfind_2[distance_init]);
+                            if (distance_cur < 0.5f)
+                            {
+                                pathfind_2.RemoveAt(i);
+                            }
+                            else
+                            {
+                                distance_init = i;
+                                i++;
+                            }
+                        }
+                    }
+                    /////////--------------------------------
+
+                    if (pathfind_2.Count < 2)
+                    {
+                        pathfind_2.Add(pathfind[pathfind.Count - 1]);
+                    }               
+                }
+                else
                 {
-                    pathfind_2.Add(pathfind[pathfind.Count - 1]);
+                    pathfind_2 = pathfind;      
                 }
 
                 newv3 = pathfind_2[pathfind_2.Count - 1];
@@ -427,7 +435,6 @@ namespace ET
                 unit.MoveByYaoGan(newv3, direction, distance, null).Coroutine();
             }
 
-
             EventType.DataUpdate.Instance.DataType = DataType.BeforeMove;
             EventType.DataUpdate.Instance.DataParamString = string.Empty;
             Game.EventSystem.PublishClass(EventType.DataUpdate.Instance);
@@ -449,42 +456,40 @@ namespace ET
 
         public  static Vector3 CanMovePosition(this UIJoystickMoveComponent self, Unit unit, Quaternion rotation, List<Vector3> pathfind)
         {
-            Vector3 targetPosi = unit.Position;
-            for (int i = 0; i < 30; i++)
-            {
-                targetPosi = targetPosi + rotation * Vector3.forward * 0.2f;
-                RaycastHit hit;
+            unit.GetComponent<PathfindingComponent>().Find(unit.Position, unit.Position + rotation * Vector3.forward * 2f, pathfind);  
+            return unit.Position;
+            //Vector3 targetPosi = unit.Position;
+            //for (int i = 0; i < 30; i++)
+            //{
+            //    targetPosi = targetPosi + rotation * Vector3.forward * 0.2f;
+            //    RaycastHit hit;
 
-                Physics.Raycast(targetPosi + new Vector3(0f, 2f, 0f), Vector3.down, out hit, 20, self.BuildingLayer);
-                if (hit.collider != null)
-                {
-                    break;
-                }
+            //    Physics.Raycast(targetPosi + new Vector3(0f, 2f, 0f), Vector3.down, out hit, 20, self.BuildingLayer);
+            //    if (hit.collider != null)
+            //    {
+            //        break;
+            //    }
 
-                Physics.Raycast(targetPosi + new Vector3(0f, 2f, 0f), Vector3.down, out hit, 20, self.MapLayer);
-                if (hit.collider == null)
-                {
-                    // if (i == 0)
-                    // {
-                    //     targetpositon = target;
-                    // }
-                    break;
-                }
-                else
-                {
-                    if (Mathf.Abs(hit.point.y - targetPosi.y) > 0.4f)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        targetPosi = hit.point;
-                        pathfind.Add(targetPosi);
-                    }
-                }
-            }
+            //    Physics.Raycast(targetPosi + new Vector3(0f, 2f, 0f), Vector3.down, out hit, 20, self.MapLayer);
+            //    if (hit.collider == null)
+            //    {
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        if (Mathf.Abs(hit.point.y - targetPosi.y) > 0.4f)
+            //        {
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            targetPosi = hit.point;
+            //            pathfind.Add(targetPosi);
+            //        }
+            //    }
+            //}
 
-            return targetPosi;
+            //return targetPosi;
         }
 
 
@@ -601,7 +606,7 @@ namespace ET
                 return;
             }
 
-            if (SettingHelper.MoveMode == 1)
+            if (SettingHelper.ClintFindPath)
             {
                 EventType.MoveStop.Instance.Unit = unit;
                 Game.EventSystem.PublishClass(EventType.MoveStop.Instance);
@@ -622,7 +627,7 @@ namespace ET
 
             //MapHelper.LogMoveInfo($"移动摇杆停止: {TimeHelper.ServerNow()}");
 
-            if (SettingHelper.MoveMode == 1)
+            if (SettingHelper.ClintFindPath )
             {
                 unit.StopResult();
             }

@@ -1197,11 +1197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff906ecbbd0163f4094f8fa4e305d39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Development: 1
-  EditorMode: 1
+  Development: 0
+  EditorMode: 0
   OueNetMode: 1
-  BigVersion: 21
-  BigVersionIOS: 21
+  BigVersion: 22
+  BigVersionIOS: 22
   Updater: {fileID: 2018631435}
   ssdk: {fileID: 575235021}
   mobsdk: {fileID: 575235022}

@@ -8,6 +8,36 @@ namespace ET
     public static class UIMapHelper
     {
 
+        public static void OnMainHeroPath(this Unit self, MapComponent mapComponent)
+        {
+            if (!self.MainHero)
+            {
+                return;
+            }
+
+            int navmesh = 0;
+            int sceneType = mapComponent.SceneTypeEnum;
+
+            if (SceneConfigHelper.UseSceneConfig(sceneType))
+            {
+                navmesh = SceneConfigCategory.Instance.Get(mapComponent.SceneId).MapID;
+            }
+            else
+            {
+                switch (sceneType)
+                {
+                    case SceneTypeEnum.LocalDungeon:
+                        navmesh = DungeonConfigCategory.Instance.Get(mapComponent.SceneId).MapID;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            self.AddComponent<PathfindingComponent, int>(navmesh);
+            //unit.AddComponent<ClientPathfinding2Component>();
+        }
+
         public static void OnMainHeroMove(Unit self)
         {
             float curTime = Time.time;
