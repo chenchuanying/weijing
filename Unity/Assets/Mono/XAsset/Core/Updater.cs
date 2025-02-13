@@ -849,6 +849,7 @@ namespace libx
                 Assets.AddSearchPath("Assets/Bundles/UI");
                 Assets.AddSearchPath("Assets/Bundles/Effect");
                 Assets.AddSearchPath("Assets/Bundles/Independent");
+                Assets.AddSearchPath("Assets/Bundles/Recast");
                 Assets.AddSearchPath("Assets/Bundles/Unit");
                 Assets.AddSearchPath("Assets/Bundles/Icon");
                 Assets.AddSearchPath("Assets/Res/Scenes");
