@@ -156,14 +156,14 @@ namespace ET
 
             if (curTime <= maxTime &&  self.AuctionStatus - TimeHelper.ServerNow() < TimeHelper.Minute)
             {
-                Console.WriteLine($"有人加价 延迟时间！   {self.DomainZone()}");
+                //Console.WriteLine($"有人加价 延迟时间！   {self.DomainZone()}");
                 self.AuctionStatus = TimeHelper.ServerNow() + TimeHelper.Minute;
                 TimerComponent.Instance.Remove(ref self.AuctionOverTimer);
                 self.AuctionOverTimer = TimerComponent.Instance.NewOnceTimer(self.AuctionStatus, TimerType.AuctionOverTimer, self);
             }
             else
             { 
-                Console.WriteLine($"有人加价！   {self.DomainZone()}");
+                //Console.WriteLine($"有人加价！   {self.DomainZone()}");
             }
         }
 

@@ -876,7 +876,7 @@ namespace ET
             int zone = self.DomainZone();
             self.BroadcastShowLie("0").Coroutine();
 
-            Log.Console($"发放狩猎排行榜奖励： {zone}");
+            //Log.Console($"发放狩猎排行榜奖励： {zone}");
             Log.Debug($"发放狩猎排行榜奖励： {zone}");
             long serverTime = TimeHelper.ServerNow();
             List<RankShouLieInfo> rankingInfos = self.DBRankInfo.rankShowLie;
