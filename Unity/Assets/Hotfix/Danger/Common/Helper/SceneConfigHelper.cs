@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
 
 namespace ET
@@ -56,7 +55,25 @@ namespace ET
                 || sceneTypeEnum == SceneTypeEnum.SeasonTower; 
         }
 
+        public static bool IfSceneCanMove(int sceneType, int sceneid)
+        {
+            if (sceneType == SceneTypeEnum.Happy
+             || sceneType == SceneTypeEnum.PetTianTi
+             || sceneType == SceneTypeEnum.PetDungeon
+             || sceneType == SceneTypeEnum.PetMing)
+            {
+                return false;
+            }
+            if (sceneType == SceneTypeEnum.LocalDungeon)
+            {
+                if (DungeonConfigCategory.Instance.Get(sceneid).MapType == SceneSubTypeEnum.LocalDungeon_1)
+                {
+                    return false;
+                }
+            }
 
+            return true;
+        }
 
         public static bool ShowRightTopButton(int sceneType)
         {

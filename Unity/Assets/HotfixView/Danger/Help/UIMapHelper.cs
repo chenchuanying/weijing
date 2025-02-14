@@ -17,6 +17,10 @@ namespace ET
 
             int navmesh = 0;
             int sceneType = mapComponent.SceneTypeEnum;
+            if (!SceneConfigHelper.IfSceneCanMove(sceneType, mapComponent.SceneId))
+            {
+                return;
+            }
 
             if (SceneConfigHelper.UseSceneConfig(sceneType))
             {
