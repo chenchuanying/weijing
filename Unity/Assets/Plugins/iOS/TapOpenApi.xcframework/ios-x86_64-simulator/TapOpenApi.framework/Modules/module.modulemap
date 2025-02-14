@@ -1,0 +1,11 @@
+framework module TapOpenApi {
+  umbrella header "TapOpenApi.h"
+  export *
+
+  module * { export * }
+}
+
+module TapOpenApi.Swift {
+  header "TapOpenApi-Swift.h"
+  requires objc
+}

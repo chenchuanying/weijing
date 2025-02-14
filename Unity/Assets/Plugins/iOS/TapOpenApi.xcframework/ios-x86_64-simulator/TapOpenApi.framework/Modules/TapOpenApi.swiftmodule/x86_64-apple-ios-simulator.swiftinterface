@@ -1,0 +1,39 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TapOpenApi
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+@_exported import TapOpenApi
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc public class TapApi : ObjectiveC.NSObject {
+  @objc public static var isTapTapInstalled: Swift.Bool {
+    @objc get
+  }
+  @objc public static func send(_ obj: TapOpenApi.TapShareObj, completion: @escaping (Swift.Int) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TapShareObj : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding, Foundation.NSSecureCoding {
+  @objc public var appId: Swift.String
+  @objc public var title: Swift.String?
+  @objc public var contents: Swift.String?
+  @objc public var groupLabelId: Swift.String?
+  @objc public var hashtagIds: Swift.String?
+  @objc public var footerImages: [Foundation.Data]?
+  @objc public var failUrl: Swift.String?
+  @objc public var backUrl: Swift.String?
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public init(appId: Swift.String)
+  @objc public init(appId: Swift.String, title: Swift.String? = nil, contents: Swift.String? = nil, groupLabelId: Swift.String? = nil, hashtagIds: Swift.String? = nil, footerImages: [Foundation.Data]? = nil, failUrl: Swift.String? = nil, backUrl: Swift.String? = nil)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}

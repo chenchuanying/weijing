@@ -1,0 +1,1983 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TapOpenApi",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TapOpenApi"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TapOpenApi",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TapApi",
+        "printedName": "TapApi",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isTapTapInstalled",
+            "printedName": "isTapTapInstalled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapApi(cpy)isTapTapInstalled",
+            "mangledName": "$s10TapOpenApi0aC0C02isaA9InstalledSbvpZ",
+            "moduleName": "TapOpenApi",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapApi(cm)isTapTapInstalled",
+                "mangledName": "$s10TapOpenApi0aC0C02isaA9InstalledSbvgZ",
+                "moduleName": "TapOpenApi",
+                "static": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "send",
+            "printedName": "send(_:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TapShareObj",
+                "printedName": "TapOpenApi.TapShareObj",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Int) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapApi(cm)send:completion:",
+            "mangledName": "$s10TapOpenApi0aC0C4send_10completionyAA0A8ShareObjC_ySictFZ",
+            "moduleName": "TapOpenApi",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TapApi",
+                "printedName": "TapOpenApi.TapApi",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapApi"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapApi(im)init",
+            "mangledName": "$s10TapOpenApi0aC0CACycfc",
+            "moduleName": "TapOpenApi",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@TapOpenApi@objc(cs)TapApi",
+        "mangledName": "$s10TapOpenApi0aC0C",
+        "moduleName": "TapOpenApi",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TapOpenApi",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TapShareObj",
+        "printedName": "TapShareObj",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "appId",
+            "printedName": "appId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(py)appId",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC5appIdSSvp",
+            "moduleName": "TapOpenApi",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)appId",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC5appIdSSvg",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)setAppId:",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC5appIdSSvs",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TapOpenApi0A8ShareObjC5appIdSSvM",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC5appIdSSvM",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "title",
+            "printedName": "title",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(py)title",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC5titleSSSgvp",
+            "moduleName": "TapOpenApi",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)title",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC5titleSSSgvg",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)setTitle:",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC5titleSSSgvs",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TapOpenApi0A8ShareObjC5titleSSSgvM",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC5titleSSSgvM",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "contents",
+            "printedName": "contents",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(py)contents",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC8contentsSSSgvp",
+            "moduleName": "TapOpenApi",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)contents",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC8contentsSSSgvg",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)setContents:",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC8contentsSSSgvs",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TapOpenApi0A8ShareObjC8contentsSSSgvM",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC8contentsSSSgvM",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "groupLabelId",
+            "printedName": "groupLabelId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(py)groupLabelId",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC12groupLabelIdSSSgvp",
+            "moduleName": "TapOpenApi",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)groupLabelId",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC12groupLabelIdSSSgvg",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)setGroupLabelId:",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC12groupLabelIdSSSgvs",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TapOpenApi0A8ShareObjC12groupLabelIdSSSgvM",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC12groupLabelIdSSSgvM",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hashtagIds",
+            "printedName": "hashtagIds",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(py)hashtagIds",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC10hashtagIdsSSSgvp",
+            "moduleName": "TapOpenApi",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)hashtagIds",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC10hashtagIdsSSSgvg",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)setHashtagIds:",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC10hashtagIdsSSSgvs",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TapOpenApi0A8ShareObjC10hashtagIdsSSSgvM",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC10hashtagIdsSSSgvM",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "footerImages",
+            "printedName": "footerImages",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Foundation.Data]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.Data]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(py)footerImages",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC12footerImagesSay10Foundation4DataVGSgvp",
+            "moduleName": "TapOpenApi",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Foundation.Data]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Foundation.Data]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)footerImages",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC12footerImagesSay10Foundation4DataVGSgvg",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Foundation.Data]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Foundation.Data]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)setFooterImages:",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC12footerImagesSay10Foundation4DataVGSgvs",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TapOpenApi0A8ShareObjC12footerImagesSay10Foundation4DataVGSgvM",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC12footerImagesSay10Foundation4DataVGSgvM",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "failUrl",
+            "printedName": "failUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(py)failUrl",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC7failUrlSSSgvp",
+            "moduleName": "TapOpenApi",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)failUrl",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC7failUrlSSSgvg",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)setFailUrl:",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC7failUrlSSSgvs",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TapOpenApi0A8ShareObjC7failUrlSSSgvM",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC7failUrlSSSgvM",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "backUrl",
+            "printedName": "backUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(py)backUrl",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC7backUrlSSSgvp",
+            "moduleName": "TapOpenApi",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)backUrl",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC7backUrlSSSgvg",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)setBackUrl:",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC7backUrlSSSgvs",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TapOpenApi0A8ShareObjC7backUrlSSSgvM",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC7backUrlSSSgvM",
+                "moduleName": "TapOpenApi",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(cpy)supportsSecureCoding",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC20supportsSecureCodingSbvpZ",
+            "moduleName": "TapOpenApi",
+            "static": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(cm)supportsSecureCoding",
+                "mangledName": "$s10TapOpenApi0A8ShareObjC20supportsSecureCodingSbvgZ",
+                "moduleName": "TapOpenApi",
+                "static": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(appId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TapShareObj",
+                "printedName": "TapOpenApi.TapShareObj",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)initWithAppId:",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC5appIdACSS_tcfc",
+            "moduleName": "TapOpenApi",
+            "objc_name": "initWithAppId:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(appId:title:contents:groupLabelId:hashtagIds:footerImages:failUrl:backUrl:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TapShareObj",
+                "printedName": "TapOpenApi.TapShareObj",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Foundation.Data]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.Data]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)initWithAppId:title:contents:groupLabelId:hashtagIds:footerImages:failUrl:backUrl:",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC5appId5title8contents010groupLabelG010hashtagIds12footerImages7failUrl04backQ0ACSS_SSSgA3LSay10Foundation4DataVGSgA2Ltcfc",
+            "moduleName": "TapOpenApi",
+            "objc_name": "initWithAppId:title:contents:groupLabelId:hashtagIds:footerImages:failUrl:backUrl:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TapOpenApi.TapShareObj?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TapShareObj",
+                    "printedName": "TapOpenApi.TapShareObj",
+                    "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)initWithCoder:",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "TapOpenApi",
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "Required",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj(im)encodeWithCoder:",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC6encode4withySo7NSCoderC_tF",
+            "moduleName": "TapOpenApi",
+            "objc_name": "encodeWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TapShareObj",
+                "printedName": "TapOpenApi.TapShareObj",
+                "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10TapOpenApi0A8ShareObjC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "TapOpenApi",
+            "implicit": true,
+            "declAttributes": [
+              "Required"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10TapOpenApi0A8ShareObjC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s10TapOpenApi0A8ShareObjC6encode2toys7Encoder_p_tKF",
+            "moduleName": "TapOpenApi",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@TapOpenApi@objc(cs)TapShareObj",
+        "mangledName": "$s10TapOpenApi0A8ShareObjC",
+        "moduleName": "TapOpenApi",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "StringLiteral",
+      "offset": 480,
+      "length": 40,
+      "value": "\"TapOpenApi, start reading share result\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "StringLiteral",
+      "offset": 690,
+      "length": 6,
+      "value": "\"data\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "Array",
+      "offset": 889,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "StringLiteral",
+      "offset": 984,
+      "length": 8,
+      "value": "\"result\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1287,
+      "length": 2,
+      "value": "-8"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1434,
+      "length": 2,
+      "value": "-7"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1568,
+      "length": 2,
+      "value": "-6"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1701,
+      "length": 2,
+      "value": "-5"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1810,
+      "length": 2,
+      "value": "-4"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1902,
+      "length": 2,
+      "value": "-3"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "StringLiteral",
+      "offset": 1945,
+      "length": 40,
+      "value": "\"TapOpenApi, share result code: \""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "StringLiteral",
+      "offset": 1984,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApplicationLifeCycleListner.swift",
+      "kind": "Array",
+      "offset": 2152,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 324,
+      "length": 11,
+      "value": "\"taptap:\/\/\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 426,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1200,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 1342,
+      "length": 56,
+      "value": "\"未安装 Taptap, url: \""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 1372,
+      "length": 1,
+      "value": "\", isSuccess: \""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 1397,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1469,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1509,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 1633,
+      "length": 33,
+      "value": "\"TapTap.TapThirdEditorShareModel\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1794,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 1871,
+      "length": 6,
+      "value": "\"data\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 1950,
+      "length": 101,
+      "value": "\"https:\/\/www.taptap.cn\/tapiosnow\/dispatch?type=third_share&opener=game_sdk&game_sdk_app=\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 2050,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 2133,
+      "length": 23,
+      "value": "\"+=\"#%\/<>?@&\\^`{|}, \""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 2340,
+      "length": 28,
+      "value": "\"&backurl=\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 2367,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 2648,
+      "length": 43,
+      "value": "\"TapOpenApi, open url result: \""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 2690,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2768,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 3159,
+      "length": 84,
+      "value": "\"https:\/\/m.taptap.cn\/app\/\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 3192,
+      "length": 2,
+      "value": "\"\/?utm_medium=rep&utm_source=rep_share_sdk_\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapApi.swift",
+      "kind": "StringLiteral",
+      "offset": 3242,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1149,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 1222,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 1927,
+      "length": 7,
+      "value": "\"title\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 1993,
+      "length": 10,
+      "value": "\"contents\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2059,
+      "length": 7,
+      "value": "\"appId\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2129,
+      "length": 14,
+      "value": "\"groupLabelId\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2204,
+      "length": 12,
+      "value": "\"hashtagIds\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2279,
+      "length": 14,
+      "value": "\"footerImages\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2351,
+      "length": 9,
+      "value": "\"failUrl\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2418,
+      "length": 9,
+      "value": "\"backUrl\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2533,
+      "length": 7,
+      "value": "\"title\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2581,
+      "length": 10,
+      "value": "\"contents\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2629,
+      "length": 7,
+      "value": "\"appId\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2681,
+      "length": 14,
+      "value": "\"groupLabelId\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2738,
+      "length": 12,
+      "value": "\"hashtagIds\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2795,
+      "length": 14,
+      "value": "\"footerImages\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2849,
+      "length": 9,
+      "value": "\"failUrl\""
+    },
+    {
+      "filePath": "\/Users\/kai\/Desktop\/workspace\/projects\/tapopenapi\/TapOpenApi\/TapShareObj.swift",
+      "kind": "StringLiteral",
+      "offset": 2898,
+      "length": 9,
+      "value": "\"backUrl\""
+    }
+  ]
+}
