@@ -65,7 +65,7 @@ namespace ET
                 {
                     dBCenterAccountInfo.DeviceID = request.DeviceID;
                     await Game.Scene.GetComponent<DBComponent>().Save<DBCenterAccountInfo>(202, dBCenterAccountInfo);
-                    Console.WriteLine($"更新设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
+                    //Console.WriteLine($"更新设备id:  {dBCenterAccountInfo.Account}  {request.DeviceID}");
                 }
             }
             
