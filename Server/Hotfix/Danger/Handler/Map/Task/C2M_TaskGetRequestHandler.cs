@@ -1,7 +1,8 @@
 ﻿using System;
+using UnityEngine;
 
 namespace ET
-{ 
+{
 
     [ActorMessageHandler]
     public class C2M_TaskGetRequestHandler : AMActorLocationRpcHandler<Unit, C2M_TaskGetRequest, M2C_TaskGetResponse>
@@ -90,6 +91,28 @@ namespace ET
                 (TaskPro taskPro, int error) = unit.GetComponent<TaskComponent>().OnAcceptedTask(request.TaskId);
                 response.Error = error;
                 response.TaskPro = taskPro;
+
+                MapComponent mapComponent = unit.DomainScene().GetComponent<MapComponent>();  
+                if (taskConfig.TaskType == TaskTypeEnum.Treasure && error == ErrorCode.ERR_Success
+                    && mapComponent.SceneTypeEnum == SceneTypeEnum.LocalDungeon && taskPro.FubenId == mapComponent.SceneId)
+                {
+                    Console.WriteLine("副本内接取藏宝图任务！");
+                    
+                    int wave = taskPro.WaveId;             //第几波
+                    int monsterid = taskConfig.Target[0];       //怪物
+
+                    string[] vector3 = SceneConfigHelper.GetPostionMonster(taskPro.FubenId, taskConfig.Target[0], wave);
+                    if (vector3 != null) 
+                    {
+                        Vector3 target = new Vector3(float.Parse(vector3[0]), float.Parse(vector3[1]), float.Parse(vector3[2]));
+                        MonsterConfig monsterConfig = MonsterConfigCategory.Instance.Get(monsterid);    
+                        Unit unitmonster = UnitFactory.CreateMonster(unit.DomainScene(), monsterid, target, new CreateMonsterInfo()
+                        {
+                            Camp = monsterConfig.MonsterCamp,
+                            SkinId = 0,
+                        });
+                    }
+                }
             }
             else
             {
