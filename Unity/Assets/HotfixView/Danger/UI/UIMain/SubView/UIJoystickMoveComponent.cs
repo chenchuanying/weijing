@@ -456,7 +456,7 @@ namespace ET
 
         public  static Vector3 CanMovePosition(this UIJoystickMoveComponent self, Unit unit, Quaternion rotation, List<Vector3> pathfind)
         {
-            unit.GetComponent<PathfindingComponent>().Find(unit.Position, unit.Position + rotation * Vector3.forward * 2f, pathfind);  
+            unit.GetComponent<PathfindingComponent>().Find(unit.Position, unit.Position + rotation * Vector3.forward * 6f, pathfind);  
             return unit.Position;
             //Vector3 targetPosi = unit.Position;
             //for (int i = 0; i < 30; i++)
