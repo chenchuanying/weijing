@@ -527,6 +527,10 @@ namespace ET
                                 unit.GetComponent<BagComponent>().AdditionalCellNum[8]++;
                                 //增加仓库格子
                                 break;
+                            case 141:  //转职道具
+                                break;
+                            default:
+                                break;
                         }
 
                         //扣除道具

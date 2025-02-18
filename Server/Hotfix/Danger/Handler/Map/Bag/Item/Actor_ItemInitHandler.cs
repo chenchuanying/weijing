@@ -11,6 +11,12 @@ namespace ET
 		{
 			BagComponent bagComponent = unit.GetComponent<BagComponent>();
 
+			//测试 送一个转职道具
+			if (ComHelp.IsInnerNet() && bagComponent.GetItemNumber(90000014) < 10)
+			{
+                bagComponent.OnAddItemData($"90000014;10", $"{ItemGetWay.GM}_{TimeHelper.ServerNow()}", false);
+            }
+
             //读取数据库
             int occ = unit.GetComponent<UserInfoComponent>().UserInfo.Occ;
             int occTwo = unit.GetComponent<UserInfoComponent>().UserInfo.OccTwo;

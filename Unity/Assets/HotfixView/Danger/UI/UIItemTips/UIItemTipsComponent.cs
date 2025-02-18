@@ -576,6 +576,11 @@ namespace ET
                     return;
                 }
             }
+            if (itemConfig.ItemSubType == 141)
+            {
+                await UIHelper.Create(self.ZoneScene(), UIType.UIItemChangeOcc);
+                return;
+            }
 
             long instanceid = self.InstanceId;
             errorCode = await self.ZoneScene().GetComponent<BagComponent>().SendUseItem(self.BagInfo, usrPar);
