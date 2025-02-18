@@ -2310,7 +2310,7 @@ message RewardItem
 }
 
 //ResponseType M2C_ChangeOccTwoResponse
-//转换职业
+//转换第二职业
 message C2M_ChangeOccTwoRequest		// IActorLocationRequest
 {
 	int32 RpcId = 90;
@@ -7791,4 +7791,19 @@ message Center2C_QueryAccountResponse // IResponse
 	string Message = 92;
 	string Account = 1;
 	string Password = 2;
+}
+
+//ResponseType M2C_ChangeOccResponse
+//转换第一职业
+message C2M_ChangeOccRequest		// IActorLocationRequest
+{
+	int32 RpcId = 90;
+	int32 Occ = 1;
+}
+
+message M2C_ChangeOccResponse	// IActorLocationResponse
+{
+	int32 RpcId = 90;
+	string Message = 91;
+	int32 Error = 92;
 }

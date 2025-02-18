@@ -4894,7 +4894,7 @@ namespace ET
 	}
 
 	[ResponseType(nameof(M2C_ChangeOccTwoResponse))]
-//转换职业
+//转换第二职业
 	[Message(OuterOpcode.C2M_ChangeOccTwoRequest)]
 	[ProtoContract]
 	public partial class C2M_ChangeOccTwoRequest: Object, IActorLocationRequest
@@ -16273,6 +16273,35 @@ namespace ET
 
 		[ProtoMember(2)]
 		public string Password { get; set; }
+
+	}
+
+	[ResponseType(nameof(M2C_ChangeOccResponse))]
+//转换第一职业
+	[Message(OuterOpcode.C2M_ChangeOccRequest)]
+	[ProtoContract]
+	public partial class C2M_ChangeOccRequest: Object, IActorLocationRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public int Occ { get; set; }
+
+	}
+
+	[Message(OuterOpcode.M2C_ChangeOccResponse)]
+	[ProtoContract]
+	public partial class M2C_ChangeOccResponse: Object, IActorLocationResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public string Message { get; set; }
+
+		[ProtoMember(92)]
+		public int Error { get; set; }
 
 	}
 

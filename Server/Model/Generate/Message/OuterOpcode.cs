@@ -894,5 +894,7 @@ namespace ET
 		 public const ushort R2C_LoginGatemCheck = 10891;
 		 public const ushort C2Center_QueryAccountRequest = 10892;
 		 public const ushort Center2C_QueryAccountResponse = 10893;
+		 public const ushort C2M_ChangeOccRequest = 10894;
+		 public const ushort M2C_ChangeOccResponse = 10895;
 	}
 }
