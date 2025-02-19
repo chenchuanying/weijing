@@ -16291,6 +16291,9 @@ namespace ET
 		[ProtoMember(2)]
 		public int Occ { get; set; }
 
+		[ProtoMember(3)]
+		public int OccTwo { get; set; }
+
 	}
 
 	[Message(OuterOpcode.M2C_ChangeOccResponse)]

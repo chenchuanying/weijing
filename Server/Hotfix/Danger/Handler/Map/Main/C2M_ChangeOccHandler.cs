@@ -102,11 +102,13 @@ namespace ET
 
             userInfoComponent.UpdateRoleData(UserDataType.Sp, (level - sp - 1).ToString());
 
-            //觉醒技能先保留 转职的时候再转换
+            
             SkillSetComponent skillSetComponent = unit.GetComponent<SkillSetComponent>();
             skillSetComponent.TianFuList.Clear();
             skillSetComponent.TianFuList1.Clear();
             skillSetComponent.TianFuPlan = 0;
+
+            //觉醒技能先保留 转职的时候再转换
             for (int k = skillSetComponent.SkillList.Count - 1; k >= 0; k--)
             {
                 SkillPro skillPro = skillSetComponent.SkillList[k];
@@ -137,6 +139,13 @@ namespace ET
                 }
             }
 
+            //需要选择第二职业
+            if (request.OccTwo != 0)
+            {
+                skillSetComponent.OnChangeJueXing(userInfoComponent.UserInfo.OccTwo, request.OccTwo);
+                skillSetComponent.OnChangeOccTwoRequest(request.OccTwo);
+            }
+
             //时装(清空 返回碎片或者其他)
             for (int fashion = 0; fashion < bagComponent.FashionActiveIds.Count; fashion++)
             {
@@ -155,9 +164,18 @@ namespace ET
 
             DataCollationComponent dataCollationComponent = unit.GetComponent<DataCollationComponent>();
             dataCollationComponent.OccOld = userInfoComponent.UserInfo.Occ;
-            dataCollationComponent.OccTwoOld = userInfoComponent.UserInfo.OccTwo;
             userInfoComponent.UserInfo.Occ = request.Occ;
-            userInfoComponent.UserInfo.OccTwo = 0;
+            
+            if (request.OccTwo != 0)
+            {
+                dataCollationComponent.OccTwoOld = 0;
+                userInfoComponent.UserInfo.OccTwo = request.OccTwo;
+            }
+            else
+            {
+                dataCollationComponent.OccTwoOld = userInfoComponent.UserInfo.OccTwo;
+                userInfoComponent.UserInfo.OccTwo = 0;
+            }
 
             reply();
             await ETTask.CompletedTask;

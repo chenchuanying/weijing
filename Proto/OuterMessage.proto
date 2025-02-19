@@ -7800,6 +7800,7 @@ message C2M_ChangeOccRequest		// IActorLocationRequest
 	int32 RpcId = 90;
 	int64 BagInfoID = 1;
 	int32 Occ = 2;
+	int32 OccTwo = 3;
 }
 
 message M2C_ChangeOccResponse	// IActorLocationResponse
