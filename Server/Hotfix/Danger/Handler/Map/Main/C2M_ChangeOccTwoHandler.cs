@@ -32,7 +32,9 @@ namespace ET
                 reply();
                 return;
             }
+            DataCollationComponent dataCollationComponent = unit.GetComponent<DataCollationComponent>();
 
+            unit.GetComponent<SkillSetComponent>().OnChangeJueXing(dataCollationComponent.OccTwoOld, request.OccTwoID);
             unit.GetComponent<SkillSetComponent>().OnChangeOccTwoRequest(request.OccTwoID);
             unit.GetComponent<TaskComponent>().OnChangeOccTwo();
 

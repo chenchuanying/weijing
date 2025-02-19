@@ -11,6 +11,7 @@ namespace ET
         public GameObject BtnClose;
         public GameObject GridList;
         public GameObject ButtonChage;
+        public long BagInfoID;
         public int SelectOcc;
     }
 
@@ -61,7 +62,36 @@ namespace ET
 
         public static async ETTask OnButtonChange(this UIItemChangeOccComponent self)
         {
-            await ETTask.CompletedTask;
+            if (self.SelectOcc == 0)
+            {
+                return;
+            }
+
+            UserInfoComponent userInfoComponent = self.ZoneScene().GetComponent<UserInfoComponent>();
+            if (self.SelectOcc == userInfoComponent.UserInfo.Occ)
+            {
+                return;
+            }
+
+            long instanceid = self.InstanceId;
+            C2M_ChangeOccRequest c2M_ChangeOcc = new C2M_ChangeOccRequest() {  Occ = self.SelectOcc,  BagInfoID = self.BagInfoID };
+            M2C_ChangeOccResponse response = (M2C_ChangeOccResponse)await self.ZoneScene().GetComponent<SessionComponent>().Session.Call(c2M_ChangeOcc);
+
+            if (instanceid != self.InstanceId)
+            {
+                return;
+            }
+
+            if (response.Error!= ErrorCode.ERR_Success)
+            {
+                return;
+            }
+
+            PopupTipHelp.OpenPopupTip_2(self.ZoneScene(), "重新登录", "请重新登录！", () => {
+                EventType.ReturnLogin.Instance.ZoneScene = self.DomainScene();
+                EventType.ReturnLogin.Instance.ErrorCode = ErrorCode.ERR_Success;
+                Game.EventSystem.PublishClass(EventType.ReturnLogin.Instance);
+            }).Coroutine();
         }
 
     }

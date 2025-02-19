@@ -578,7 +578,10 @@ namespace ET
             }
             if (itemConfig.ItemSubType == 141)
             {
-                await UIHelper.Create(self.ZoneScene(), UIType.UIItemChangeOcc);
+                UI uichangeOcc =  await UIHelper.Create(self.ZoneScene(), UIType.UIItemChangeOcc);
+                uichangeOcc.GetComponent<UIItemChangeOccComponent>().BagInfoID = self.BagInfo.BagInfoID;
+                //注销Tips
+                self.OnCloseTips();
                 return;
             }
 

@@ -7798,7 +7798,8 @@ message Center2C_QueryAccountResponse // IResponse
 message C2M_ChangeOccRequest		// IActorLocationRequest
 {
 	int32 RpcId = 90;
-	int32 Occ = 1;
+	int64 BagInfoID = 1;
+	int32 Occ = 2;
 }
 
 message M2C_ChangeOccResponse	// IActorLocationResponse

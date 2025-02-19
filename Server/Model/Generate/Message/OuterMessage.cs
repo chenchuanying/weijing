@@ -16286,6 +16286,9 @@ namespace ET
 		public int RpcId { get; set; }
 
 		[ProtoMember(1)]
+		public long BagInfoID { get; set; }
+
+		[ProtoMember(2)]
 		public int Occ { get; set; }
 
 	}

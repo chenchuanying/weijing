@@ -21,8 +21,12 @@ namespace ET
         //第一职业（用文字 法师/战士）
         public string Occ;
 
+        public int OccOld;
+
         //转职（用文字 元素剑士/驭剑士……）
         public string OccTwo;
+
+        public int OccTwoOld;
 
         //战斗力
         public int Combat;
