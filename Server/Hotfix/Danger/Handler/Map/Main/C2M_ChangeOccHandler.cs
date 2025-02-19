@@ -112,17 +112,17 @@ namespace ET
             for (int k = skillSetComponent.SkillList.Count - 1; k >= 0; k--)
             {
                 SkillPro skillPro = skillSetComponent.SkillList[k];
-                if (skillPro.SkillID == SkillSetEnum.Item)
-                {
-                    continue;
-                }
+                //if (skillPro.SkillSetType == SkillSetEnum.Item)
+                //{
+                //    continue;
+                //}
 
                 int skillid = skillPro.SkillID;
                 if (OccupationJueXingConfigCategory.Instance.Contain(skillid))
                 {
                     continue;
                 }
-
+                Console.WriteLine($"removeSkill:  {skillid}    {skillPro.SkillSetType}  {skillPro.SkillSource}");
                 skillSetComponent.SkillList.RemoveAt(k);
             }
 
