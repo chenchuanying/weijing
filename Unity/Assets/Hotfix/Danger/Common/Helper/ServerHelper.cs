@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ET
 {
+
     public static class ServerHelper
     {
         public static int UpdateServerList = 0;  //改成int
@@ -364,7 +365,7 @@ namespace ET
             serverItems_1.Add(new ServerItem() { ServerId = 130, ServerIp = $"{ip}:20605", ServerName = "巅峰对决", ServerOpenTime = 1732273200000, New = 0, Show = 0, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
 
 
-            //2025/02/21 19:00:00 1740135600000 合区 花满楼-奇迹之光   131/133
+            //2025/02/21 19:00:00 1740135600000 合区 花满楼-奇迹之光 131/133
             serverItems_1.Add(new ServerItem() { ServerId = 131, ServerIp = $"{ip}:20515", ServerName = "花满楼", ServerOpenTime = 1732878000000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 132, ServerIp = $"{ip}:20515", ServerName = "星辰之怒", ServerOpenTime = 1733482800000, New = 0, Show = 0, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 133, ServerIp = $"{ip}:20515", ServerName = "奇迹之光", ServerOpenTime = 1734087600000, New = 0, Show = 0, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
@@ -379,7 +380,6 @@ namespace ET
             //2025/02/21 19:00:00 1740135600000 合区 千山万水-凤凰于飞 137/138
             serverItems_1.Add(new ServerItem() { ServerId = 137, ServerIp = $"{ip}:20445", ServerName = "千山万水", ServerOpenTime = 1736506800000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 138, ServerIp = $"{ip}:20445", ServerName = "凤凰于飞", ServerOpenTime = 1737111600000, New = 0, Show = 0, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
-
 
             serverItems_1.Add(new ServerItem() { ServerId = 139, ServerIp = $"{ip}:20475", ServerName = "吉祥如意", ServerOpenTime = 1737716400000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
             serverItems_1.Add(new ServerItem() { ServerId = 140, ServerIp = $"{ip}:20505", ServerName = "新年快乐", ServerOpenTime = 1738321200000, New = 0, Show = 1, PlatformList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 20001 } });
